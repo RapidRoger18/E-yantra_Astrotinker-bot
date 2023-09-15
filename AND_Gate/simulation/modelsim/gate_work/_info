@@ -1,0 +1,85 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/saish_k/Eyantra/Task 0/AND_Gate/simulation/modelsim
+vAND_Gate
+Z1 !s110 1694690390
+!i10b 1
+!s100 gZn<Bl00Kfhg@1Iz0K<FG2
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IdPC32K_1hik5jEQ:A6CMV0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z4 w1694690387
+Z5 8AND_Gate.vo
+Z6 FAND_Gate.vo
+!i122 0
+L0 32 89
+Z7 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z8 !s108 1694690390.000000
+Z9 !s107 AND_Gate.vo|
+Z10 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+.|AND_Gate.vo|
+!i113 1
+Z11 o-vlog01compat -work work
+Z12 !s92 -vlog01compat -work work +incdir+.
+Z13 tCvgOpt 0
+n@a@n@d_@gate
+vAND_Gate_tb
+R1
+!i10b 1
+!s100 @R98B<]XNhcmUU;Z8A6;g2
+R2
+I[Pf7QnNQBbLfCAXF:<Uz=2
+R3
+R0
+w1694443947
+8/home/saish_k/Eyantra/Task 0/AND_Gate/AND_gate_tb.v
+F/home/saish_k/Eyantra/Task 0/AND_Gate/AND_gate_tb.v
+!i122 1
+L0 2 17
+R7
+r1
+!s85 0
+31
+R8
+!s107 /home/saish_k/Eyantra/Task 0/AND_Gate/AND_gate_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/saish_k/Eyantra/Task 0/AND_Gate|/home/saish_k/Eyantra/Task 0/AND_Gate/AND_gate_tb.v|
+!i113 1
+R11
+!s92 -vlog01compat -work work {+incdir+/home/saish_k/Eyantra/Task 0/AND_Gate}
+R13
+n@a@n@d_@gate_tb
+vhard_block
+R1
+!i10b 1
+!s100 6^5AiAD_5@IZ`]6zo<>>V1
+R2
+Ig_]a4U11FF[NMYDXadj4Y1
+R3
+R0
+R4
+R5
+R6
+!i122 0
+L0 122 34
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+R13

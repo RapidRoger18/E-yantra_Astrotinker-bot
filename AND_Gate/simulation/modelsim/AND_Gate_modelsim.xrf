@@ -1,0 +1,13 @@
+vendor_name = ModelSim
+source_file = 1, /home/saish_k/Eyantra/Task 0/AND_Gate/AND_Gate.v
+source_file = 1, /home/saish_k/Eyantra/Task 0/AND_Gate/AND_gate_tb.v
+source_file = 1, /home/saish_k/Eyantra/Task 0/AND_Gate/db/AND_Gate.cbx.xml
+design_name = AND_Gate
+instance = comp, \out~output , out~output, AND_Gate, 1
+instance = comp, \b~input , b~input, AND_Gate, 1
+instance = comp, \a~input , a~input, AND_Gate, 1
+instance = comp, \out~0 , out~0, AND_Gate, 1
+design_name = hard_block
+instance = comp, \~ALTERA_ASDO_DATA1~~ibuf , ~ALTERA_ASDO_DATA1~~ibuf, hard_block, 1
+instance = comp, \~ALTERA_FLASH_nCE_nCSO~~ibuf , ~ALTERA_FLASH_nCE_nCSO~~ibuf, hard_block, 1
+instance = comp, \~ALTERA_DATA0~~ibuf , ~ALTERA_DATA0~~ibuf, hard_block, 1
