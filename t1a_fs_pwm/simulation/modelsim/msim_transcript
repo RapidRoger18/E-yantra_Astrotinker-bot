@@ -9,51 +9,51 @@
 # Copying /home/saish_k/intelFPGA/20.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -vlog01compat -work work +incdir+/home/saish_k/t1a_fs_pwm {/home/saish_k/t1a_fs_pwm/t1a_fs_pwm_bdf.v}
+# vlog -vlog01compat -work work +incdir+/home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm {/home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/t1a_fs_pwm_bdf.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 15:35:18 on Sep 20,2023
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/saish_k/t1a_fs_pwm" /home/saish_k/t1a_fs_pwm/t1a_fs_pwm_bdf.v 
+# Start time: 19:34:07 on Sep 20,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm" /home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/t1a_fs_pwm_bdf.v 
 # -- Compiling module t1a_fs_pwm_bdf
 # 
 # Top level modules:
 # 	t1a_fs_pwm_bdf
-# End time: 15:35:18 on Sep 20,2023, Elapsed time: 0:00:00
+# End time: 19:34:07 on Sep 20,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+/home/saish_k/t1a_fs_pwm {/home/saish_k/t1a_fs_pwm/pwm_generator.v}
+# vlog -vlog01compat -work work +incdir+/home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm {/home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/pwm_generator.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 15:35:18 on Sep 20,2023
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/saish_k/t1a_fs_pwm" /home/saish_k/t1a_fs_pwm/pwm_generator.v 
+# Start time: 19:34:07 on Sep 20,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm" /home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/pwm_generator.v 
 # -- Compiling module pwm_generator
 # 
 # Top level modules:
 # 	pwm_generator
-# End time: 15:35:18 on Sep 20,2023, Elapsed time: 0:00:00
+# End time: 19:34:07 on Sep 20,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+/home/saish_k/t1a_fs_pwm {/home/saish_k/t1a_fs_pwm/frequency_scaling.v}
+# vlog -vlog01compat -work work +incdir+/home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm {/home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/frequency_scaling.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 15:35:18 on Sep 20,2023
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/saish_k/t1a_fs_pwm" /home/saish_k/t1a_fs_pwm/frequency_scaling.v 
+# Start time: 19:34:07 on Sep 20,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm" /home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/frequency_scaling.v 
 # -- Compiling module frequency_scaling
 # 
 # Top level modules:
 # 	frequency_scaling
-# End time: 15:35:18 on Sep 20,2023, Elapsed time: 0:00:00
+# End time: 19:34:07 on Sep 20,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vlog -vlog01compat -work work +incdir+/home/saish_k/t1a_fs_pwm/simulation/modelsim {/home/saish_k/t1a_fs_pwm/simulation/modelsim/tb.v}
+# vlog -vlog01compat -work work +incdir+/home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/simulation/modelsim {/home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/simulation/modelsim/tb.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 15:35:18 on Sep 20,2023
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/saish_k/t1a_fs_pwm/simulation/modelsim" /home/saish_k/t1a_fs_pwm/simulation/modelsim/tb.v 
+# Start time: 19:34:07 on Sep 20,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/simulation/modelsim" /home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/simulation/modelsim/tb.v 
 # -- Compiling module tb
 # 
 # Top level modules:
 # 	tb
-# End time: 15:35:18 on Sep 20,2023, Elapsed time: 0:00:00
+# End time: 19:34:08 on Sep 20,2023, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  tb
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" tb 
-# Start time: 15:35:18 on Sep 20,2023
+# Start time: 19:34:08 on Sep 20,2023
 # Loading work.tb
 # Loading work.t1a_fs_pwm_bdf
 # Loading work.pwm_generator
@@ -65,6 +65,4 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run 40 us
-# Error(s) encountered, please check your design!
-# End time: 15:35:54 on Sep 20,2023, Elapsed time: 0:00:36
-# Errors: 0, Warnings: 0
+# No errors encountered, congratulations!

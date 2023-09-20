@@ -1,5 +1,5 @@
 Fitter report for t1a_fs_pwm
-Wed Sep 20 15:34:47 2023
+Wed Sep 20 19:33:50 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Wed Sep 20 15:34:47 2023       ;
+; Fitter Status                      ; Successful - Wed Sep 20 19:33:50 2023       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; t1a_fs_pwm                                  ;
 ; Top-level Entity Name              ; t1a_fs_pwm_bdf                              ;
@@ -76,9 +76,9 @@ https://fpgasoftware.intel.com/eula.
 ; Device                             ; EP4CE22F17C6                                ;
 ; Timing Models                      ; Final                                       ;
 ; Total logic elements               ; 13 / 22,320 ( < 1 % )                       ;
-;     Total combinational functions  ; 11 / 22,320 ( < 1 % )                       ;
-;     Dedicated logic registers      ; 9 / 22,320 ( < 1 % )                        ;
-; Total registers                    ; 9                                           ;
+;     Total combinational functions  ; 12 / 22,320 ( < 1 % )                       ;
+;     Dedicated logic registers      ; 10 / 22,320 ( < 1 % )                       ;
+; Total registers                    ; 10                                          ;
 ; Total pins                         ; 8 / 154 ( 5 % )                             ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 608,256 ( 0 % )                         ;
@@ -155,12 +155,12 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 12          ;
 ;                            ;             ;
-; Average used               ; 1.03        ;
+; Average used               ; 1.02        ;
 ; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.3%      ;
+;     Processor 2            ;   0.2%      ;
 ;     Processors 3-12        ;   0.2%      ;
 +----------------------------+-------------+
 
@@ -171,8 +171,8 @@ https://fpgasoftware.intel.com/eula.
 ; Type                ; Total [A + B]     ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+-------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                   ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 49 ) ; 0.00 % ( 0 / 49 )          ; 0.00 % ( 0 / 49 )        ;
-;     -- Achieved     ; 0.00 % ( 0 / 49 ) ; 0.00 % ( 0 / 49 )          ; 0.00 % ( 0 / 49 )        ;
+;     -- Requested    ; 0.00 % ( 0 / 51 ) ; 0.00 % ( 0 / 51 )          ; 0.00 % ( 0 / 51 )        ;
+;     -- Achieved     ; 0.00 % ( 0 / 51 ) ; 0.00 % ( 0 / 51 )          ; 0.00 % ( 0 / 51 )        ;
 ;                     ;                   ;                            ;                          ;
 ; Routing (by net)    ;                   ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )  ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -195,7 +195,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 39 )     ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 41 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -203,7 +203,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in /home/saish_k/t1a_fs_pwm/output_files/t1a_fs_pwm.pin.
+The pin-out file can be found in /home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/output_files/t1a_fs_pwm.pin.
 
 
 +---------------------------------------------------------------------+
@@ -212,22 +212,22 @@ The pin-out file can be found in /home/saish_k/t1a_fs_pwm/output_files/t1a_fs_pw
 ; Resource                                    ; Usage                 ;
 +---------------------------------------------+-----------------------+
 ; Total logic elements                        ; 13 / 22,320 ( < 1 % ) ;
-;     -- Combinational with no register       ; 4                     ;
-;     -- Register only                        ; 2                     ;
-;     -- Combinational with a register        ; 7                     ;
+;     -- Combinational with no register       ; 3                     ;
+;     -- Register only                        ; 1                     ;
+;     -- Combinational with a register        ; 9                     ;
 ;                                             ;                       ;
 ; Logic element usage by number of LUT inputs ;                       ;
 ;     -- 4 input functions                    ; 4                     ;
-;     -- 3 input functions                    ; 2                     ;
-;     -- <=2 input functions                  ; 5                     ;
-;     -- Register only                        ; 2                     ;
+;     -- 3 input functions                    ; 4                     ;
+;     -- <=2 input functions                  ; 4                     ;
+;     -- Register only                        ; 1                     ;
 ;                                             ;                       ;
 ; Logic elements by mode                      ;                       ;
-;     -- normal mode                          ; 11                    ;
+;     -- normal mode                          ; 12                    ;
 ;     -- arithmetic mode                      ; 0                     ;
 ;                                             ;                       ;
-; Total registers*                            ; 9 / 23,018 ( < 1 % )  ;
-;     -- Dedicated logic registers            ; 9 / 22,320 ( < 1 % )  ;
+; Total registers*                            ; 10 / 23,018 ( < 1 % ) ;
+;     -- Dedicated logic registers            ; 10 / 22,320 ( < 1 % ) ;
 ;     -- I/O registers                        ; 0 / 698 ( 0 % )       ;
 ;                                             ;                       ;
 ; Total LABs:  partially or completely used   ; 2 / 1,395 ( < 1 % )   ;
@@ -249,11 +249,11 @@ The pin-out file can be found in /home/saish_k/t1a_fs_pwm/output_files/t1a_fs_pw
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )         ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )         ;
 ; Average interconnect usage (total/H/V)      ; 0.0% / 0.0% / 0.0%    ;
-; Peak interconnect usage (total/H/V)         ; 0.1% / 0.0% / 0.2%    ;
-; Maximum fan-out                             ; 5                     ;
-; Highest non-global fan-out                  ; 5                     ;
-; Total fan-out                               ; 68                    ;
-; Average fan-out                             ; 1.36                  ;
+; Peak interconnect usage (total/H/V)         ; 0.1% / 0.1% / 0.2%    ;
+; Maximum fan-out                             ; 6                     ;
+; Highest non-global fan-out                  ; 6                     ;
+; Total fan-out                               ; 73                    ;
+; Average fan-out                             ; 1.43                  ;
 +---------------------------------------------+-----------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -267,22 +267,22 @@ The pin-out file can be found in /home/saish_k/t1a_fs_pwm/output_files/t1a_fs_pw
 ; Difficulty Clustering Region                ; Low                  ; Low                            ;
 ;                                             ;                      ;                                ;
 ; Total logic elements                        ; 13 / 22320 ( < 1 % ) ; 0 / 22320 ( 0 % )              ;
-;     -- Combinational with no register       ; 4                    ; 0                              ;
-;     -- Register only                        ; 2                    ; 0                              ;
-;     -- Combinational with a register        ; 7                    ; 0                              ;
+;     -- Combinational with no register       ; 3                    ; 0                              ;
+;     -- Register only                        ; 1                    ; 0                              ;
+;     -- Combinational with a register        ; 9                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic element usage by number of LUT inputs ;                      ;                                ;
 ;     -- 4 input functions                    ; 4                    ; 0                              ;
-;     -- 3 input functions                    ; 2                    ; 0                              ;
-;     -- <=2 input functions                  ; 5                    ; 0                              ;
-;     -- Register only                        ; 2                    ; 0                              ;
+;     -- 3 input functions                    ; 4                    ; 0                              ;
+;     -- <=2 input functions                  ; 4                    ; 0                              ;
+;     -- Register only                        ; 1                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic elements by mode                      ;                      ;                                ;
-;     -- normal mode                          ; 11                   ; 0                              ;
+;     -- normal mode                          ; 12                   ; 0                              ;
 ;     -- arithmetic mode                      ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
-; Total registers                             ; 9                    ; 0                              ;
-;     -- Dedicated logic registers            ; 9 / 22320 ( < 1 % )  ; 0 / 22320 ( 0 % )              ;
+; Total registers                             ; 10                   ; 0                              ;
+;     -- Dedicated logic registers            ; 10 / 22320 ( < 1 % ) ; 0 / 22320 ( 0 % )              ;
 ;     -- I/O registers                        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Total LABs:  partially or completely used   ; 2 / 1395 ( < 1 % )   ; 0 / 1395 ( 0 % )               ;
@@ -301,8 +301,8 @@ The pin-out file can be found in /home/saish_k/t1a_fs_pwm/output_files/t1a_fs_pw
 ;     -- Registered Output Connections        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Internal Connections                        ;                      ;                                ;
-;     -- Total Connections                    ; 63                   ; 5                              ;
-;     -- Registered Connections               ; 27                   ; 0                              ;
+;     -- Total Connections                    ; 68                   ; 5                              ;
+;     -- Registered Connections               ; 32                   ; 0                              ;
 ;                                             ;                      ;                                ;
 ; External Connections                        ;                      ;                                ;
 ;     -- Top                                  ; 0                    ; 0                              ;
@@ -336,9 +336,9 @@ The pin-out file can be found in /home/saish_k/t1a_fs_pwm/output_files/t1a_fs_pw
 +---------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 ; clk_50M       ; E1    ; 1        ; 0            ; 16           ; 7            ; 4                     ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
 ; duty_cycle[0] ; P2    ; 2        ; 0            ; 4            ; 14           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; duty_cycle[1] ; R1    ; 2        ; 0            ; 5            ; 21           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; duty_cycle[2] ; R3    ; 3        ; 1            ; 0            ; 7            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; duty_cycle[3] ; P1    ; 2        ; 0            ; 4            ; 21           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; duty_cycle[1] ; R3    ; 3        ; 1            ; 0            ; 7            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; duty_cycle[2] ; P1    ; 2        ; 0            ; 4            ; 21           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; duty_cycle[3] ; R1    ; 2        ; 0            ; 5            ; 21           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
 +---------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 
 
@@ -347,9 +347,9 @@ The pin-out file can be found in /home/saish_k/t1a_fs_pwm/output_files/t1a_fs_pw
 +-------------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
 ; Name        ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Output Register ; Output Enable Register ; Power Up High ; Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination                       ; Termination Control Block ; Output Buffer Pre-emphasis ; Voltage Output Differential ; Location assigned by ; Output Enable Source ; Output Enable Group ;
 +-------------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
-; clk_195KHz  ; P3    ; 3        ; 1            ; 0            ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; clk_195KHz  ; N3    ; 3        ; 1            ; 0            ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
 ; clk_3125KHz ; P8    ; 3        ; 25           ; 0            ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
-; pwm_signal  ; N3    ; 3        ; 1            ; 0            ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
+; pwm_signal  ; P3    ; 3        ; 1            ; 0            ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; Fitter               ; -                    ; -                   ;
 +-------------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
 
 
@@ -590,7 +590,7 @@ The pin-out file can be found in /home/saish_k/t1a_fs_pwm/output_files/t1a_fs_pw
 ; M16      ; 148        ; 5        ; GND+                                                      ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; N1       ; 44         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; N2       ; 43         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; N3       ; 52         ; 3        ; pwm_signal                                                ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; N3       ; 52         ; 3        ; clk_195KHz                                                ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; N4       ;            ;          ; VCCD_PLL1                                                 ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; N5       ; 62         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; N6       ; 63         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -604,9 +604,9 @@ The pin-out file can be found in /home/saish_k/t1a_fs_pwm/output_files/t1a_fs_pw
 ; N14      ; 126        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; N15      ; 133        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; N16      ; 132        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; P1       ; 51         ; 2        ; duty_cycle[3]                                             ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; P1       ; 51         ; 2        ; duty_cycle[2]                                             ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; P2       ; 50         ; 2        ; duty_cycle[0]                                             ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
-; P3       ; 53         ; 3        ; clk_195KHz                                                ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; P3       ; 53         ; 3        ; pwm_signal                                                ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; P4       ;            ; 3        ; VCCIO3                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; P5       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; P6       ; 67         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
@@ -620,9 +620,9 @@ The pin-out file can be found in /home/saish_k/t1a_fs_pwm/output_files/t1a_fs_pw
 ; P14      ; 119        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; P15      ; 127        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; P16      ; 128        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; R1       ; 49         ; 2        ; duty_cycle[1]                                             ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; R1       ; 49         ; 2        ; duty_cycle[3]                                             ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; R2       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; R3       ; 54         ; 3        ; duty_cycle[2]                                             ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; R3       ; 54         ; 3        ; duty_cycle[1]                                             ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; R4       ; 60         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; R5       ; 71         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; R6       ; 73         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -685,9 +685,9 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +----------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------+-------------------+--------------+
 ; Compilation Hierarchy Node       ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                         ; Entity Name       ; Library Name ;
 +----------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------+-------------------+--------------+
-; |t1a_fs_pwm_bdf                  ; 13 (0)      ; 9 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 8    ; 0            ; 4 (0)        ; 2 (0)             ; 7 (0)            ; |t1a_fs_pwm_bdf                             ; t1a_fs_pwm_bdf    ; work         ;
+; |t1a_fs_pwm_bdf                  ; 13 (0)      ; 10 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 8    ; 0            ; 3 (0)        ; 1 (0)             ; 9 (0)            ; |t1a_fs_pwm_bdf                             ; t1a_fs_pwm_bdf    ; work         ;
 ;    |frequency_scaling:b2v_inst1| ; 5 (5)       ; 4 (4)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 1 (1)             ; 3 (3)            ; |t1a_fs_pwm_bdf|frequency_scaling:b2v_inst1 ; frequency_scaling ; work         ;
-;    |pwm_generator:b2v_inst|      ; 8 (8)       ; 5 (5)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 1 (1)             ; 4 (4)            ; |t1a_fs_pwm_bdf|pwm_generator:b2v_inst      ; pwm_generator     ; work         ;
+;    |pwm_generator:b2v_inst|      ; 8 (8)       ; 6 (6)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 6 (6)            ; |t1a_fs_pwm_bdf|pwm_generator:b2v_inst      ; pwm_generator     ; work         ;
 +----------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -702,7 +702,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; clk_3125KHz   ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; duty_cycle[3] ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; duty_cycle[2] ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; duty_cycle[1] ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; duty_cycle[1] ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; duty_cycle[0] ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; clk_50M       ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
 +---------------+----------+---------------+---------------+-----------------------+-----+------+
@@ -714,11 +714,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Source Pin / Fanout                       ; Pad To Core Index ; Setting ;
 +-------------------------------------------+-------------------+---------+
 ; duty_cycle[3]                             ;                   ;         ;
-;      - pwm_generator:b2v_inst|LessThan0~1 ; 1                 ; 6       ;
+;      - pwm_generator:b2v_inst|LessThan0~2 ; 1                 ; 6       ;
 ; duty_cycle[2]                             ;                   ;         ;
 ;      - pwm_generator:b2v_inst|LessThan0~1 ; 0                 ; 6       ;
 ; duty_cycle[1]                             ;                   ;         ;
-;      - pwm_generator:b2v_inst|LessThan0~0 ; 1                 ; 6       ;
+;      - pwm_generator:b2v_inst|LessThan0~0 ; 0                 ; 6       ;
 ; duty_cycle[0]                             ;                   ;         ;
 ;      - pwm_generator:b2v_inst|LessThan0~0 ; 0                 ; 6       ;
 ; clk_50M                                   ;                   ;         ;
@@ -731,7 +731,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name                                    ; Location      ; Fan-Out ; Usage ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-----------------------------------------+---------------+---------+-------+--------+----------------------+------------------+---------------------------+
 ; clk_50M                                 ; PIN_E1        ; 4       ; Clock ; yes    ; Global Clock         ; GCLK2            ; --                        ;
-; frequency_scaling:b2v_inst1|clk_3125KHz ; FF_X28_Y1_N29 ; 5       ; Clock ; yes    ; Global Clock         ; GCLK17           ; --                        ;
+; frequency_scaling:b2v_inst1|clk_3125KHz ; FF_X28_Y1_N29 ; 6       ; Clock ; yes    ; Global Clock         ; GCLK17           ; --                        ;
 +-----------------------------------------+---------------+---------+-------+--------+----------------------+------------------+---------------------------+
 
 
@@ -741,7 +741,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name                                    ; Location      ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-----------------------------------------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; clk_50M                                 ; PIN_E1        ; 4       ; 0                                    ; Global Clock         ; GCLK2            ; --                        ;
-; frequency_scaling:b2v_inst1|clk_3125KHz ; FF_X28_Y1_N29 ; 5       ; 1                                    ; Global Clock         ; GCLK17           ; --                        ;
+; frequency_scaling:b2v_inst1|clk_3125KHz ; FF_X28_Y1_N29 ; 6       ; 0                                    ; Global Clock         ; GCLK17           ; --                        ;
 +-----------------------------------------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
@@ -750,7 +750,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------+
 ; Routing Resource Type ; Usage                 ;
 +-----------------------+-----------------------+
-; Block interconnects   ; 16 / 71,559 ( < 1 % ) ;
+; Block interconnects   ; 15 / 71,559 ( < 1 % ) ;
 ; C16 interconnects     ; 0 / 2,597 ( 0 % )     ;
 ; C4 interconnects      ; 11 / 46,848 ( < 1 % ) ;
 ; Direct links          ; 4 / 71,559 ( < 1 % )  ;
@@ -797,7 +797,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                        ;
 +----------------------------------------------+-----------------------------+
-; Number of Signals Sourced  (Average = 11.00) ; Number of LABs  (Total = 2) ;
+; Number of Signals Sourced  (Average = 11.50) ; Number of LABs  (Total = 2) ;
 +----------------------------------------------+-----------------------------+
 ; 0                                            ; 0                           ;
 ; 1                                            ; 0                           ;
@@ -812,7 +812,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 10                                           ; 0                           ;
 ; 11                                           ; 0                           ;
 ; 12                                           ; 0                           ;
-; 13                                           ; 1                           ;
+; 13                                           ; 0                           ;
+; 14                                           ; 1                           ;
 +----------------------------------------------+-----------------------------+
 
 
@@ -1000,13 +1001,13 @@ Info (332144): No user constrained base clocks found in the design
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
-Info (176353): Automatically promoted node clk_50M~input (placed in PIN E1 (CLK1, DIFFCLK_0n)) File: /home/saish_k/t1a_fs_pwm/t1a_fs_pwm_bdf.v Line: 29
+Info (176353): Automatically promoted node clk_50M~input (placed in PIN E1 (CLK1, DIFFCLK_0n)) File: /home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/t1a_fs_pwm_bdf.v Line: 29
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G2
-Info (176353): Automatically promoted node frequency_scaling:b2v_inst1|clk_3125KHz  File: /home/saish_k/t1a_fs_pwm/frequency_scaling.v Line: 23
+Info (176353): Automatically promoted node frequency_scaling:b2v_inst1|clk_3125KHz  File: /home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/frequency_scaling.v Line: 23
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node frequency_scaling:b2v_inst1|clk_3125KHz~0 File: /home/saish_k/t1a_fs_pwm/frequency_scaling.v Line: 23
-        Info (176357): Destination node clk_3125KHz~output File: /home/saish_k/t1a_fs_pwm/t1a_fs_pwm_bdf.v Line: 33
+        Info (176357): Destination node frequency_scaling:b2v_inst1|clk_3125KHz~0 File: /home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/frequency_scaling.v Line: 23
+        Info (176357): Destination node clk_3125KHz~output File: /home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/t1a_fs_pwm_bdf.v Line: 33
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
@@ -1023,7 +1024,7 @@ Info (176215): I/O bank details before I/O pin placement
         Info (176213): I/O bank number 6 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  12 pins available
         Info (176213): I/O bank number 7 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  24 pins available
         Info (176213): I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  24 pins available
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
@@ -1036,23 +1037,23 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.05 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.06 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
-Info (144001): Generated suppressed messages file /home/saish_k/t1a_fs_pwm/output_files/t1a_fs_pwm.fit.smsg
+Info (144001): Generated suppressed messages file /home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/output_files/t1a_fs_pwm.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 1558 megabytes
-    Info: Processing ended: Wed Sep 20 15:34:47 2023
+    Info: Peak virtual memory: 1562 megabytes
+    Info: Processing ended: Wed Sep 20 19:33:50 2023
     Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Total CPU time (on all processors): 00:00:06
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in /home/saish_k/t1a_fs_pwm/output_files/t1a_fs_pwm.fit.smsg.
+The suppressed messages can be found in /home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/output_files/t1a_fs_pwm.fit.smsg.
 
 

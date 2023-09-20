@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Wed Sep 20 15:34:44 2023
+Analysis & Synthesis Status : Successful - Wed Sep 20 19:33:46 2023
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : t1a_fs_pwm
 Top-level Entity Name : t1a_fs_pwm_bdf
 Family : Cyclone IV E
-Total logic elements : 11
-    Total combinational functions : 11
-    Dedicated logic registers : 9
-Total registers : 9
+Total logic elements : 12
+    Total combinational functions : 12
+    Dedicated logic registers : 10
+Total registers : 10
 Total pins : 8
 Total virtual pins : 0
 Total memory bits : 0

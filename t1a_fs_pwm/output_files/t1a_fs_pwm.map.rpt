@@ -1,5 +1,5 @@
 Analysis & Synthesis report for t1a_fs_pwm
-Wed Sep 20 15:34:44 2023
+Wed Sep 20 19:33:46 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -13,11 +13,12 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Inverted Register Statistics
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -44,15 +45,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Sep 20 15:34:44 2023       ;
+; Analysis & Synthesis Status        ; Successful - Wed Sep 20 19:33:46 2023       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; t1a_fs_pwm                                  ;
 ; Top-level Entity Name              ; t1a_fs_pwm_bdf                              ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 11                                          ;
-;     Total combinational functions  ; 11                                          ;
-;     Dedicated logic registers      ; 9                                           ;
-; Total registers                    ; 9                                           ;
+; Total logic elements               ; 12                                          ;
+;     Total combinational functions  ; 12                                          ;
+;     Dedicated logic registers      ; 10                                          ;
+; Total registers                    ; 10                                          ;
 ; Total pins                         ; 8                                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -160,19 +161,20 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-12        ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                               ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                 ; Library ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------+---------+
-; t1a_fs_pwm_bdf.v                 ; yes             ; User Verilog HDL File  ; /home/saish_k/t1a_fs_pwm/t1a_fs_pwm_bdf.v    ;         ;
-; pwm_generator.v                  ; yes             ; User Verilog HDL File  ; /home/saish_k/t1a_fs_pwm/pwm_generator.v     ;         ;
-; frequency_scaling.v              ; yes             ; User Verilog HDL File  ; /home/saish_k/t1a_fs_pwm/frequency_scaling.v ;         ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                        ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                          ; Library ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------+---------+
+; t1a_fs_pwm_bdf.v                 ; yes             ; User Verilog HDL File  ; /home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/t1a_fs_pwm_bdf.v    ;         ;
+; pwm_generator.v                  ; yes             ; User Verilog HDL File  ; /home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/pwm_generator.v     ;         ;
+; frequency_scaling.v              ; yes             ; User Verilog HDL File  ; /home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/frequency_scaling.v ;         ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------------------------------------+
@@ -180,20 +182,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------------------------------------+
 ; Resource                                    ; Usage                                   ;
 +---------------------------------------------+-----------------------------------------+
-; Estimated Total logic elements              ; 11                                      ;
+; Estimated Total logic elements              ; 12                                      ;
 ;                                             ;                                         ;
-; Total combinational functions               ; 11                                      ;
+; Total combinational functions               ; 12                                      ;
 ; Logic element usage by number of LUT inputs ;                                         ;
 ;     -- 4 input functions                    ; 4                                       ;
-;     -- 3 input functions                    ; 2                                       ;
-;     -- <=2 input functions                  ; 5                                       ;
+;     -- 3 input functions                    ; 4                                       ;
+;     -- <=2 input functions                  ; 4                                       ;
 ;                                             ;                                         ;
 ; Logic elements by mode                      ;                                         ;
-;     -- normal mode                          ; 11                                      ;
+;     -- normal mode                          ; 12                                      ;
 ;     -- arithmetic mode                      ; 0                                       ;
 ;                                             ;                                         ;
-; Total registers                             ; 9                                       ;
-;     -- Dedicated logic registers            ; 9                                       ;
+; Total registers                             ; 10                                      ;
+;     -- Dedicated logic registers            ; 10                                      ;
 ;     -- I/O registers                        ; 0                                       ;
 ;                                             ;                                         ;
 ; I/O pins                                    ; 8                                       ;
@@ -201,9 +203,9 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0                                       ;
 ;                                             ;                                         ;
 ; Maximum fan-out node                        ; frequency_scaling:b2v_inst1|clk_3125KHz ;
-; Maximum fan-out                             ; 7                                       ;
-; Total fan-out                               ; 59                                      ;
-; Average fan-out                             ; 1.64                                    ;
+; Maximum fan-out                             ; 8                                       ;
+; Total fan-out                               ; 65                                      ;
+; Average fan-out                             ; 1.71                                    ;
 +---------------------------------------------+-----------------------------------------+
 
 
@@ -212,11 +214,23 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+-------------------+--------------+
 ; Compilation Hierarchy Node       ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                         ; Entity Name       ; Library Name ;
 +----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+-------------------+--------------+
-; |t1a_fs_pwm_bdf                  ; 11 (0)              ; 9 (0)                     ; 0           ; 0            ; 0       ; 0         ; 8    ; 0            ; |t1a_fs_pwm_bdf                             ; t1a_fs_pwm_bdf    ; work         ;
+; |t1a_fs_pwm_bdf                  ; 12 (0)              ; 10 (0)                    ; 0           ; 0            ; 0       ; 0         ; 8    ; 0            ; |t1a_fs_pwm_bdf                             ; t1a_fs_pwm_bdf    ; work         ;
 ;    |frequency_scaling:b2v_inst1| ; 4 (4)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |t1a_fs_pwm_bdf|frequency_scaling:b2v_inst1 ; frequency_scaling ; work         ;
-;    |pwm_generator:b2v_inst|      ; 7 (7)               ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |t1a_fs_pwm_bdf|pwm_generator:b2v_inst      ; pwm_generator     ; work         ;
+;    |pwm_generator:b2v_inst|      ; 8 (8)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |t1a_fs_pwm_bdf|pwm_generator:b2v_inst      ; pwm_generator     ; work         ;
 +----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                        ;
++---------------------------------------+---------------------------------------------------+
+; Register name                         ; Reason for Removal                                ;
++---------------------------------------+---------------------------------------------------+
+; pwm_generator:b2v_inst|counter[0]     ; Merged with pwm_generator:b2v_inst|counter_pwm[0] ;
+; pwm_generator:b2v_inst|counter[1]     ; Merged with pwm_generator:b2v_inst|counter_pwm[1] ;
+; pwm_generator:b2v_inst|counter[2]     ; Merged with pwm_generator:b2v_inst|counter_pwm[2] ;
+; Total Number of Removed Registers = 3 ;                                                   ;
++---------------------------------------+---------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -224,7 +238,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 9     ;
+; Total registers                              ; 10    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -239,7 +253,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; pwm_generator:b2v_inst|pwm_signal      ; 2       ;
+; pwm_generator:b2v_inst|pwm_signal      ; 1       ;
 ; Total number of inverted registers = 1 ;         ;
 +----------------------------------------+---------+
 
@@ -250,17 +264,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 8                           ;
-; cycloneiii_ff         ; 9                           ;
-;     plain             ; 9                           ;
-; cycloneiii_lcell_comb ; 12                          ;
-;     normal            ; 12                          ;
+; cycloneiii_ff         ; 10                          ;
+;     plain             ; 10                          ;
+; cycloneiii_lcell_comb ; 13                          ;
+;     normal            ; 13                          ;
 ;         1 data inputs ; 3                           ;
-;         2 data inputs ; 3                           ;
-;         3 data inputs ; 2                           ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 4                           ;
 ;         4 data inputs ; 4                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.73                        ;
+; Average LUT depth     ; 1.54                        ;
 +-----------------------+-----------------------------+
 
 
@@ -279,21 +293,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Wed Sep 20 15:34:38 2023
+    Info: Processing started: Wed Sep 20 19:33:40 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off t1a_fs_pwm -c t1a_fs_pwm
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file t1a_fs_pwm_bdf.v
-    Info (12023): Found entity 1: t1a_fs_pwm_bdf File: /home/saish_k/t1a_fs_pwm/t1a_fs_pwm_bdf.v Line: 20
+    Info (12023): Found entity 1: t1a_fs_pwm_bdf File: /home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/t1a_fs_pwm_bdf.v Line: 20
 Info (12021): Found 1 design units, including 1 entities, in source file t1a_fs_pwm.bdf
     Info (12023): Found entity 1: t1a_fs_pwm
 Info (12021): Found 1 design units, including 1 entities, in source file pwm_generator.v
-    Info (12023): Found entity 1: pwm_generator File: /home/saish_k/t1a_fs_pwm/pwm_generator.v Line: 20
+    Info (12023): Found entity 1: pwm_generator File: /home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/pwm_generator.v Line: 20
 Info (12021): Found 1 design units, including 1 entities, in source file frequency_scaling.v
-    Info (12023): Found entity 1: frequency_scaling File: /home/saish_k/t1a_fs_pwm/frequency_scaling.v Line: 20
+    Info (12023): Found entity 1: frequency_scaling File: /home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/frequency_scaling.v Line: 20
 Info (12127): Elaborating entity "t1a_fs_pwm_bdf" for the top level hierarchy
-Info (12128): Elaborating entity "pwm_generator" for hierarchy "pwm_generator:b2v_inst" File: /home/saish_k/t1a_fs_pwm/t1a_fs_pwm_bdf.v Line: 46
-Info (12128): Elaborating entity "frequency_scaling" for hierarchy "frequency_scaling:b2v_inst1" File: /home/saish_k/t1a_fs_pwm/t1a_fs_pwm_bdf.v Line: 51
+Info (12128): Elaborating entity "pwm_generator" for hierarchy "pwm_generator:b2v_inst" File: /home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/t1a_fs_pwm_bdf.v Line: 46
+Info (12128): Elaborating entity "frequency_scaling" for hierarchy "frequency_scaling:b2v_inst1" File: /home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/t1a_fs_pwm_bdf.v Line: 51
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -302,9 +316,9 @@ Info (21057): Implemented 20 device resources after synthesis - the final resour
     Info (21059): Implemented 3 output pins
     Info (21061): Implemented 12 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 472 megabytes
-    Info: Processing ended: Wed Sep 20 15:34:44 2023
+    Info: Peak virtual memory: 464 megabytes
+    Info: Processing ended: Wed Sep 20 19:33:46 2023
     Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:13
+    Info: Total CPU time (on all processors): 00:00:15
 
 

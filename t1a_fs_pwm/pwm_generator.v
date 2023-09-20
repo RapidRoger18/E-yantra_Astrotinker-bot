@@ -37,6 +37,14 @@ counter=counter+ 1'b1;
 
 end
 
+reg [3:0] counter_pwm=0;
+always @(posedge clk_3125KHz) begin
+if(counter_pwm < duty_cycle) pwm_signal<=1'b1;
+else pwm_signal<=1'b0;
+counter_pwm = counter_pwm + 1'b1;
+end
+
+
 
 //////////////////DO NOT MAKE ANY CHANGES BELOW THIS LINE//////////////////
 

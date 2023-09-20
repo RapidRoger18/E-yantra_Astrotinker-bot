@@ -1,5 +1,5 @@
 Timing Analyzer report for t1a_fs_pwm
-Wed Sep 20 15:34:50 2023
+Wed Sep 20 19:33:52 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -19,8 +19,8 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
  11. Slow 1200mV 85C Model Minimum Pulse Width Summary
  12. Slow 1200mV 85C Model Setup: 'clk_50M'
  13. Slow 1200mV 85C Model Setup: 'frequency_scaling:b2v_inst1|clk_3125KHz'
- 14. Slow 1200mV 85C Model Hold: 'frequency_scaling:b2v_inst1|clk_3125KHz'
- 15. Slow 1200mV 85C Model Hold: 'clk_50M'
+ 14. Slow 1200mV 85C Model Hold: 'clk_50M'
+ 15. Slow 1200mV 85C Model Hold: 'frequency_scaling:b2v_inst1|clk_3125KHz'
  16. Slow 1200mV 85C Model Metastability Summary
  17. Slow 1200mV 0C Model Fmax Summary
  18. Slow 1200mV 0C Model Setup Summary
@@ -40,8 +40,8 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
  32. Fast 1200mV 0C Model Minimum Pulse Width Summary
  33. Fast 1200mV 0C Model Setup: 'clk_50M'
  34. Fast 1200mV 0C Model Setup: 'frequency_scaling:b2v_inst1|clk_3125KHz'
- 35. Fast 1200mV 0C Model Hold: 'frequency_scaling:b2v_inst1|clk_3125KHz'
- 36. Fast 1200mV 0C Model Hold: 'clk_50M'
+ 35. Fast 1200mV 0C Model Hold: 'clk_50M'
+ 36. Fast 1200mV 0C Model Hold: 'frequency_scaling:b2v_inst1|clk_3125KHz'
  37. Fast 1200mV 0C Model Metastability Summary
  38. Multicorner Timing Analysis Summary
  39. Board Trace Model Assignments
@@ -105,7 +105,7 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 12          ;
 ;                            ;             ;
-; Average used               ; 1.02        ;
+; Average used               ; 1.03        ;
 ; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
@@ -131,7 +131,7 @@ https://fpgasoftware.intel.com/eula.
 ; Fmax       ; Restricted Fmax ; Clock Name                              ; Note                                                          ;
 +------------+-----------------+-----------------------------------------+---------------------------------------------------------------+
 ; 490.44 MHz ; 250.0 MHz       ; clk_50M                                 ; limit due to minimum period restriction (max I/O toggle rate) ;
-; 740.74 MHz ; 500.0 MHz       ; frequency_scaling:b2v_inst1|clk_3125KHz ; limit due to minimum period restriction (tmin)                ;
+; 669.34 MHz ; 500.0 MHz       ; frequency_scaling:b2v_inst1|clk_3125KHz ; limit due to minimum period restriction (tmin)                ;
 +------------+-----------------+-----------------------------------------+---------------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -148,7 +148,7 @@ HTML report is unavailable in plain text report export.
 ; Clock                                   ; Slack  ; End Point TNS ;
 +-----------------------------------------+--------+---------------+
 ; clk_50M                                 ; -1.039 ; -1.071        ;
-; frequency_scaling:b2v_inst1|clk_3125KHz ; -0.350 ; -0.913        ;
+; frequency_scaling:b2v_inst1|clk_3125KHz ; -0.494 ; -1.252        ;
 +-----------------------------------------+--------+---------------+
 
 
@@ -157,8 +157,8 @@ HTML report is unavailable in plain text report export.
 +-----------------------------------------+-------+---------------+
 ; Clock                                   ; Slack ; End Point TNS ;
 +-----------------------------------------+-------+---------------+
-; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.342 ; 0.000         ;
 ; clk_50M                                 ; 0.358 ; 0.000         ;
+; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.358 ; 0.000         ;
 +-----------------------------------------+-------+---------------+
 
 
@@ -180,7 +180,7 @@ No paths to report.
 ; Clock                                   ; Slack  ; End Point TNS ;
 +-----------------------------------------+--------+---------------+
 ; clk_50M                                 ; -3.000 ; -7.000        ;
-; frequency_scaling:b2v_inst1|clk_3125KHz ; -1.000 ; -5.000        ;
+; frequency_scaling:b2v_inst1|clk_3125KHz ; -1.000 ; -6.000        ;
 +-----------------------------------------+--------+---------------+
 
 
@@ -203,48 +203,30 @@ No paths to report.
 +--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-------------+--------------+------------+------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Setup: 'frequency_scaling:b2v_inst1|clk_3125KHz'                                                                                                                                      ;
-+--------+-----------------------------------+-----------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
-; Slack  ; From Node                         ; To Node                           ; Launch Clock                            ; Latch Clock                             ; Relationship ; Clock Skew ; Data Delay ;
-+--------+-----------------------------------+-----------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
-; -0.350 ; pwm_generator:b2v_inst|counter[1] ; pwm_generator:b2v_inst|counter[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.063     ; 1.282      ;
-; -0.333 ; pwm_generator:b2v_inst|counter[1] ; pwm_generator:b2v_inst|pwm_signal ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; 0.290      ; 1.618      ;
-; -0.234 ; pwm_generator:b2v_inst|counter[2] ; pwm_generator:b2v_inst|counter[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.063     ; 1.166      ;
-; -0.196 ; pwm_generator:b2v_inst|counter[2] ; pwm_generator:b2v_inst|pwm_signal ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; 0.290      ; 1.481      ;
-; -0.194 ; pwm_generator:b2v_inst|counter[0] ; pwm_generator:b2v_inst|pwm_signal ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; 0.290      ; 1.479      ;
-; -0.172 ; pwm_generator:b2v_inst|counter[2] ; pwm_generator:b2v_inst|clk_195KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.063     ; 1.104      ;
-; -0.166 ; pwm_generator:b2v_inst|counter[1] ; pwm_generator:b2v_inst|clk_195KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.063     ; 1.098      ;
-; -0.105 ; pwm_generator:b2v_inst|counter[0] ; pwm_generator:b2v_inst|counter[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.063     ; 1.037      ;
-; -0.058 ; pwm_generator:b2v_inst|counter[0] ; pwm_generator:b2v_inst|counter[1] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.063     ; 0.990      ;
-; -0.057 ; pwm_generator:b2v_inst|counter[0] ; pwm_generator:b2v_inst|clk_195KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.063     ; 0.989      ;
-; 0.258  ; pwm_generator:b2v_inst|pwm_signal ; pwm_generator:b2v_inst|pwm_signal ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.078     ; 0.659      ;
-; 0.273  ; pwm_generator:b2v_inst|counter[0] ; pwm_generator:b2v_inst|counter[0] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.063     ; 0.659      ;
-; 0.273  ; pwm_generator:b2v_inst|clk_195KHz ; pwm_generator:b2v_inst|clk_195KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.063     ; 0.659      ;
-; 0.273  ; pwm_generator:b2v_inst|counter[1] ; pwm_generator:b2v_inst|counter[1] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.063     ; 0.659      ;
-+--------+-----------------------------------+-----------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Hold: 'frequency_scaling:b2v_inst1|clk_3125KHz'                                                                                                                                      ;
-+-------+-----------------------------------+-----------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
-; Slack ; From Node                         ; To Node                           ; Launch Clock                            ; Latch Clock                             ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-----------------------------------+-----------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
-; 0.342 ; pwm_generator:b2v_inst|pwm_signal ; pwm_generator:b2v_inst|pwm_signal ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.078      ; 0.577      ;
-; 0.357 ; pwm_generator:b2v_inst|clk_195KHz ; pwm_generator:b2v_inst|clk_195KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.063      ; 0.577      ;
-; 0.357 ; pwm_generator:b2v_inst|counter[1] ; pwm_generator:b2v_inst|counter[1] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.063      ; 0.577      ;
-; 0.360 ; pwm_generator:b2v_inst|counter[0] ; pwm_generator:b2v_inst|counter[0] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.063      ; 0.580      ;
-; 0.625 ; pwm_generator:b2v_inst|counter[0] ; pwm_generator:b2v_inst|pwm_signal ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.431      ; 1.213      ;
-; 0.680 ; pwm_generator:b2v_inst|counter[0] ; pwm_generator:b2v_inst|clk_195KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.063      ; 0.900      ;
-; 0.681 ; pwm_generator:b2v_inst|counter[0] ; pwm_generator:b2v_inst|counter[1] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.063      ; 0.901      ;
-; 0.697 ; pwm_generator:b2v_inst|counter[0] ; pwm_generator:b2v_inst|counter[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.063      ; 0.917      ;
-; 0.725 ; pwm_generator:b2v_inst|counter[2] ; pwm_generator:b2v_inst|pwm_signal ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.431      ; 1.313      ;
-; 0.752 ; pwm_generator:b2v_inst|counter[1] ; pwm_generator:b2v_inst|clk_195KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.063      ; 0.972      ;
-; 0.760 ; pwm_generator:b2v_inst|counter[2] ; pwm_generator:b2v_inst|clk_195KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.063      ; 0.980      ;
-; 0.797 ; pwm_generator:b2v_inst|counter[2] ; pwm_generator:b2v_inst|counter[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.063      ; 1.017      ;
-; 0.804 ; pwm_generator:b2v_inst|counter[1] ; pwm_generator:b2v_inst|pwm_signal ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.431      ; 1.392      ;
-; 0.876 ; pwm_generator:b2v_inst|counter[1] ; pwm_generator:b2v_inst|counter[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.063      ; 1.096      ;
-+-------+-----------------------------------+-----------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'frequency_scaling:b2v_inst1|clk_3125KHz'                                                                                                                                              ;
++--------+---------------------------------------+---------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                             ; To Node                               ; Launch Clock                            ; Latch Clock                             ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------+---------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+; -0.494 ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|pwm_signal     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.062     ; 1.427      ;
+; -0.414 ; pwm_generator:b2v_inst|counter_pwm[1] ; pwm_generator:b2v_inst|pwm_signal     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.062     ; 1.347      ;
+; -0.367 ; pwm_generator:b2v_inst|counter_pwm[1] ; pwm_generator:b2v_inst|counter_pwm[3] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.062     ; 1.300      ;
+; -0.363 ; pwm_generator:b2v_inst|counter_pwm[2] ; pwm_generator:b2v_inst|pwm_signal     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.062     ; 1.296      ;
+; -0.208 ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|clk_195KHz     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.062     ; 1.141      ;
+; -0.187 ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|counter_pwm[3] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.062     ; 1.120      ;
+; -0.183 ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|counter_pwm[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.062     ; 1.116      ;
+; -0.060 ; pwm_generator:b2v_inst|counter_pwm[1] ; pwm_generator:b2v_inst|clk_195KHz     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.062     ; 0.993      ;
+; -0.027 ; pwm_generator:b2v_inst|counter_pwm[3] ; pwm_generator:b2v_inst|pwm_signal     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.062     ; 0.960      ;
+; 0.056  ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|counter_pwm[1] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.062     ; 0.877      ;
+; 0.083  ; pwm_generator:b2v_inst|counter_pwm[2] ; pwm_generator:b2v_inst|clk_195KHz     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.062     ; 0.850      ;
+; 0.086  ; pwm_generator:b2v_inst|counter_pwm[2] ; pwm_generator:b2v_inst|counter_pwm[3] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.062     ; 0.847      ;
+; 0.203  ; pwm_generator:b2v_inst|counter_pwm[1] ; pwm_generator:b2v_inst|counter_pwm[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.062     ; 0.730      ;
+; 0.274  ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|counter_pwm[0] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.062     ; 0.659      ;
+; 0.274  ; pwm_generator:b2v_inst|counter_pwm[3] ; pwm_generator:b2v_inst|counter_pwm[3] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.062     ; 0.659      ;
+; 0.274  ; pwm_generator:b2v_inst|clk_195KHz     ; pwm_generator:b2v_inst|clk_195KHz     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.062     ; 0.659      ;
+; 0.274  ; pwm_generator:b2v_inst|counter_pwm[2] ; pwm_generator:b2v_inst|counter_pwm[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.062     ; 0.659      ;
+; 0.274  ; pwm_generator:b2v_inst|counter_pwm[1] ; pwm_generator:b2v_inst|counter_pwm[1] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.062     ; 0.659      ;
++--------+---------------------------------------+---------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -266,6 +248,32 @@ No paths to report.
 +-------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-------------+--------------+------------+------------+
 
 
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'frequency_scaling:b2v_inst1|clk_3125KHz'                                                                                                                                              ;
++-------+---------------------------------------+---------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+; Slack ; From Node                             ; To Node                               ; Launch Clock                            ; Latch Clock                             ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------+---------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+; 0.358 ; pwm_generator:b2v_inst|clk_195KHz     ; pwm_generator:b2v_inst|clk_195KHz     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.062      ; 0.577      ;
+; 0.358 ; pwm_generator:b2v_inst|counter_pwm[3] ; pwm_generator:b2v_inst|counter_pwm[3] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.062      ; 0.577      ;
+; 0.358 ; pwm_generator:b2v_inst|counter_pwm[2] ; pwm_generator:b2v_inst|counter_pwm[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.062      ; 0.577      ;
+; 0.358 ; pwm_generator:b2v_inst|counter_pwm[1] ; pwm_generator:b2v_inst|counter_pwm[1] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.062      ; 0.577      ;
+; 0.361 ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|counter_pwm[0] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.062      ; 0.580      ;
+; 0.405 ; pwm_generator:b2v_inst|counter_pwm[1] ; pwm_generator:b2v_inst|counter_pwm[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.062      ; 0.624      ;
+; 0.530 ; pwm_generator:b2v_inst|counter_pwm[2] ; pwm_generator:b2v_inst|counter_pwm[3] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.062      ; 0.749      ;
+; 0.533 ; pwm_generator:b2v_inst|counter_pwm[2] ; pwm_generator:b2v_inst|clk_195KHz     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.062      ; 0.752      ;
+; 0.549 ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|counter_pwm[1] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.062      ; 0.768      ;
+; 0.554 ; pwm_generator:b2v_inst|counter_pwm[3] ; pwm_generator:b2v_inst|pwm_signal     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.062      ; 0.773      ;
+; 0.638 ; pwm_generator:b2v_inst|counter_pwm[1] ; pwm_generator:b2v_inst|clk_195KHz     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.062      ; 0.857      ;
+; 0.734 ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|counter_pwm[3] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.062      ; 0.953      ;
+; 0.734 ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|counter_pwm[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.062      ; 0.953      ;
+; 0.781 ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|clk_195KHz     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.062      ; 1.000      ;
+; 0.907 ; pwm_generator:b2v_inst|counter_pwm[2] ; pwm_generator:b2v_inst|pwm_signal     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.062      ; 1.126      ;
+; 0.926 ; pwm_generator:b2v_inst|counter_pwm[1] ; pwm_generator:b2v_inst|counter_pwm[3] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.062      ; 1.145      ;
+; 1.013 ; pwm_generator:b2v_inst|counter_pwm[1] ; pwm_generator:b2v_inst|pwm_signal     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.062      ; 1.232      ;
+; 1.102 ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|pwm_signal     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.062      ; 1.321      ;
++-------+---------------------------------------+---------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+
+
 -----------------------------------------------
 ; Slow 1200mV 85C Model Metastability Summary ;
 -----------------------------------------------
@@ -278,7 +286,7 @@ No synchronizer chains to report.
 ; Fmax       ; Restricted Fmax ; Clock Name                              ; Note                                                          ;
 +------------+-----------------+-----------------------------------------+---------------------------------------------------------------+
 ; 553.1 MHz  ; 250.0 MHz       ; clk_50M                                 ; limit due to minimum period restriction (max I/O toggle rate) ;
-; 831.26 MHz ; 500.0 MHz       ; frequency_scaling:b2v_inst1|clk_3125KHz ; limit due to minimum period restriction (tmin)                ;
+; 740.74 MHz ; 500.0 MHz       ; frequency_scaling:b2v_inst1|clk_3125KHz ; limit due to minimum period restriction (tmin)                ;
 +------------+-----------------+-----------------------------------------+---------------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -289,7 +297,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; Clock                                   ; Slack  ; End Point TNS ;
 +-----------------------------------------+--------+---------------+
 ; clk_50M                                 ; -0.808 ; -0.808        ;
-; frequency_scaling:b2v_inst1|clk_3125KHz ; -0.203 ; -0.443        ;
+; frequency_scaling:b2v_inst1|clk_3125KHz ; -0.350 ; -0.700        ;
 +-----------------------------------------+--------+---------------+
 
 
@@ -298,7 +306,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------------------------------------+-------+---------------+
 ; Clock                                   ; Slack ; End Point TNS ;
 +-----------------------------------------+-------+---------------+
-; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.299 ; 0.000         ;
+; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.311 ; 0.000         ;
 ; clk_50M                                 ; 0.312 ; 0.000         ;
 +-----------------------------------------+-------+---------------+
 
@@ -321,7 +329,7 @@ No paths to report.
 ; Clock                                   ; Slack  ; End Point TNS ;
 +-----------------------------------------+--------+---------------+
 ; clk_50M                                 ; -3.000 ; -7.000        ;
-; frequency_scaling:b2v_inst1|clk_3125KHz ; -1.000 ; -5.000        ;
+; frequency_scaling:b2v_inst1|clk_3125KHz ; -1.000 ; -6.000        ;
 +-----------------------------------------+--------+---------------+
 
 
@@ -344,48 +352,56 @@ No paths to report.
 +--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-------------+--------------+------------+------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Setup: 'frequency_scaling:b2v_inst1|clk_3125KHz'                                                                                                                                       ;
-+--------+-----------------------------------+-----------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
-; Slack  ; From Node                         ; To Node                           ; Launch Clock                            ; Latch Clock                             ; Relationship ; Clock Skew ; Data Delay ;
-+--------+-----------------------------------+-----------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
-; -0.203 ; pwm_generator:b2v_inst|counter[1] ; pwm_generator:b2v_inst|counter[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.055     ; 1.143      ;
-; -0.200 ; pwm_generator:b2v_inst|counter[1] ; pwm_generator:b2v_inst|pwm_signal ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; 0.263      ; 1.458      ;
-; -0.101 ; pwm_generator:b2v_inst|counter[2] ; pwm_generator:b2v_inst|counter[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.055     ; 1.041      ;
-; -0.073 ; pwm_generator:b2v_inst|counter[2] ; pwm_generator:b2v_inst|pwm_signal ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; 0.263      ; 1.331      ;
-; -0.070 ; pwm_generator:b2v_inst|counter[0] ; pwm_generator:b2v_inst|pwm_signal ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; 0.263      ; 1.328      ;
-; -0.040 ; pwm_generator:b2v_inst|counter[2] ; pwm_generator:b2v_inst|clk_195KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.055     ; 0.980      ;
-; -0.037 ; pwm_generator:b2v_inst|counter[1] ; pwm_generator:b2v_inst|clk_195KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.055     ; 0.977      ;
-; 0.009  ; pwm_generator:b2v_inst|counter[0] ; pwm_generator:b2v_inst|counter[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.055     ; 0.931      ;
-; 0.052  ; pwm_generator:b2v_inst|counter[0] ; pwm_generator:b2v_inst|counter[1] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.055     ; 0.888      ;
-; 0.053  ; pwm_generator:b2v_inst|counter[0] ; pwm_generator:b2v_inst|clk_195KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.055     ; 0.887      ;
-; 0.344  ; pwm_generator:b2v_inst|pwm_signal ; pwm_generator:b2v_inst|pwm_signal ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.068     ; 0.583      ;
-; 0.357  ; pwm_generator:b2v_inst|counter[0] ; pwm_generator:b2v_inst|counter[0] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.055     ; 0.583      ;
-; 0.357  ; pwm_generator:b2v_inst|clk_195KHz ; pwm_generator:b2v_inst|clk_195KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.055     ; 0.583      ;
-; 0.357  ; pwm_generator:b2v_inst|counter[1] ; pwm_generator:b2v_inst|counter[1] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.055     ; 0.583      ;
-+--------+-----------------------------------+-----------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'frequency_scaling:b2v_inst1|clk_3125KHz'                                                                                                                                               ;
++--------+---------------------------------------+---------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                             ; To Node                               ; Launch Clock                            ; Latch Clock                             ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------+---------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+; -0.350 ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|pwm_signal     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.056     ; 1.289      ;
+; -0.274 ; pwm_generator:b2v_inst|counter_pwm[1] ; pwm_generator:b2v_inst|pwm_signal     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.056     ; 1.213      ;
+; -0.220 ; pwm_generator:b2v_inst|counter_pwm[2] ; pwm_generator:b2v_inst|pwm_signal     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.056     ; 1.159      ;
+; -0.213 ; pwm_generator:b2v_inst|counter_pwm[1] ; pwm_generator:b2v_inst|counter_pwm[3] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.056     ; 1.152      ;
+; -0.080 ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|clk_195KHz     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.056     ; 1.019      ;
+; -0.062 ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|counter_pwm[3] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.056     ; 1.001      ;
+; -0.057 ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|counter_pwm[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.056     ; 0.996      ;
+; 0.052  ; pwm_generator:b2v_inst|counter_pwm[1] ; pwm_generator:b2v_inst|clk_195KHz     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.056     ; 0.887      ;
+; 0.088  ; pwm_generator:b2v_inst|counter_pwm[3] ; pwm_generator:b2v_inst|pwm_signal     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.056     ; 0.851      ;
+; 0.149  ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|counter_pwm[1] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.056     ; 0.790      ;
+; 0.180  ; pwm_generator:b2v_inst|counter_pwm[2] ; pwm_generator:b2v_inst|clk_195KHz     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.056     ; 0.759      ;
+; 0.183  ; pwm_generator:b2v_inst|counter_pwm[2] ; pwm_generator:b2v_inst|counter_pwm[3] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.056     ; 0.756      ;
+; 0.283  ; pwm_generator:b2v_inst|counter_pwm[1] ; pwm_generator:b2v_inst|counter_pwm[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.056     ; 0.656      ;
+; 0.356  ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|counter_pwm[0] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.056     ; 0.583      ;
+; 0.356  ; pwm_generator:b2v_inst|counter_pwm[3] ; pwm_generator:b2v_inst|counter_pwm[3] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.056     ; 0.583      ;
+; 0.356  ; pwm_generator:b2v_inst|clk_195KHz     ; pwm_generator:b2v_inst|clk_195KHz     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.056     ; 0.583      ;
+; 0.356  ; pwm_generator:b2v_inst|counter_pwm[2] ; pwm_generator:b2v_inst|counter_pwm[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.056     ; 0.583      ;
+; 0.356  ; pwm_generator:b2v_inst|counter_pwm[1] ; pwm_generator:b2v_inst|counter_pwm[1] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.056     ; 0.583      ;
++--------+---------------------------------------+---------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Hold: 'frequency_scaling:b2v_inst1|clk_3125KHz'                                                                                                                                       ;
-+-------+-----------------------------------+-----------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
-; Slack ; From Node                         ; To Node                           ; Launch Clock                            ; Latch Clock                             ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-----------------------------------+-----------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
-; 0.299 ; pwm_generator:b2v_inst|pwm_signal ; pwm_generator:b2v_inst|pwm_signal ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.068      ; 0.511      ;
-; 0.312 ; pwm_generator:b2v_inst|clk_195KHz ; pwm_generator:b2v_inst|clk_195KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.055      ; 0.511      ;
-; 0.312 ; pwm_generator:b2v_inst|counter[1] ; pwm_generator:b2v_inst|counter[1] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.055      ; 0.511      ;
-; 0.320 ; pwm_generator:b2v_inst|counter[0] ; pwm_generator:b2v_inst|counter[0] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.055      ; 0.519      ;
-; 0.564 ; pwm_generator:b2v_inst|counter[0] ; pwm_generator:b2v_inst|pwm_signal ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.386      ; 1.094      ;
-; 0.627 ; pwm_generator:b2v_inst|counter[0] ; pwm_generator:b2v_inst|counter[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.055      ; 0.826      ;
-; 0.629 ; pwm_generator:b2v_inst|counter[0] ; pwm_generator:b2v_inst|clk_195KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.055      ; 0.828      ;
-; 0.630 ; pwm_generator:b2v_inst|counter[0] ; pwm_generator:b2v_inst|counter[1] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.055      ; 0.829      ;
-; 0.652 ; pwm_generator:b2v_inst|counter[2] ; pwm_generator:b2v_inst|pwm_signal ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.386      ; 1.182      ;
-; 0.684 ; pwm_generator:b2v_inst|counter[1] ; pwm_generator:b2v_inst|clk_195KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.055      ; 0.883      ;
-; 0.696 ; pwm_generator:b2v_inst|counter[2] ; pwm_generator:b2v_inst|clk_195KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.055      ; 0.895      ;
-; 0.715 ; pwm_generator:b2v_inst|counter[2] ; pwm_generator:b2v_inst|counter[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.055      ; 0.914      ;
-; 0.721 ; pwm_generator:b2v_inst|counter[1] ; pwm_generator:b2v_inst|pwm_signal ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.386      ; 1.251      ;
-; 0.793 ; pwm_generator:b2v_inst|counter[1] ; pwm_generator:b2v_inst|counter[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.055      ; 0.992      ;
-+-------+-----------------------------------+-----------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'frequency_scaling:b2v_inst1|clk_3125KHz'                                                                                                                                               ;
++-------+---------------------------------------+---------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+; Slack ; From Node                             ; To Node                               ; Launch Clock                            ; Latch Clock                             ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------+---------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+; 0.311 ; pwm_generator:b2v_inst|clk_195KHz     ; pwm_generator:b2v_inst|clk_195KHz     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.056      ; 0.511      ;
+; 0.311 ; pwm_generator:b2v_inst|counter_pwm[3] ; pwm_generator:b2v_inst|counter_pwm[3] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.056      ; 0.511      ;
+; 0.311 ; pwm_generator:b2v_inst|counter_pwm[2] ; pwm_generator:b2v_inst|counter_pwm[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.056      ; 0.511      ;
+; 0.311 ; pwm_generator:b2v_inst|counter_pwm[1] ; pwm_generator:b2v_inst|counter_pwm[1] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.056      ; 0.511      ;
+; 0.319 ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|counter_pwm[0] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.056      ; 0.519      ;
+; 0.358 ; pwm_generator:b2v_inst|counter_pwm[1] ; pwm_generator:b2v_inst|counter_pwm[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.056      ; 0.558      ;
+; 0.477 ; pwm_generator:b2v_inst|counter_pwm[2] ; pwm_generator:b2v_inst|counter_pwm[3] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.056      ; 0.677      ;
+; 0.481 ; pwm_generator:b2v_inst|counter_pwm[2] ; pwm_generator:b2v_inst|clk_195KHz     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.056      ; 0.681      ;
+; 0.497 ; pwm_generator:b2v_inst|counter_pwm[3] ; pwm_generator:b2v_inst|pwm_signal     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.056      ; 0.697      ;
+; 0.503 ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|counter_pwm[1] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.056      ; 0.703      ;
+; 0.574 ; pwm_generator:b2v_inst|counter_pwm[1] ; pwm_generator:b2v_inst|clk_195KHz     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.056      ; 0.774      ;
+; 0.672 ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|counter_pwm[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.056      ; 0.872      ;
+; 0.673 ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|counter_pwm[3] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.056      ; 0.873      ;
+; 0.717 ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|clk_195KHz     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.056      ; 0.917      ;
+; 0.815 ; pwm_generator:b2v_inst|counter_pwm[2] ; pwm_generator:b2v_inst|pwm_signal     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.056      ; 1.015      ;
+; 0.850 ; pwm_generator:b2v_inst|counter_pwm[1] ; pwm_generator:b2v_inst|counter_pwm[3] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.056      ; 1.050      ;
+; 0.908 ; pwm_generator:b2v_inst|counter_pwm[1] ; pwm_generator:b2v_inst|pwm_signal     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.056      ; 1.108      ;
+; 0.988 ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|pwm_signal     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.056      ; 1.188      ;
++-------+---------------------------------------+---------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -419,7 +435,7 @@ No synchronizer chains to report.
 ; Clock                                   ; Slack  ; End Point TNS ;
 +-----------------------------------------+--------+---------------+
 ; clk_50M                                 ; -0.438 ; -0.438        ;
-; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.243  ; 0.000         ;
+; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.185  ; 0.000         ;
 +-----------------------------------------+--------+---------------+
 
 
@@ -428,8 +444,8 @@ No synchronizer chains to report.
 +-----------------------------------------+-------+---------------+
 ; Clock                                   ; Slack ; End Point TNS ;
 +-----------------------------------------+-------+---------------+
-; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.178 ; 0.000         ;
 ; clk_50M                                 ; 0.186 ; 0.000         ;
+; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.187 ; 0.000         ;
 +-----------------------------------------+-------+---------------+
 
 
@@ -451,7 +467,7 @@ No paths to report.
 ; Clock                                   ; Slack  ; End Point TNS ;
 +-----------------------------------------+--------+---------------+
 ; clk_50M                                 ; -3.000 ; -7.224        ;
-; frequency_scaling:b2v_inst1|clk_3125KHz ; -1.000 ; -5.000        ;
+; frequency_scaling:b2v_inst1|clk_3125KHz ; -1.000 ; -6.000        ;
 +-----------------------------------------+--------+---------------+
 
 
@@ -474,48 +490,30 @@ No paths to report.
 +--------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-------------+--------------+------------+------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fast 1200mV 0C Model Setup: 'frequency_scaling:b2v_inst1|clk_3125KHz'                                                                                                                                      ;
-+-------+-----------------------------------+-----------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
-; Slack ; From Node                         ; To Node                           ; Launch Clock                            ; Latch Clock                             ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-----------------------------------+-----------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
-; 0.243 ; pwm_generator:b2v_inst|counter[1] ; pwm_generator:b2v_inst|counter[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.037     ; 0.707      ;
-; 0.256 ; pwm_generator:b2v_inst|counter[1] ; pwm_generator:b2v_inst|pwm_signal ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; 0.153      ; 0.884      ;
-; 0.312 ; pwm_generator:b2v_inst|counter[2] ; pwm_generator:b2v_inst|counter[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.037     ; 0.638      ;
-; 0.330 ; pwm_generator:b2v_inst|counter[0] ; pwm_generator:b2v_inst|pwm_signal ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; 0.153      ; 0.810      ;
-; 0.334 ; pwm_generator:b2v_inst|counter[2] ; pwm_generator:b2v_inst|pwm_signal ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; 0.153      ; 0.806      ;
-; 0.341 ; pwm_generator:b2v_inst|counter[2] ; pwm_generator:b2v_inst|clk_195KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.037     ; 0.609      ;
-; 0.346 ; pwm_generator:b2v_inst|counter[1] ; pwm_generator:b2v_inst|clk_195KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.037     ; 0.604      ;
-; 0.382 ; pwm_generator:b2v_inst|counter[0] ; pwm_generator:b2v_inst|counter[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.037     ; 0.568      ;
-; 0.399 ; pwm_generator:b2v_inst|counter[0] ; pwm_generator:b2v_inst|counter[1] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.037     ; 0.551      ;
-; 0.399 ; pwm_generator:b2v_inst|counter[0] ; pwm_generator:b2v_inst|clk_195KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.037     ; 0.551      ;
-; 0.583 ; pwm_generator:b2v_inst|pwm_signal ; pwm_generator:b2v_inst|pwm_signal ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.045     ; 0.359      ;
-; 0.591 ; pwm_generator:b2v_inst|counter[0] ; pwm_generator:b2v_inst|counter[0] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.037     ; 0.359      ;
-; 0.591 ; pwm_generator:b2v_inst|clk_195KHz ; pwm_generator:b2v_inst|clk_195KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.037     ; 0.359      ;
-; 0.591 ; pwm_generator:b2v_inst|counter[1] ; pwm_generator:b2v_inst|counter[1] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.037     ; 0.359      ;
-+-------+-----------------------------------+-----------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fast 1200mV 0C Model Hold: 'frequency_scaling:b2v_inst1|clk_3125KHz'                                                                                                                                       ;
-+-------+-----------------------------------+-----------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
-; Slack ; From Node                         ; To Node                           ; Launch Clock                            ; Latch Clock                             ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-----------------------------------+-----------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
-; 0.178 ; pwm_generator:b2v_inst|pwm_signal ; pwm_generator:b2v_inst|pwm_signal ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.045      ; 0.307      ;
-; 0.186 ; pwm_generator:b2v_inst|clk_195KHz ; pwm_generator:b2v_inst|clk_195KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.037      ; 0.307      ;
-; 0.186 ; pwm_generator:b2v_inst|counter[1] ; pwm_generator:b2v_inst|counter[1] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.037      ; 0.307      ;
-; 0.193 ; pwm_generator:b2v_inst|counter[0] ; pwm_generator:b2v_inst|counter[0] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.037      ; 0.314      ;
-; 0.338 ; pwm_generator:b2v_inst|counter[0] ; pwm_generator:b2v_inst|pwm_signal ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.235      ; 0.657      ;
-; 0.349 ; pwm_generator:b2v_inst|counter[0] ; pwm_generator:b2v_inst|clk_195KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.037      ; 0.470      ;
-; 0.350 ; pwm_generator:b2v_inst|counter[0] ; pwm_generator:b2v_inst|counter[1] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.037      ; 0.471      ;
-; 0.364 ; pwm_generator:b2v_inst|counter[0] ; pwm_generator:b2v_inst|counter[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.037      ; 0.485      ;
-; 0.395 ; pwm_generator:b2v_inst|counter[2] ; pwm_generator:b2v_inst|pwm_signal ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.235      ; 0.714      ;
-; 0.399 ; pwm_generator:b2v_inst|counter[1] ; pwm_generator:b2v_inst|clk_195KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.037      ; 0.520      ;
-; 0.402 ; pwm_generator:b2v_inst|counter[2] ; pwm_generator:b2v_inst|clk_195KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.037      ; 0.523      ;
-; 0.421 ; pwm_generator:b2v_inst|counter[2] ; pwm_generator:b2v_inst|counter[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.037      ; 0.542      ;
-; 0.435 ; pwm_generator:b2v_inst|counter[1] ; pwm_generator:b2v_inst|pwm_signal ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.235      ; 0.754      ;
-; 0.466 ; pwm_generator:b2v_inst|counter[1] ; pwm_generator:b2v_inst|counter[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.037      ; 0.587      ;
-+-------+-----------------------------------+-----------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'frequency_scaling:b2v_inst1|clk_3125KHz'                                                                                                                                              ;
++-------+---------------------------------------+---------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+; Slack ; From Node                             ; To Node                               ; Launch Clock                            ; Latch Clock                             ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------+---------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+; 0.185 ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|pwm_signal     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.036     ; 0.766      ;
+; 0.224 ; pwm_generator:b2v_inst|counter_pwm[1] ; pwm_generator:b2v_inst|counter_pwm[3] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.036     ; 0.727      ;
+; 0.227 ; pwm_generator:b2v_inst|counter_pwm[1] ; pwm_generator:b2v_inst|pwm_signal     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.036     ; 0.724      ;
+; 0.237 ; pwm_generator:b2v_inst|counter_pwm[2] ; pwm_generator:b2v_inst|pwm_signal     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.036     ; 0.714      ;
+; 0.318 ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|clk_195KHz     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.036     ; 0.633      ;
+; 0.325 ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|counter_pwm[3] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.036     ; 0.626      ;
+; 0.327 ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|counter_pwm[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.036     ; 0.624      ;
+; 0.410 ; pwm_generator:b2v_inst|counter_pwm[1] ; pwm_generator:b2v_inst|clk_195KHz     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.036     ; 0.541      ;
+; 0.424 ; pwm_generator:b2v_inst|counter_pwm[3] ; pwm_generator:b2v_inst|pwm_signal     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.036     ; 0.527      ;
+; 0.467 ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|counter_pwm[1] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.036     ; 0.484      ;
+; 0.484 ; pwm_generator:b2v_inst|counter_pwm[2] ; pwm_generator:b2v_inst|clk_195KHz     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.036     ; 0.467      ;
+; 0.486 ; pwm_generator:b2v_inst|counter_pwm[2] ; pwm_generator:b2v_inst|counter_pwm[3] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.036     ; 0.465      ;
+; 0.555 ; pwm_generator:b2v_inst|counter_pwm[1] ; pwm_generator:b2v_inst|counter_pwm[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.036     ; 0.396      ;
+; 0.592 ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|counter_pwm[0] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.036     ; 0.359      ;
+; 0.592 ; pwm_generator:b2v_inst|counter_pwm[3] ; pwm_generator:b2v_inst|counter_pwm[3] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.036     ; 0.359      ;
+; 0.592 ; pwm_generator:b2v_inst|clk_195KHz     ; pwm_generator:b2v_inst|clk_195KHz     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.036     ; 0.359      ;
+; 0.592 ; pwm_generator:b2v_inst|counter_pwm[2] ; pwm_generator:b2v_inst|counter_pwm[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.036     ; 0.359      ;
+; 0.592 ; pwm_generator:b2v_inst|counter_pwm[1] ; pwm_generator:b2v_inst|counter_pwm[1] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 1.000        ; -0.036     ; 0.359      ;
++-------+---------------------------------------+---------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -537,6 +535,32 @@ No paths to report.
 +-------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-------------+--------------+------------+------------+
 
 
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'frequency_scaling:b2v_inst1|clk_3125KHz'                                                                                                                                               ;
++-------+---------------------------------------+---------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+; Slack ; From Node                             ; To Node                               ; Launch Clock                            ; Latch Clock                             ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------+---------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+; 0.187 ; pwm_generator:b2v_inst|clk_195KHz     ; pwm_generator:b2v_inst|clk_195KHz     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.036      ; 0.307      ;
+; 0.187 ; pwm_generator:b2v_inst|counter_pwm[3] ; pwm_generator:b2v_inst|counter_pwm[3] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.036      ; 0.307      ;
+; 0.187 ; pwm_generator:b2v_inst|counter_pwm[2] ; pwm_generator:b2v_inst|counter_pwm[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.036      ; 0.307      ;
+; 0.187 ; pwm_generator:b2v_inst|counter_pwm[1] ; pwm_generator:b2v_inst|counter_pwm[1] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.036      ; 0.307      ;
+; 0.194 ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|counter_pwm[0] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.036      ; 0.314      ;
+; 0.213 ; pwm_generator:b2v_inst|counter_pwm[1] ; pwm_generator:b2v_inst|counter_pwm[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.036      ; 0.333      ;
+; 0.275 ; pwm_generator:b2v_inst|counter_pwm[2] ; pwm_generator:b2v_inst|counter_pwm[3] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.036      ; 0.395      ;
+; 0.277 ; pwm_generator:b2v_inst|counter_pwm[2] ; pwm_generator:b2v_inst|clk_195KHz     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.036      ; 0.397      ;
+; 0.288 ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|counter_pwm[1] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.036      ; 0.408      ;
+; 0.296 ; pwm_generator:b2v_inst|counter_pwm[3] ; pwm_generator:b2v_inst|pwm_signal     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.036      ; 0.416      ;
+; 0.342 ; pwm_generator:b2v_inst|counter_pwm[1] ; pwm_generator:b2v_inst|clk_195KHz     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.036      ; 0.462      ;
+; 0.390 ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|counter_pwm[2] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.036      ; 0.510      ;
+; 0.391 ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|counter_pwm[3] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.036      ; 0.511      ;
+; 0.416 ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|clk_195KHz     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.036      ; 0.536      ;
+; 0.487 ; pwm_generator:b2v_inst|counter_pwm[1] ; pwm_generator:b2v_inst|counter_pwm[3] ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.036      ; 0.607      ;
+; 0.489 ; pwm_generator:b2v_inst|counter_pwm[2] ; pwm_generator:b2v_inst|pwm_signal     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.036      ; 0.609      ;
+; 0.554 ; pwm_generator:b2v_inst|counter_pwm[1] ; pwm_generator:b2v_inst|pwm_signal     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.036      ; 0.674      ;
+; 0.602 ; pwm_generator:b2v_inst|counter_pwm[0] ; pwm_generator:b2v_inst|pwm_signal     ; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 0.000        ; 0.036      ; 0.722      ;
++-------+---------------------------------------+---------------------------------------+-----------------------------------------+-----------------------------------------+--------------+------------+------------+
+
+
 ----------------------------------------------
 ; Fast 1200mV 0C Model Metastability Summary ;
 ----------------------------------------------
@@ -548,12 +572,12 @@ No synchronizer chains to report.
 +------------------------------------------+--------+-------+----------+---------+---------------------+
 ; Clock                                    ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------------------------------+--------+-------+----------+---------+---------------------+
-; Worst-case Slack                         ; -1.039 ; 0.178 ; N/A      ; N/A     ; -3.000              ;
+; Worst-case Slack                         ; -1.039 ; 0.186 ; N/A      ; N/A     ; -3.000              ;
 ;  clk_50M                                 ; -1.039 ; 0.186 ; N/A      ; N/A     ; -3.000              ;
-;  frequency_scaling:b2v_inst1|clk_3125KHz ; -0.350 ; 0.178 ; N/A      ; N/A     ; -1.000              ;
-; Design-wide TNS                          ; -1.984 ; 0.0   ; 0.0      ; 0.0     ; -12.224             ;
+;  frequency_scaling:b2v_inst1|clk_3125KHz ; -0.494 ; 0.187 ; N/A      ; N/A     ; -1.000              ;
+; Design-wide TNS                          ; -2.323 ; 0.0   ; 0.0      ; 0.0     ; -13.224             ;
 ;  clk_50M                                 ; -1.071 ; 0.000 ; N/A      ; N/A     ; -7.224              ;
-;  frequency_scaling:b2v_inst1|clk_3125KHz ; -0.913 ; 0.000 ; N/A      ; N/A     ; -5.000              ;
+;  frequency_scaling:b2v_inst1|clk_3125KHz ; -1.252 ; 0.000 ; N/A      ; N/A     ; -6.000              ;
 +------------------------------------------+--------+-------+----------+---------+---------------------+
 
 
@@ -632,7 +656,7 @@ No synchronizer chains to report.
 +-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
 ; clk_50M                                 ; clk_50M                                 ; 9        ; 0        ; 0        ; 0        ;
 ; frequency_scaling:b2v_inst1|clk_3125KHz ; clk_50M                                 ; 1        ; 1        ; 0        ; 0        ;
-; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 16       ; 0        ; 0        ; 0        ;
+; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 18       ; 0        ; 0        ; 0        ;
 +-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -644,7 +668,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
 ; clk_50M                                 ; clk_50M                                 ; 9        ; 0        ; 0        ; 0        ;
 ; frequency_scaling:b2v_inst1|clk_3125KHz ; clk_50M                                 ; 1        ; 1        ; 0        ; 0        ;
-; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 16       ; 0        ; 0        ; 0        ;
+; frequency_scaling:b2v_inst1|clk_3125KHz ; frequency_scaling:b2v_inst1|clk_3125KHz ; 18       ; 0        ; 0        ; 0        ;
 +-----------------------------------------+-----------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -737,7 +761,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Wed Sep 20 15:34:49 2023
+    Info: Processing started: Wed Sep 20 19:33:51 2023
 Info: Command: quartus_sta t1a_fs_pwm -c t1a_fs_pwm
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -759,19 +783,19 @@ Info (332146): Worst-case setup slack is -1.039
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -1.039              -1.071 clk_50M 
-    Info (332119):    -0.350              -0.913 frequency_scaling:b2v_inst1|clk_3125KHz 
-Info (332146): Worst-case hold slack is 0.342
+    Info (332119):    -0.494              -1.252 frequency_scaling:b2v_inst1|clk_3125KHz 
+Info (332146): Worst-case hold slack is 0.358
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.342               0.000 frequency_scaling:b2v_inst1|clk_3125KHz 
     Info (332119):     0.358               0.000 clk_50M 
+    Info (332119):     0.358               0.000 frequency_scaling:b2v_inst1|clk_3125KHz 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -3.000              -7.000 clk_50M 
-    Info (332119):    -1.000              -5.000 frequency_scaling:b2v_inst1|clk_3125KHz 
+    Info (332119):    -1.000              -6.000 frequency_scaling:b2v_inst1|clk_3125KHz 
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
@@ -782,11 +806,11 @@ Info (332146): Worst-case setup slack is -0.808
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -0.808              -0.808 clk_50M 
-    Info (332119):    -0.203              -0.443 frequency_scaling:b2v_inst1|clk_3125KHz 
-Info (332146): Worst-case hold slack is 0.299
+    Info (332119):    -0.350              -0.700 frequency_scaling:b2v_inst1|clk_3125KHz 
+Info (332146): Worst-case hold slack is 0.311
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.299               0.000 frequency_scaling:b2v_inst1|clk_3125KHz 
+    Info (332119):     0.311               0.000 frequency_scaling:b2v_inst1|clk_3125KHz 
     Info (332119):     0.312               0.000 clk_50M 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
@@ -794,7 +818,7 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -3.000              -7.000 clk_50M 
-    Info (332119):    -1.000              -5.000 frequency_scaling:b2v_inst1|clk_3125KHz 
+    Info (332119):    -1.000              -6.000 frequency_scaling:b2v_inst1|clk_3125KHz 
 Info: Analyzing Fast 1200mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
@@ -803,24 +827,24 @@ Info (332146): Worst-case setup slack is -0.438
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -0.438              -0.438 clk_50M 
-    Info (332119):     0.243               0.000 frequency_scaling:b2v_inst1|clk_3125KHz 
-Info (332146): Worst-case hold slack is 0.178
+    Info (332119):     0.185               0.000 frequency_scaling:b2v_inst1|clk_3125KHz 
+Info (332146): Worst-case hold slack is 0.186
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.178               0.000 frequency_scaling:b2v_inst1|clk_3125KHz 
     Info (332119):     0.186               0.000 clk_50M 
+    Info (332119):     0.187               0.000 frequency_scaling:b2v_inst1|clk_3125KHz 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):    -3.000              -7.224 clk_50M 
-    Info (332119):    -1.000              -5.000 frequency_scaling:b2v_inst1|clk_3125KHz 
+    Info (332119):    -1.000              -6.000 frequency_scaling:b2v_inst1|clk_3125KHz 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 537 megabytes
-    Info: Processing ended: Wed Sep 20 15:34:50 2023
+    Info: Peak virtual memory: 563 megabytes
+    Info: Processing ended: Wed Sep 20 19:33:52 2023
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
