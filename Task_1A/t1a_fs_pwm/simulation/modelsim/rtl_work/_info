@@ -1,0 +1,107 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/simulation/modelsim
+vfrequency_scaling
+Z1 !s110 1695218647
+!i10b 1
+!s100 L^gcmZnzIFPoMHYBjXC4i2
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IKdQP0FjL>`4<jWImZl6gF2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1695201580
+8/home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/frequency_scaling.v
+F/home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/frequency_scaling.v
+!i122 2
+L0 20 22
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1695218647.000000
+!s107 /home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/frequency_scaling.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm|/home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/frequency_scaling.v|
+!i113 1
+Z6 o-vlog01compat -work work
+Z7 !s92 -vlog01compat -work work +incdir+/home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm
+Z8 tCvgOpt 0
+vpwm_generator
+R1
+!i10b 1
+!s100 mXeb]2F_4P@lK^JzZ[F5[0
+R2
+I54Y;0iime<eO4a=XFg[XM3
+R3
+R0
+w1695218617
+8/home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/pwm_generator.v
+F/home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/pwm_generator.v
+!i122 1
+L0 20 32
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/pwm_generator.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm|/home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/pwm_generator.v|
+!i113 1
+R6
+R7
+R8
+vt1a_fs_pwm_bdf
+R1
+!i10b 1
+!s100 Bd4W;W:D0@k_fU9[QiK`>0
+R2
+Ig_SjACIo<T3L67l:U_jN]1
+R3
+R0
+w1695199909
+8/home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/t1a_fs_pwm_bdf.v
+F/home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/t1a_fs_pwm_bdf.v
+!i122 0
+L0 20 35
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/t1a_fs_pwm_bdf.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm|/home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/t1a_fs_pwm_bdf.v|
+!i113 1
+R6
+R7
+R8
+vtb
+!s110 1695218648
+!i10b 1
+!s100 Q@6RV:lI1kA4V`l5J^V7k0
+R2
+I:H<JcOacg?z2?J:Eh2DiV0
+R3
+R0
+w1695144038
+8/home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/simulation/modelsim/tb.v
+F/home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/simulation/modelsim/tb.v
+!i122 3
+L0 4 96
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/simulation/modelsim/tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/simulation/modelsim|/home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/simulation/modelsim/tb.v|
+!i113 1
+R6
+!s92 -vlog01compat -work work +incdir+/home/saish_k/E-yantra_Astrotinker-bot/t1a_fs_pwm/simulation/modelsim
+R8
