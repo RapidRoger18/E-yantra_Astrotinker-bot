@@ -95,7 +95,7 @@ int main(int argc, char const *argv[]) {
     // _put_byte('\n');
 
     // ############# Add your code here #############
-//    int end=START_POINT, start=END_POINT; 
+
 int map[30][30] = { {0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},        //30 X 30 array that stores distance of each node from its nearest nodes(default dist.0)
                     {1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
                     {0,1,0,2,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
@@ -137,14 +137,14 @@ int temp;
         node_dist[b]=10000;            
         checked[b]=false;
     }
-    node_dist[END_POINT]=0;
+    node_dist[END_POINT]=0;            // set all indexes to start values in node_dist and parent arrays
     parent[END_POINT]=-1;
-    for (int j = 0; j < 29; j++)
+    for (int j = 0; j < 29; j++)        //runs 29 times for 29 relations(30 nodes , 29 relations)
     {
         int min_val = 10000, min_index;
         for (int k = 0; k < 30; k++)
         {
-            if(checked[k]==false&&node_dist[k]<=min_val){
+            if(checked[k]==false&&node_dist[k]<=min_val){        // checking condition for shortest dist
                 min_val=node_dist[k];
                 min_index=k;
             }
@@ -159,8 +159,8 @@ int temp;
         }
     }
     temp=START_POINT;
-   int output [30];
-    for(int z=0;z<30;z++){
+   
+    for(int z=0;z<30;z++){                        // loop to print planned path
         if(parent[temp]==-1)
         { path_planned[z]=(temp);
         //_put_value(path_planned[idx]);
