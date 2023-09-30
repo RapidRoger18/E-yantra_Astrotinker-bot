@@ -96,7 +96,7 @@ int main(int argc, char const *argv[]) {
 
     // ############# Add your code here #############
 //    int end=START_POINT, start=END_POINT; 
-int map[30][30] = { {0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+int map[30][30] = { {0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},        //30 X 30 array that stores distance of each node from its nearest nodes(default dist.0)
                     {1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
                     {0,1,0,2,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
                     {0,0,2,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,0},
@@ -128,18 +128,13 @@ int map[30][30] = { {0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
                     {0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,2,0}   
 };
 
-// _put_str("Enter the start node");
-// scanf("%d",&start);
-// _put_str("Enter the end node");
-// scanf("%d",&end);
-
-int parent[30];
-bool checked[30];
-int node_dist[30];
+int parent[30];                        // to check which node has been analysed
+bool checked[30];                      // bool array(true=node_checked false=node_unchecked)
+int node_dist[30];                     // to store distance between nodes while calculating path
 int temp;
-    for (int b = 0; b < 30; b++)        //initialize parent & checked array at infi. dist. for all nodes & no node checked
+    for (int b = 0; b < 30; b++)        //initialize parent & checked array at infi. dist.(relatively large) for all nodes & no node checked
     {
-        node_dist[b]=10000;
+        node_dist[b]=10000;            
         checked[b]=false;
     }
     node_dist[END_POINT]=0;
@@ -175,24 +170,7 @@ int temp;
         path_planned[z]=(temp);
         temp=parent[temp];
         idx+=1;
-         //_put_value(path_planned[idx]);
-        
-        // path_planned[a]=
     }
-        
- 
-
-    
-
-
-        
-        
-    
-
-    
-
-
-
 
     // ##############################################
 
