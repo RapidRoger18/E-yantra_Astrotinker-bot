@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at control_unit.v(45): always construct contains both blocking and non-blocking assignments File: /home/saish_k/Eyantra/task 2/t2b_riscv_cpu(1)/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 45
