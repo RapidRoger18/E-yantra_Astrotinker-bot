@@ -4,10 +4,6 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "MemWrite",
-					"strict" : false
-				},
-				{
 					"name" : "WriteData[0]",
 					"strict" : false
 				},
@@ -392,15 +388,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "Ext_WriteData[0]",
+					"strict" : false
+				},
+				{
 					"name" : "reset",
 					"strict" : false
 				},
 				{
 					"name" : "Ext_MemWrite",
-					"strict" : false
-				},
-				{
-					"name" : "Ext_WriteData[0]",
 					"strict" : false
 				},
 				{

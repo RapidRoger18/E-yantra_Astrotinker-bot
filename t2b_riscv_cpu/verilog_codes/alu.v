@@ -8,12 +8,13 @@ input [36:0] instructions,
 
 output reg [31:0] ALUoutput
 );
-reg [31:0] Simm;
+wire [31:0] Simm;
 
 	initial begin
 		ALUoutput = 0;
 	end	
-	Simm={{imm[31:12],{20{imm[11]}}},imm};
+	
+	assign Simm={{imm[31:12],{20{imm[11]}}},imm};
 	always@(*) begin
 	
     case(instructions) 
