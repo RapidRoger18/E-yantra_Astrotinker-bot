@@ -21,7 +21,7 @@ wire [6:0]func7;
 
     assign opcode=instr[6:0];
     assign is_i_instr=(instr[6:0]== 7'b0000011)||(instr[6:0]== 7'b0010011)||(instr[6:0]== 7'b1100111);
-    assign is_u_instr=(instr[6:0]==7'b0010111);
+    assign is_u_instr=(instr[6:0]==7'b0010111)||(instr[6:0] == 7'b0110111);
     assign is_b_instr=(instr[6:0]==7'b1100011);
     assign is_j_instr=(instr[6:0]==7'b1101111);
     assign is_s_instr=(instr[6:0]==7'b0100011);
@@ -57,15 +57,15 @@ assign out_signal[0]=(is_r_instr&&(func3==3'h0)&&(func7==7'h00))? 1'b1 : 1'b0; /
   assign out_signal[8]=(is_r_instr&&(func3==3'h2)&&(func7==7'h0))? 1'b1 : 1'b0; //slt
   assign out_signal[9]=(is_r_instr&&(func3==3'h3)&&(func7==7'h0))? 1'b1 : 1'b0; //sltu
   
-  assign out_signal[10]=(is_i_instr&&(func3==3'h0)&&(func7==7'h0))? 1'b1: 1'b0; //addi
-  assign out_signal[11]=(is_i_instr&&(func3==3'h4)) ? 1'b1: 1'b0; //xori
-  assign out_signal[12]=(is_i_instr&&(func3==3'h6))? 1'b1: 1'b0; //ori
-  assign out_signal[13]=(is_i_instr&&(func3==3'h7))? 1'b1: 1'b0; //andi
-  assign out_signal[14]=(is_i_instr&&(func3==3'h1)&&(imm[11:5]==7'h0))? 1'b1: 1'b0;//slli
-  assign out_signal[15]=(is_i_instr&&(func3==3'h5)&&(imm[11:5]==7'h0))? 1'b1: 1'b0; //srli
-  assign out_signal[16]=(is_i_instr&&(func3==3'h5)&&(imm[11:5]==7'h20))? 1'b1: 1'b0; //srai
-  assign out_signal[17]=(is_i_instr&&(func3==3'h2))? 1'b1:1'b0; //slti
-  assign out_signal[18]=(is_i_instr&&(func3==3'h3))? 1'b1:1'b0; //sltiu
+  assign out_signal[10]=(is_i_instr&&(func3==3'h0)&&(func7==7'h0)&&(opcode == 7'b0010011))? 1'b1: 1'b0; //addi
+  assign out_signal[11]=(is_i_instr&&(func3==3'h4)&&(opcode == 7'b0010011)) ? 1'b1: 1'b0; //xori
+  assign out_signal[12]=(is_i_instr&&(func3==3'h6)&&(opcode == 7'b0010011))? 1'b1: 1'b0; //ori
+  assign out_signal[13]=(is_i_instr&&(func3==3'h7)&&(opcode == 7'b0010011))? 1'b1: 1'b0; //andi
+  assign out_signal[14]=(is_i_instr&&(func3==3'h1)&&(imm[11:5]==7'h0)&&(opcode == 7'b0010011))? 1'b1: 1'b0;//slli
+  assign out_signal[15]=(is_i_instr&&(func3==3'h5)&&(imm[11:5]==7'h0)&&(opcode == 7'b0010011))? 1'b1: 1'b0; //srli
+  assign out_signal[16]=(is_i_instr&&(func3==3'h5)&&(imm[11:5]==7'h20)&&(opcode == 7'b0010011))? 1'b1: 1'b0; //srai
+  assign out_signal[17]=(is_i_instr&&(func3==3'h2)&&(opcode == 7'b0010011))? 1'b1:1'b0; //slti
+  assign out_signal[18]=(is_i_instr&&(func3==3'h3)&&(opcode == 7'b0010011))? 1'b1:1'b0; //sltiu
   
   assign out_signal[19]=(is_i_instr&&(opcode==7'b0000011)&&(func3==3'h0))? 1'b1:1'b0; //lb
   assign out_signal[20]=(is_i_instr&&(opcode==7'b0000011)&&(func3==3'h1))? 1'b1:1'b0; //lh
@@ -75,7 +75,7 @@ assign out_signal[0]=(is_r_instr&&(func3==3'h0)&&(func7==7'h00))? 1'b1 : 1'b0; /
   
   assign out_signal[24]=(is_s_instr&&(func3==3'h0))? 1'b1 : 1'b0; //sb
   assign out_signal[25]=(is_s_instr&&(func3==3'h1))? 1'b1 : 1'b0; //sh
-  assign out_signal[26]=(is_s_instr&&(func3==3'h0))? 1'b1 : 1'b0; //sw
+  assign out_signal[26]=(is_s_instr&&(func3==3'h2))? 1'b1 : 1'b0; //sw
   
   assign out_signal[27]=(is_b_instr&&(func3==3'h0))? 1'b1 : 1'b0; //beq
   assign out_signal[28]=(is_b_instr&&(func3==3'h1))? 1'b1 : 1'b0; //bne
@@ -85,10 +85,10 @@ assign out_signal[0]=(is_r_instr&&(func3==3'h0)&&(func7==7'h00))? 1'b1 : 1'b0; /
   assign out_signal[32]=(is_b_instr&&(func3==3'h7))? 1'b1 : 1'b0; //bgeu
   
   assign out_signal[33]=(is_j_instr&&(opcode==7'b1101111))? 1'b1 : 1'b0; //jal
-  assign out_signal[34]=(is_i_instr&&(opcode==7'b1101111)&&(func3==3'h0))? 1'b1 : 1'b0; //jalr
+  assign out_signal[34]=((opcode==7'b1100111)&&(func3==3'h0))? 1'b1 : 1'b0; //jalr
   
-  assign out_signal[35]=(is_u_instr&&(opcode==7'b0110111))? 1'b1 : 1'b0; //lui
-  assign out_signal[36]=(is_u_instr&&(opcode==7'b0010111))? 1'b1 : 1'b0; //auipc
+  assign out_signal[35]=(opcode==7'b0110111)? 1'b1 : 1'b0; //lui
+  assign out_signal[36]=(opcode==7'b0010111)? 1'b1 : 1'b0; //auipc
 
 
 endmodule

@@ -15,7 +15,7 @@ module PC(
 			next_pc = jump;
 		end
 		else begin
-			next_pc = next_pc + 32'b1;
+			next_pc = next_pc + 32'd4;
 		end
    end
 	
