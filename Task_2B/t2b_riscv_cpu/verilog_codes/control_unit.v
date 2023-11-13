@@ -10,7 +10,7 @@ module control_unit(
 	input [31:0] pc_input,                                                                                      //input from PC(its output address) 
 	input [31:0] ALUoutput,                                                                                            //output from ALU
 	
-	output reg [46:0] instructions,                                                                             //instruction bus for ALU
+	output reg [36:0] instructions,                                                                             //instruction bus for ALU
 	output reg [31:0] mem_write,                                                                                //write data in memory
 	output reg wr_en,                                                                                           //write signal(enable or disable
 	output reg [31:0] addr,                                                                                     //address for memory
@@ -39,6 +39,7 @@ always@(*) begin
 			final_output <= ALUoutput;
 			wr_en_rf <= 2'b1;
 			if(j_signal==1) j_signal<=0;
+			if(wr_en==1) wr_en<=0;
         end
         7'b0000011 : begin                                                                          // mem read set
 			addr <= rs1_input + imm;
@@ -49,7 +50,8 @@ always@(*) begin
                 37'h400000 : final_output <= mem_read[7:0];                                         //lbu
                 37'h800000 : final_output <= mem_read[15:0];                                        //lhu
             endcase                                                            //sending required address
-			if(j_signal==1)j_signal<=0;                                                                         //enable read signal
+			if(j_signal==1)j_signal<=0;			                                           //enable read signal
+			if(wr_en==1) wr_en<=0;
         end
         7'b0100011 : begin
 			addr <= rs1_input + imm;                                                                //send assigned address
@@ -68,36 +70,42 @@ always@(*) begin
 						jump <= pc_input + {{20{imm[12]}},imm[12:1],1'b0};                                                     //beq
                     	j_signal <= 2'b1;   
             		end 
+						if(wr_en==1) wr_en<=0;
                 end																				    //activate jump signal
 				37'h10000000 :begin
 					if(rs1_input != rs2_input) begin 
 						jump <= pc_input +{{20{imm[12]}},imm[12:1],1'b0};                                                     //bne
 						j_signal <= 2'b1;   
 					end	
+					if(wr_en==1) wr_en<=0;
 				end																		            //activate jump signal					 
                 37'h20000000 :begin
                     if(rs1_input < rs2_input) begin 
 						jump <= pc_input +{{20{imm[12]}},imm[12:1],1'b0};                                                    //blt
 						j_signal <= 2'b1;   
 					end	
+					if(wr_en==1) wr_en<=0;
 				end																		            //activate jump signal
 				37'h40000000 :begin
 					if(rs1_input >= rs2_input) begin 
 						jump <= pc_input +{{20{imm[12]}},imm[12:1],1'b0};                                                     //bge
 						j_signal <= 2'b1;   
 					end	
+					if(wr_en==1) wr_en<=0;
 				end																		            //activate jump signal 
                 37'h80000000 :begin
 					if(rs1_input < rs2_input) begin 
 						jump <= pc_input +{{20{imm[12]}},imm[12:1],1'b0};                                                     //bltu 
 						j_signal <= 2'b1;   
 					end	
+					if(wr_en==1) wr_en<=0;
 				end																			        //activate jump signal
                 37'h100000000 :begin
 					if(rs1_input >= rs2_input) begin 
 						jump <= pc_input +{{20{imm[12]}},imm[12:1],1'b0};                                                     //bgeu
                         j_signal <= 2'b1;   
                      end 
+							if(wr_en==1) wr_en<=0;
                   end																				    //activate jump signal 
 			endcase
         end
@@ -107,6 +115,7 @@ always@(*) begin
 				j_signal <= 2'b1;  
                 final_output <= pc_input + 4;
             end 
+				if(wr_en==1) wr_en<=0;
         end
         7'b1100111 : begin                                                                          //jalr
 			if(out_signal == 37'h400000000) begin			
@@ -114,18 +123,21 @@ always@(*) begin
 				j_signal <= 2'b1;  
             final_output <= pc_input + 4; 
             end
+				if(wr_en==1) wr_en<=0;
         end
         7'b0110111 : begin
 			if(j_signal==1)j_signal<=0;
             if(out_signal == 37'h800000000) begin   
 				final_output <= {imm[31:12],12'b0};                                                          //lui
             end
+				if(wr_en==1) wr_en<=0;
         end
         7'b0010111 : begin
 			if(j_signal==1)j_signal<=0;
             if(out_signal == 37'h1000000000) begin   
 				final_output <= pc_input +{imm[31:12],12'b0};                                             //auipc 
-            end                
+            end   
+				if(wr_en==1) wr_en<=0;				
         end
     endcase
 end
