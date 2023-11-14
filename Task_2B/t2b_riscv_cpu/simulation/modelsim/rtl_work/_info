@@ -10,7 +10,7 @@ z2
 cModel Technology
 Z0 d/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/simulation/modelsim
 valu
-Z1 !s110 1699858369
+Z1 !s110 1699895076
 !i10b 1
 !s100 eaB;>d0X8]iJ5;P3I=GD@2
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -26,7 +26,7 @@ Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1699858369.000000
+Z6 !s108 1699895076.000000
 !s107 /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/alu.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes|/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/alu.v|
 !i113 1
@@ -98,7 +98,7 @@ R5
 r1
 !s85 0
 31
-Z11 !s108 1699858368.000000
+R6
 !s107 /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/decoder.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes|/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/decoder.v|
 !i113 1
@@ -130,7 +130,7 @@ R7
 R10
 R9
 vPC
-Z12 !s110 1699858368
+R1
 !i10b 1
 !s100 UEKR<bGNk_4>TjJ2]DeAM0
 R2
@@ -146,7 +146,7 @@ R5
 r1
 !s85 0
 31
-R11
+R6
 !s107 /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes|/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v|
 !i113 1
@@ -155,7 +155,7 @@ R8
 R9
 n@p@c
 vregisterfile
-R12
+R1
 !i10b 1
 !s100 U]<L69nb6Z6:jXS[6@;Yc1
 R2
@@ -171,7 +171,7 @@ R5
 r1
 !s85 0
 31
-R11
+R6
 !s107 /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes|/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v|
 !i113 1
