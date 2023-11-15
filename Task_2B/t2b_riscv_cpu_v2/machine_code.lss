@@ -1,0 +1,155 @@
+
+.temp.file.elf:     file format elf32-littleriscv
+
+SYMBOL TABLE:
+00000000 l    d  .init	00000000 .init
+00000054 l    d  .text	00000000 .text
+02000000 l    d  .data	00000000 .data
+02000000 l    d  .bss	00000000 .bss
+02000000 l    d  .stack	00000000 .stack
+00000000 l    d  .riscv.attributes	00000000 .riscv.attributes
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_str	00000000 .debug_str
+00000000 l    d  .debug_loc	00000000 .debug_loc
+00000000 l    d  .debug_ranges	00000000 .debug_ranges
+00000000 l    d  .debug_frame	00000000 .debug_frame
+00000000 l    d  .debug_macro	00000000 .debug_macro
+00000000 l    df *ABS*	00000000 tls.c
+00000000 l    df *ABS*	00000000 
+00000093 l       .debug_info	00000000 
+00000093 l       .debug_info	00000000 
+00000093 l       .debug_info	00000000 
+00000093 l       .debug_info	00000000 
+00000093 l       .debug_info	00000000 
+00000093 l       .debug_info	00000000 
+00000093 l       .debug_info	00000000 
+00000093 l       .debug_info	00000000 
+00000093 l       .debug_info	00000000 
+00000093 l       .debug_info	00000000 
+00000093 l       .debug_info	00000000 
+00000093 l       .debug_info	00000000 
+00000093 l       .debug_info	00000000 
+00000093 l       .debug_info	00000000 
+00000093 l       .debug_info	00000000 
+00000093 l       .debug_info	00000000 
+00000093 l       .debug_info	00000000 
+00000093 l       .debug_info	00000000 
+00000093 l       .debug_info	00000000 
+00000093 l       .debug_info	00000000 
+00000000 g       *ABS*	00000000 __data_size
+02000800 g       .data	00000000 __global_pointer$
+02000000 g       .bss	00000000 __tls_base
+00000800 g       *ABS*	00000000 __flash_size
+00000040 g       *ABS*	00000000 __stack_size
+00000000 g       *ABS*	00000000 __bss_size
+0000007c g     F .text	00000024 memcpy
+02000000 g       .bss	00000000 __bss_end
+00000000 g       *ABS*	00000000 __tbss_size
+00000074 g     F .text	00000008 _set_tls
+00000000 g     F .init	00000000 _start
+02000000 g       *ABS*	00000000 __ram
+02000000 g       .bss	00000000 __data_end
+000000bc g       .text	00000000 __text_end
+02000000 g       .bss	00000000 __bss_start
+000000a0 g     F .text	0000001c memset
+00000054 g     F .text	00000020 main
+00000093  w      .debug_info	00000000 .hidden t1b_path_planner.c.4f18815f
+00000100 g       *ABS*	00000000 __ram_size
+02000100 g       .init	00000000 __stack
+00000000 g     F *ABS*	00000000 vfscanf
+000000c0 g       *ABS*	00000000 __data_source
+00000000 g       *ABS*	00000000 __flash
+02000000 g       .data	00000000 __data_start
+00000000 g     F *ABS*	00000000 vfprintf
+
+
+
+Disassembly of section .init:
+
+00000000 <_start>:
+   0:	    02000117          	auipc	x2,0x2000
+   4:	    10010113          	addi	x2,x2,256 # 2000100 <__stack>
+   8:	    02000197          	auipc	x3,0x2000
+   c:	    7f818193          	addi	x3,x3,2040 # 2000800 <__global_pointer$>
+  10:	    02000517          	auipc	x10,0x2000
+  14:	    ff050513          	addi	x10,x10,-16 # 2000000 <__bss_end>
+  18:	    0c000593          	addi	x11,x0,192
+  1c:	    00000613          	addi	x12,x0,0
+  20:	    05c000ef          	jal	x1,7c <memcpy>
+  24:	    02000517          	auipc	x10,0x2000
+  28:	    fdc50513          	addi	x10,x10,-36 # 2000000 <__bss_end>
+  2c:	    00000593          	addi	x11,x0,0
+  30:	    00000613          	addi	x12,x0,0
+  34:	    06c000ef          	jal	x1,a0 <memset>
+  38:	    02000517          	auipc	x10,0x2000
+  3c:	    fc850513          	addi	x10,x10,-56 # 2000000 <__bss_end>
+  40:	    034000ef          	jal	x1,74 <_set_tls>
+  44:	    00000513          	addi	x10,x0,0
+  48:	    00000593          	addi	x11,x0,0
+  4c:	    008000ef          	jal	x1,54 <main>
+  50:	/-- 0000006f          	jal	x0,50 <__stack_size+0x10>
+
+Disassembly of section .text:
+
+00000054 <main>:
+     ###     for (int b = 0; b < 30; b++)        //initialize parent & checked array at infi. dist.(relatively large) for all nodes & no node checked
+     ###     {
+     ###         node_dist[b]=10000;            
+     ###         checked[b]=false;
+     ###     }
+     ###     node_dist[END_POINT]=0;            // set all indexes to start values in node_dist and parent arrays
+  54:	020007b7          	lui	x15,0x2000
+  58:	0027c703          	lbu	x14,2(x15) # 2000002 <__bss_end+0x2>
+     ###     parent[END_POINT]=-1;
+  5c:	0027c703          	lbu	x14,2(x15)
+     ###                 parent[l]=min_index;
+     ###                 node_dist[l]=node_dist[min_index]+map[min_index][l];
+     ###             }
+     ###         }
+     ###     }
+     ###     temp=START_POINT;
+  60:	0017c703          	lbu	x14,1(x15)
+     ###         _put_str("################################\n");
+     ### 
+     ###     #endif
+     ### 
+     ###     return 0;
+     ### }
+  64:	00000513          	addi	x10,x0,0
+     ###     CPU_DONE = 1;
+  68:	00100713          	addi	x14,x0,1
+  6c:	00e78223          	sb	x14,4(x15)
+     ### }
+  70:	00008067          	jalr	x0,0(x1)
+
+00000074 <_set_tls>:
+  74:	00050213          	addi	x4,x10,0
+  78:	00008067          	jalr	x0,0(x1)
+
+0000007c <memcpy>:
+  7c:	       00050313          	addi	x6,x10,0
+  80:	/----- 00060e63          	beq	x12,x0,9c <t1b_path_planner.c.4f18815f+0x9>
+  84:	|  /-> 00058383          	lb	x7,0(x11)
+  88:	|  |   00730023          	sb	x7,0(x6)
+  8c:	|  |   fff60613          	addi	x12,x12,-1
+  90:	|  |   00130313          	addi	x6,x6,1
+  94:	|  |   00158593          	addi	x11,x11,1
+  98:	|  \-- fe0616e3          	bne	x12,x0,84 <memcpy+0x8>
+  9c:	\----> 00008067          	jalr	x0,0(x1)
+
+000000a0 <memset>:
+  a0:	       00050313          	addi	x6,x10,0
+  a4:	/----- 00060a63          	beq	x12,x0,b8 <memset+0x18>
+  a8:	|  /-> 00b30023          	sb	x11,0(x6)
+  ac:	|  |   fff60613          	addi	x12,x12,-1
+  b0:	|  |   00130313          	addi	x6,x6,1
+  b4:	|  \-- fe061ae3          	bne	x12,x0,a8 <memset+0x8>
+  b8:	\----> 00008067          	jalr	x0,0(x1)
+
+000000bc <__text_end>:
+  bc:	0000                	c.unimp
+	...
