@@ -1,5 +1,5 @@
 Analysis & Synthesis report for t2b_riscv_cpu
-Mon Nov 13 12:22:44 2023
+Wed Nov 15 12:22:29 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -48,13 +48,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Nov 13 12:22:44 2023       ;
+; Analysis & Synthesis Status        ; Successful - Wed Nov 15 12:22:29 2023       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; t2b_riscv_cpu                               ;
 ; Top-level Entity Name              ; t2b_riscv_cpu                               ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 8,940                                       ;
-;     Total combinational functions  ; 5,964                                       ;
+; Total logic elements               ; 8,618                                       ;
+;     Total combinational functions  ; 5,642                                       ;
 ;     Dedicated logic registers      ; 3,072                                       ;
 ; Total registers                    ; 3072                                        ;
 ; Total pins                         ; 164                                         ;
@@ -171,8 +171,7 @@ https://fpgasoftware.intel.com/eula.
 ;     Processor 6            ;   0.2%      ;
 ;     Processor 7            ;   0.2%      ;
 ;     Processor 8            ;   0.2%      ;
-;     Processor 9            ;   0.1%      ;
-;     Processors 10-12       ;   0.1%      ;
+;     Processors 9-12        ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -199,17 +198,17 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 8,940     ;
+; Estimated Total logic elements              ; 8,618     ;
 ;                                             ;           ;
-; Total combinational functions               ; 5964      ;
+; Total combinational functions               ; 5642      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 4679      ;
-;     -- 3 input functions                    ; 1156      ;
-;     -- <=2 input functions                  ; 129       ;
+;     -- 4 input functions                    ; 4374      ;
+;     -- 3 input functions                    ; 1130      ;
+;     -- <=2 input functions                  ; 138       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 5750      ;
-;     -- arithmetic mode                      ; 214       ;
+;     -- normal mode                          ; 5409      ;
+;     -- arithmetic mode                      ; 233       ;
 ;                                             ;           ;
 ; Total registers                             ; 3072      ;
 ;     -- Dedicated logic registers            ; 3072      ;
@@ -221,8 +220,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
 ; Maximum fan-out                             ; 3072      ;
-; Total fan-out                               ; 31918     ;
-; Average fan-out                             ; 3.41      ;
+; Total fan-out                               ; 30638     ;
+; Average fan-out                             ; 3.39      ;
 +---------------------------------------------+-----------+
 
 
@@ -231,14 +230,14 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------+---------------+--------------+
 ; Compilation Hierarchy Node     ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                      ; Entity Name   ; Library Name ;
 +--------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------+---------------+--------------+
-; |t2b_riscv_cpu                 ; 5964 (65)           ; 3072 (0)                  ; 0           ; 0            ; 0       ; 0         ; 164  ; 0            ; |t2b_riscv_cpu                                           ; t2b_riscv_cpu ; work         ;
+; |t2b_riscv_cpu                 ; 5642 (65)           ; 3072 (0)                  ; 0           ; 0            ; 0       ; 0         ; 164  ; 0            ; |t2b_riscv_cpu                                           ; t2b_riscv_cpu ; work         ;
 ;    |data_mem:dmem|             ; 1488 (1488)         ; 2048 (2048)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |t2b_riscv_cpu|data_mem:dmem                             ; data_mem      ; work         ;
-;    |instr_mem:imem|            ; 1225 (1225)         ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |t2b_riscv_cpu|instr_mem:imem                            ; instr_mem     ; work         ;
-;    |riscv_cpu:rvsingle|        ; 3186 (0)            ; 1024 (0)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |t2b_riscv_cpu|riscv_cpu:rvsingle                        ; riscv_cpu     ; work         ;
+;    |instr_mem:imem|            ; 827 (827)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |t2b_riscv_cpu|instr_mem:imem                            ; instr_mem     ; work         ;
+;    |riscv_cpu:rvsingle|        ; 3262 (0)            ; 1024 (0)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |t2b_riscv_cpu|riscv_cpu:rvsingle                        ; riscv_cpu     ; work         ;
 ;       |PC:b2v_inst|            ; 63 (63)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |t2b_riscv_cpu|riscv_cpu:rvsingle|PC:b2v_inst            ; PC            ; work         ;
-;       |alu:b2v_inst1|          ; 509 (509)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |t2b_riscv_cpu|riscv_cpu:rvsingle|alu:b2v_inst1          ; alu           ; work         ;
-;       |control_unit:b2v_inst2| ; 1004 (1004)         ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |t2b_riscv_cpu|riscv_cpu:rvsingle|control_unit:b2v_inst2 ; control_unit  ; work         ;
-;       |decoder:b2v_inst3|      ; 155 (155)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |t2b_riscv_cpu|riscv_cpu:rvsingle|decoder:b2v_inst3      ; decoder       ; work         ;
+;       |alu:b2v_inst1|          ; 537 (537)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |t2b_riscv_cpu|riscv_cpu:rvsingle|alu:b2v_inst1          ; alu           ; work         ;
+;       |control_unit:b2v_inst2| ; 1049 (1049)         ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |t2b_riscv_cpu|riscv_cpu:rvsingle|control_unit:b2v_inst2 ; control_unit  ; work         ;
+;       |decoder:b2v_inst3|      ; 158 (158)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |t2b_riscv_cpu|riscv_cpu:rvsingle|decoder:b2v_inst3      ; decoder       ; work         ;
 ;       |registerfile:b2v_inst4| ; 1455 (1455)         ; 992 (992)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |t2b_riscv_cpu|riscv_cpu:rvsingle|registerfile:b2v_inst4 ; registerfile  ; work         ;
 +--------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------+---------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -418,19 +417,20 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |t2b_riscv_cpu|riscv_cpu:rvsingle|PC:b2v_inst|next_pc[1]                      ;
 ; 3:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |t2b_riscv_cpu|riscv_cpu:rvsingle|PC:b2v_inst|next_pc[23]                     ;
 ; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |t2b_riscv_cpu|riscv_cpu:rvsingle|registerfile:b2v_inst4|register_file[0][23] ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |t2b_riscv_cpu|riscv_cpu:rvsingle|decoder:b2v_inst3|imm[8]                    ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |t2b_riscv_cpu|riscv_cpu:rvsingle|decoder:b2v_inst3|imm[13]                   ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |t2b_riscv_cpu|riscv_cpu:rvsingle|decoder:b2v_inst3|imm[5]                    ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |t2b_riscv_cpu|riscv_cpu:rvsingle|decoder:b2v_inst3|imm[15]                   ;
 ; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |t2b_riscv_cpu|riscv_cpu:rvsingle|decoder:b2v_inst3|imm[1]                    ;
 ; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |t2b_riscv_cpu|riscv_cpu:rvsingle|registerfile:b2v_inst4|Mux47                ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |t2b_riscv_cpu|riscv_cpu:rvsingle|registerfile:b2v_inst4|Mux4                 ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |t2b_riscv_cpu|riscv_cpu:rvsingle|control_unit:b2v_inst2|Selector16           ;
-; 23:1               ; 8 bits    ; 120 LEs       ; 112 LEs              ; 8 LEs                  ; No         ; |t2b_riscv_cpu|riscv_cpu:rvsingle|control_unit:b2v_inst2|Selector114          ;
-; 23:1               ; 8 bits    ; 120 LEs       ; 112 LEs              ; 8 LEs                  ; No         ; |t2b_riscv_cpu|riscv_cpu:rvsingle|control_unit:b2v_inst2|Selector118          ;
-; 25:1               ; 4 bits    ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |t2b_riscv_cpu|riscv_cpu:rvsingle|control_unit:b2v_inst2|Selector104          ;
-; 25:1               ; 4 bits    ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |t2b_riscv_cpu|riscv_cpu:rvsingle|control_unit:b2v_inst2|Selector126          ;
-; 27:1               ; 2 bits    ; 36 LEs        ; 34 LEs               ; 2 LEs                  ; No         ; |t2b_riscv_cpu|riscv_cpu:rvsingle|control_unit:b2v_inst2|Selector101          ;
-; 27:1               ; 2 bits    ; 36 LEs        ; 34 LEs               ; 2 LEs                  ; No         ; |t2b_riscv_cpu|riscv_cpu:rvsingle|control_unit:b2v_inst2|Selector128          ;
-; 29:1               ; 2 bits    ; 38 LEs        ; 34 LEs               ; 4 LEs                  ; No         ; |t2b_riscv_cpu|riscv_cpu:rvsingle|control_unit:b2v_inst2|Selector99           ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |t2b_riscv_cpu|riscv_cpu:rvsingle|registerfile:b2v_inst4|Mux20                ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |t2b_riscv_cpu|riscv_cpu:rvsingle|control_unit:b2v_inst2|Selector15           ;
+; 24:1               ; 4 bits    ; 64 LEs        ; 60 LEs               ; 4 LEs                  ; No         ; |t2b_riscv_cpu|riscv_cpu:rvsingle|control_unit:b2v_inst2|Selector106          ;
+; 25:1               ; 8 bits    ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; No         ; |t2b_riscv_cpu|riscv_cpu:rvsingle|control_unit:b2v_inst2|Selector94           ;
+; 25:1               ; 4 bits    ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |t2b_riscv_cpu|riscv_cpu:rvsingle|control_unit:b2v_inst2|Selector102          ;
+; 26:1               ; 4 bits    ; 68 LEs        ; 64 LEs               ; 4 LEs                  ; No         ; |t2b_riscv_cpu|riscv_cpu:rvsingle|control_unit:b2v_inst2|Selector112          ;
+; 27:1               ; 4 bits    ; 72 LEs        ; 68 LEs               ; 4 LEs                  ; No         ; |t2b_riscv_cpu|riscv_cpu:rvsingle|control_unit:b2v_inst2|Selector90           ;
+; 28:1               ; 2 bits    ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |t2b_riscv_cpu|riscv_cpu:rvsingle|control_unit:b2v_inst2|Selector115          ;
+; 29:1               ; 2 bits    ; 38 LEs        ; 36 LEs               ; 2 LEs                  ; No         ; |t2b_riscv_cpu|riscv_cpu:rvsingle|control_unit:b2v_inst2|Selector88           ;
+; 31:1               ; 2 bits    ; 40 LEs        ; 36 LEs               ; 4 LEs                  ; No         ; |t2b_riscv_cpu|riscv_cpu:rvsingle|control_unit:b2v_inst2|Selector86           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
 
 
@@ -467,18 +467,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; cycloneiii_ff         ; 3072                        ;
 ;     ENA               ; 3042                        ;
 ;     SCLR              ; 30                          ;
-; cycloneiii_lcell_comb ; 5964                        ;
-;     arith             ; 214                         ;
+; cycloneiii_lcell_comb ; 5642                        ;
+;     arith             ; 233                         ;
 ;         2 data inputs ; 29                          ;
-;         3 data inputs ; 185                         ;
-;     normal            ; 5750                        ;
+;         3 data inputs ; 204                         ;
+;     normal            ; 5409                        ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 99                          ;
-;         3 data inputs ; 971                         ;
-;         4 data inputs ; 4679                        ;
+;         2 data inputs ; 108                         ;
+;         3 data inputs ; 926                         ;
+;         4 data inputs ; 4374                        ;
 ;                       ;                             ;
 ; Max LUT depth         ; 22.00                       ;
-; Average LUT depth     ; 10.80                       ;
+; Average LUT depth     ; 10.67                       ;
 +-----------------------+-----------------------------+
 
 
@@ -487,7 +487,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:26     ;
+; Top            ; 00:00:17     ;
 +----------------+--------------+
 
 
@@ -497,7 +497,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Mon Nov 13 12:22:10 2023
+    Info: Processing started: Wed Nov 15 12:22:06 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off t2b_riscv_cpu -c t2b_riscv_cpu
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -517,6 +517,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file instr_m
     Info (12023): Found entity 1: instr_mem File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/instr_mem.v Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file data_mem.v
     Info (12023): Found entity 1: data_mem File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/data_mem.v Line: 4
+Warning (10238): Verilog Module Declaration warning at riscv_cpu.v(29): ignored anonymous port(s) indicated by duplicate or dangling comma(s) in the port list for module "riscv_cpu" File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/riscv_cpu.v Line: 29
 Info (12021): Found 1 design units, including 1 entities, in source file riscv_cpu.v
     Info (12023): Found entity 1: riscv_cpu File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/riscv_cpu.v Line: 20
 Info (12021): Found 1 design units, including 1 entities, in source file t2b_riscv_cpu.v
@@ -524,7 +525,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file t2b_ris
 Info (12127): Elaborating entity "t2b_riscv_cpu" for the top level hierarchy
 Warning (10230): Verilog HDL assignment warning at t2b_riscv_cpu.v(36): truncated value with size 32 to match size of target (1) File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/t2b_riscv_cpu.v Line: 36
 Info (12128): Elaborating entity "riscv_cpu" for hierarchy "riscv_cpu:rvsingle" File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/t2b_riscv_cpu.v Line: 31
-Info (12128): Elaborating entity "PC" for hierarchy "riscv_cpu:rvsingle|PC:b2v_inst" File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/riscv_cpu.v Line: 70
+Info (12128): Elaborating entity "PC" for hierarchy "riscv_cpu:rvsingle|PC:b2v_inst" File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/riscv_cpu.v Line: 69
 Info (12128): Elaborating entity "alu" for hierarchy "riscv_cpu:rvsingle|alu:b2v_inst1" File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/riscv_cpu.v Line: 78
 Warning (10230): Verilog HDL assignment warning at alu.v(17): truncated value with size 72 to match size of target (32) File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/alu.v Line: 17
 Warning (10762): Verilog HDL Case Statement warning at alu.v(20): can't check case statement for completeness because the case expression has too many possible states File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/alu.v Line: 20
@@ -555,8 +556,6 @@ Warning (10270): Verilog HDL Case Statement warning at control_unit.v(67): incom
 Info (10264): Verilog HDL Case Statement information at control_unit.v(67): all case item expressions in this case statement are onehot File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 67
 Warning (10230): Verilog HDL assignment warning at control_unit.v(115): truncated value with size 2 to match size of target (1) File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 115
 Warning (10230): Verilog HDL assignment warning at control_unit.v(123): truncated value with size 2 to match size of target (1) File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 123
-Warning (10272): Verilog HDL Case Statement warning at control_unit.v(128): case item expression covers a value already covered by a previous case item File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 128
-Warning (10272): Verilog HDL Case Statement warning at control_unit.v(135): case item expression covers a value already covered by a previous case item File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 135
 Warning (10270): Verilog HDL Case Statement warning at control_unit.v(36): incomplete case statement has no default case item File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
 Warning (10240): Verilog HDL Always Construct warning at control_unit.v(36): inferring latch(es) for variable "jump", which holds its previous value in one or more paths through the always construct File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
 Warning (10240): Verilog HDL Always Construct warning at control_unit.v(36): inferring latch(es) for variable "j_signal", which holds its previous value in one or more paths through the always construct File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
@@ -865,69 +864,69 @@ Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|mem_write[30] h
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|mem_write[31] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
     Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|decoder:b2v_inst3|out_signal[26] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/decoder.v Line: 15
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs2_value[0] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[4] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs2_value[1] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[4] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs2_value[2] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[4] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs2_value[3] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[4] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs2_value[4] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[4] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs2_value[5] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[4] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs2_value[6] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[4] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs2_value[7] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[4] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs2_value[8] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[4] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs2_value[9] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[4] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs2_value[10] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[4] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs2_value[11] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[4] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs2_value[12] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[4] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs2_value[13] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[4] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs2_value[14] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[4] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs2_value[15] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[4] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs2_value[16] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[4] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs2_value[17] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[4] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs2_value[18] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[4] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs2_value[19] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[4] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs2_value[20] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[4] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs2_value[21] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[4] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs2_value[22] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[4] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs2_value[23] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[4] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs2_value[24] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[4] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs2_value[25] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[4] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs2_value[26] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[4] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs2_value[27] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[4] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs2_value[28] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[4] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs2_value[29] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[4] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs2_value[30] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[4] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs2_value[31] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[4] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs1_value[0] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
     Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|decoder:b2v_inst3|is_i_instr File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/decoder.v Line: 17
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs1_value[1] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
@@ -992,98 +991,98 @@ Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs1_value[30] h
     Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|decoder:b2v_inst3|is_i_instr File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/decoder.v Line: 17
 Warning (13012): Latch riscv_cpu:rvsingle|registerfile:b2v_inst4|rs1_value[31] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v Line: 53
     Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|decoder:b2v_inst3|is_i_instr File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/decoder.v Line: 17
-Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|jump[2] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
-Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|j_signal has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
-Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|jump[3] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
-Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|jump[4] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|jump[7] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
     Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
-Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|jump[10] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
-Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|jump[6] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
+Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|j_signal has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 17
     Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|jump[8] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
     Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|jump[4] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|jump[5] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|jump[6] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|jump[10] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|jump[3] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|jump[2] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
     Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|jump[9] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
     Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|final_output[0] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[8] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|final_output[1] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[8] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|final_output[2] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|final_output[3] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|final_output[4] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|final_output[5] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|final_output[6] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|final_output[7] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|final_output[8] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|final_output[9] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|final_output[10] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|final_output[11] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|final_output[12] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|final_output[13] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|final_output[14] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|final_output[15] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|final_output[16] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|final_output[17] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|final_output[18] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|final_output[19] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|final_output[20] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|final_output[21] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|final_output[22] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|final_output[23] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|final_output[24] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|final_output[25] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|final_output[26] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|final_output[27] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|final_output[28] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|final_output[29] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|final_output[30] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|final_output[31] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|jump[1] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
     Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|jump[0] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[8] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|instructions[0] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|instructions[1] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|instructions[2] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
     Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|instructions[3] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
@@ -1093,9 +1092,9 @@ Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|instructions[4]
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|instructions[5] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
     Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|instructions[6] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|instructions[7] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[10] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|instructions[8] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
     Warning (13013): Ports D and ENA on the latch are fed by the same signal riscv_cpu:rvsingle|PC:b2v_inst|next_pc[9] File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v Line: 11
 Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|instructions[9] has unsafe behavior File: /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 36
@@ -1167,14 +1166,14 @@ Warning (13012): Latch riscv_cpu:rvsingle|control_unit:b2v_inst2|jump[31] has un
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 9168 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 8846 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 67 input pins
     Info (21059): Implemented 97 output pins
-    Info (21061): Implemented 9004 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 397 warnings
-    Info: Peak virtual memory: 512 megabytes
-    Info: Processing ended: Mon Nov 13 12:22:44 2023
-    Info: Elapsed time: 00:00:34
-    Info: Total CPU time (on all processors): 00:00:43
+    Info (21061): Implemented 8682 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 396 warnings
+    Info: Peak virtual memory: 511 megabytes
+    Info: Processing ended: Wed Nov 15 12:22:29 2023
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:30
 
 

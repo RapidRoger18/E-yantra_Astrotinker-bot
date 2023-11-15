@@ -54,7 +54,7 @@ always@(*) begin
 	if (rs2_valid) rs2_value <= register_file[rs2[4:0]];
 end
 
-always @(negedge clk) begin 
+always @(posedge clk) begin 
 	register_file[0]<=0;
 	if (wr_en&&rd[4:0]!=0) begin
 		register_file[rd[4:0]]<=result;

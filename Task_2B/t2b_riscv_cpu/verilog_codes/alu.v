@@ -5,7 +5,7 @@ input [31:0] rs1,
 input [31:0] rs2,
 input [31:0] imm,
 input [36:0] instructions,
-
+input [31:0] pc_input,
 output reg [31:0] ALUoutput
 );
 wire [31:0] Simm;
@@ -37,7 +37,8 @@ wire [31:0] Simm;
          37'h10000 : ALUoutput <= (rs1 >>> imm[4:0]); //srai :)                       //srai
          37'h20000 : ALUoutput <= (rs1 < Simm);       //stli                         //slti
          37'h40000 : ALUoutput <= (rs1 < Simm);       //sltiu                         //sltiu 
-          
+			37'h800000000: ALUoutput<= imm<<12;  //lui
+         37'h1000000000: ALUoutput <= pc_input + (imm<<12);  //auipc
          default : ALUoutput<= 0;
         
 		
