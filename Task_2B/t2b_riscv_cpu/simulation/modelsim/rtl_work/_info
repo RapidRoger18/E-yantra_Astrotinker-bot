@@ -10,7 +10,7 @@ z2
 cModel Technology
 Z0 d/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/simulation/modelsim
 valu
-Z1 !s110 1700031163
+Z1 !s110 1700032965
 !i10b 1
 !s100 YI7f71@<KCS?^0fcjPH]i1
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -26,7 +26,7 @@ Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1700031163.000000
+Z5 !s108 1700032965.000000
 !s107 /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/alu.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes|/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/alu.v|
 !i113 1

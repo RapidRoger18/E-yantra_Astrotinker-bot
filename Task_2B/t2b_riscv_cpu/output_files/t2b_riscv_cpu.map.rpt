@@ -1,5 +1,5 @@
 Analysis & Synthesis report for t2b_riscv_cpu
-Wed Nov 15 12:22:29 2023
+Wed Nov 15 12:42:40 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -48,7 +48,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Nov 15 12:22:29 2023       ;
+; Analysis & Synthesis Status        ; Successful - Wed Nov 15 12:42:40 2023       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; t2b_riscv_cpu                               ;
 ; Top-level Entity Name              ; t2b_riscv_cpu                               ;
@@ -165,13 +165,14 @@ https://fpgasoftware.intel.com/eula.
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.3%      ;
-;     Processor 3            ;   0.2%      ;
+;     Processor 3            ;   0.3%      ;
 ;     Processor 4            ;   0.2%      ;
 ;     Processor 5            ;   0.2%      ;
 ;     Processor 6            ;   0.2%      ;
 ;     Processor 7            ;   0.2%      ;
 ;     Processor 8            ;   0.2%      ;
-;     Processors 9-12        ;   0.1%      ;
+;     Processor 9            ;   0.2%      ;
+;     Processors 10-12       ;   0.2%      ;
 +----------------------------+-------------+
 
 
@@ -487,7 +488,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:17     ;
+; Top            ; 00:00:16     ;
 +----------------+--------------+
 
 
@@ -497,7 +498,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Wed Nov 15 12:22:06 2023
+    Info: Processing started: Wed Nov 15 12:42:17 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off t2b_riscv_cpu -c t2b_riscv_cpu
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -1171,8 +1172,8 @@ Info (21057): Implemented 8846 device resources after synthesis - the final reso
     Info (21059): Implemented 97 output pins
     Info (21061): Implemented 8682 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 396 warnings
-    Info: Peak virtual memory: 511 megabytes
-    Info: Processing ended: Wed Nov 15 12:22:29 2023
+    Info: Peak virtual memory: 510 megabytes
+    Info: Processing ended: Wed Nov 15 12:42:40 2023
     Info: Elapsed time: 00:00:23
     Info: Total CPU time (on all processors): 00:00:30
 
