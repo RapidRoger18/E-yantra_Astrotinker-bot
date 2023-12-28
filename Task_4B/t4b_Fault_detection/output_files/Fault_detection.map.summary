@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Dec 28 15:34:52 2023
+Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Revision Name : Fault_detection
+Top-level Entity Name : Fault_detection
+Family : Cyclone IV E
+Total logic elements : 1,279
+    Total combinational functions : 645
+    Dedicated logic registers : 1,017
+Total registers : 1017
+Total pins : 20
+Total virtual pins : 0
+Total memory bits : 6,400
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

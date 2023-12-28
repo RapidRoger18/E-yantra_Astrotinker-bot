@@ -1,0 +1,51 @@
+# do Fault_detection_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying /home/atharvak/Quartus/intelFPGA/20.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/t4b_Fault_detection {/home/atharvak/E-yantra23/t4b_Fault_detection/Fault_detection.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:02:01 on Dec 25,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/t4b_Fault_detection" /home/atharvak/E-yantra23/t4b_Fault_detection/Fault_detection.v 
+# -- Compiling module Fault_detection
+# ** Warning: /home/atharvak/E-yantra23/t4b_Fault_detection/Fault_detection.v(95): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: /home/atharvak/E-yantra23/t4b_Fault_detection/Fault_detection.v(98): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# 
+# Top level modules:
+# 	Fault_detection
+# End time: 11:02:01 on Dec 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+# 
+# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/t4b_Fault_detection/simulation/modelsim {/home/atharvak/E-yantra23/t4b_Fault_detection/simulation/modelsim/Fault_detection_tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:02:01 on Dec 25,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/t4b_Fault_detection/simulation/modelsim" /home/atharvak/E-yantra23/t4b_Fault_detection/simulation/modelsim/Fault_detection_tb.v 
+# -- Compiling module Fault_detection_tb
+# 
+# Top level modules:
+# 	Fault_detection_tb
+# End time: 11:02:01 on Dec 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  Fault_detection_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" Fault_detection_tb 
+# Start time: 11:02:01 on Dec 25,2023
+# Loading work.Fault_detection_tb
+# Loading work.Fault_detection
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Break key hit
+# Simulation stop requested.
+# End time: 11:20:10 on Dec 25,2023, Elapsed time: 0:18:09
+# Errors: 0, Warnings: 0

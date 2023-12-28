@@ -1,0 +1,49 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "UV_trig",
+					"strict" : false
+				},
+				{
+					"name" : "led1_B1",
+					"strict" : false
+				},
+				{
+					"name" : "led2_B2",
+					"strict" : false
+				},
+				{
+					"name" : "led3_B3",
+					"strict" : false
+				},
+				{
+					"name" : "clk_50M",
+					"strict" : false
+				},
+				{
+					"name" : "UV_echo",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tms",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tck",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdi",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdo",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

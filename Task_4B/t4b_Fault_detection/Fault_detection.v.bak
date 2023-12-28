@@ -1,0 +1,18 @@
+module FaultDetection(
+	input clk_50M,
+	input UV_echo,
+	output UV_trig,
+	output led1_R1,
+	output led1_G1,
+	output led1_B1,
+	output led2_R2,
+	output led2_G2,
+	output led2_B2,
+	output led3_R3,
+	output led3_G3,
+	output led3_B3,
+	output 
+	
+);
+
+endmodule 

@@ -1,0 +1,14 @@
+Fault_detection_tb();
+	reg clk_50M;
+	reg UV_echo;
+	wire UV_trig;												
+	wire led1_R1;													
+	wire led1_G1;
+	wire led1_B1;
+	wire led2_R2;
+	wire led2_G2;
+	wire led2_B2;
+	wire led3_R3;
+	wire led3_G3;
+	wire led3_B3;
+	wire [7:0] msg;		
