@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at pwm_generator1.v(40): always construct contains both blocking and non-blocking assignments File: /home/atharvak/E-yantra23/Line_Following/pwm_generator1.v Line: 40
+Warning (10268): Verilog HDL information at pwm_generator2.v(41): always construct contains both blocking and non-blocking assignments File: /home/atharvak/E-yantra23/Line_Following/pwm_generator2.v Line: 41

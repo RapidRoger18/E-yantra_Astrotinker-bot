@@ -1,0 +1,14 @@
+Partition Merge Status : Successful - Fri Dec 29 18:50:13 2023
+Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Revision Name : Line_Following
+Top-level Entity Name : instantiate_LFA
+Family : Cyclone IV E
+Total logic elements : 1,237
+    Total combinational functions : 648
+    Dedicated logic registers : 947
+Total registers : 947
+Total pins : 17
+Total virtual pins : 0
+Total memory bits : 5,504
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
