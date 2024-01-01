@@ -43,8 +43,8 @@ always @(*) begin
 					m1_b<=0;
 					m2_a<=0;
 					m2_b<=1;
-					dutycyc_left<=4'd7;
-					dutycyc_right<=4'd3;
+					dc1<=4'd10;
+					dc2<=4'd3;
 					{led1_R1,led2_R2,led3_R3} <= 2'b0;
 				   {led1_B1,led2_B2,led3_B3} <= 3'b111;
 					{led1_G1,led2_G2,led3_G3} <= 3'b0;
@@ -56,40 +56,48 @@ always @(*) begin
 						m1_b<=0;
 						m2_a<=1;	
 						m2_b<=0;
-						dutycyc_left<=4'd7;
-						dutycyc_right<=4'd4;
+						dc1<=4'd10;
+						dc2<=4'd2;
 						node_flag <= 0;
 	end
-	else if ( left > 1200 && right < 700) begin
+	else if ( left > 1300 && right < 700) begin
 						m1_a<=1; // *
 						m1_b<=0;
 						m2_a<=1;
 						m2_b<=0;
-						dutycyc_left<=4'd4;
-						dutycyc_right<=4'd7;
+						dc1<=4'd2;
+						dc2<=4'd10;
 						node_flag <= 0;
 	end
-	else if (left < 700 && middle > 1200  && right < 700) begin
+	else if (left < 700 && middle > 1200  && right < 700 ) begin
 						m1_a<=1;
 						m1_b<=0;
 						m2_a<=1;
 						m2_b<=0;
-						dutycyc_left<=4'd7;
-						dutycyc_right<=4'd7;
+						dc1<=4'd8;
+						dc2<=4'd8;
 						node_flag <= 0;
+	end					
+	else if (left<700 && middle < 700 && right < 700 )begin
+						m1_a<=1;
+						m1_b<=0;
+						m2_a<=1;	
+						m2_b<=0;
+						dc1<=4'd10;
+						dc2<=4'd2;
 	end
 
 
 	 if (left<700) read_left<=0;
     else read_left<=1;
 
-    if (middle>1000) read_center<=1;
+    if (middle>1300) read_center<=1;
     else read_center<=0;
 
      if (right<700) read_right<=0;
     else read_right<=1;
 
-    error <= ((3*read_right+1*read_center-3*read_left)-1)/(read_right+read_center+read_center); //weighted sum - 1/ sum
+    error <= (2*read_right+0*read_center-2*read_left)/(read_right+read_center+read_center); //weighted sum - 1/ sum
     proportional<= Kp * error;
     derivative <= Kd * (error-prev_error);
     integral <= integral + (Ki*error);
