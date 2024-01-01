@@ -20,56 +20,85 @@ module Line_Following(
 		);
 		
 reg [3:0]node=0;
+parameter Kp = 1;
+parameter Kd = 1;
+parameter Ki = 1;
+
+reg read_left, read_center,read_right ;
+reg [3:0]error;
+reg node_flag = 0;
+reg [3:0] dutycyc_left, dutycyc_right;
+reg [3:0]prev_error = 0;
+reg [3:0]proportional;
+reg [3:0]derivative;
+reg [3:0]integral= 0;
+reg [3:0] correction ;
 always @(*) begin
-	if (node!=5) begin
-			if ( left<12'd100 & middle>12'd100 & right<12'd100) begin
-						m1_a<=1;
-						m1_b<=0;
-						m2_a<=1;
-						m2_b<=0;
-						dc1<=4'd11;
-						dc2<=4'd11;
-			end
-			else if ( left<12'd100 & middle>12'd100 & right>12'd100) begin
-						m1_a<=1;
-						m1_b<=0;
-						m2_a<=0;
-						m2_b<=1;
-						dc1<=4'd7;
-						dc2<=4'd3;
-			end
-			else if ( left>12'd100 & middle<12'd100 & right<12'd100) begin
-						m1_a<=0;
-						m1_b<=0;
-						m2_a<=1;
-						m2_b<=0;
-						dc1<=4'd7;
-						dc2<=4'd3;
-			end
-	end
-	else begin
-			m1_a<=1;
-			m1_b<=0;
-			m2_a<=1;
-			m2_b<=0;
-			dc1<=4'd11;
-			dc2<=4'd11;
-	end
+
 		{led1_R1,led2_R2,led3_R3} <= 2'b0;
 	   {led1_B1,led2_B2,led3_B3} <= 3'b0;
 		{led1_G1,led2_G2,led3_G3} <= 3'b111;
-	if (left>12'd100 & middle>12'd100 & right>12'd100) begin
+	if (left>12'd1200 && middle>12'd1200 && right>12'd1200 && !node_flag) begin
 					m1_a<=1;
 					m1_b<=0;
 					m2_a<=0;
 					m2_b<=1;
-					dc1<=4'd7;
-					dc2<=4'd3;
-					node<=node+1;
+					dutycyc_left<=4'd7;
+					dutycyc_right<=4'd3;
 					{led1_R1,led2_R2,led3_R3} <= 2'b0;
-				   {led1_B1,led2_B2,led3_B3} <= 3'b0;
+				   {led1_B1,led2_B2,led3_B3} <= 3'b111;
 					{led1_G1,led2_G2,led3_G3} <= 3'b0;
+					node <= node + 1;
+					node_flag <= 1;  
 	end
+	else if ( right > 1200 && left < 700) begin
+						m1_a<=1;
+						m1_b<=0;
+						m2_a<=1;	
+						m2_b<=0;
+						dutycyc_left<=4'd7;
+						dutycyc_right<=4'd4;
+						node_flag <= 0;
+	end
+	else if ( left > 1200 && right < 700) begin
+						m1_a<=1; // *
+						m1_b<=0;
+						m2_a<=1;
+						m2_b<=0;
+						dutycyc_left<=4'd4;
+						dutycyc_right<=4'd7;
+						node_flag <= 0;
+	end
+	else if (left < 700 && middle > 1200  && right < 700) begin
+						m1_a<=1;
+						m1_b<=0;
+						m2_a<=1;
+						m2_b<=0;
+						dutycyc_left<=4'd7;
+						dutycyc_right<=4'd7;
+						node_flag <= 0;
+	end
+
+
+	 if (left<700) read_left<=0;
+    else read_left<=1;
+
+    if (middle>1000) read_center<=1;
+    else read_center<=0;
+
+     if (right<700) read_right<=0;
+    else read_right<=1;
+
+    error <= ((3*read_right+1*read_center-3*read_left)-1)/(read_right+read_center+read_center); //weighted sum - 1/ sum
+    proportional<= Kp * error;
+    derivative <= Kd * (error-prev_error);
+    integral <= integral + (Ki*error);
+
+    correction<=proportional+derivative+integral;
+    dc1<=dutycyc_left+correction;
+    dc2<=dutycyc_right-correction;	
+
+    prev_error<=error;
 end
 endmodule 
 		

@@ -12,11 +12,39 @@
 					"strict" : false
 				},
 				{
+					"name" : "led1_G1",
+					"strict" : false
+				},
+				{
+					"name" : "led1_B1",
+					"strict" : false
+				},
+				{
+					"name" : "led2_G2",
+					"strict" : false
+				},
+				{
+					"name" : "led2_B2",
+					"strict" : false
+				},
+				{
+					"name" : "led3_G3",
+					"strict" : false
+				},
+				{
+					"name" : "led3_B3",
+					"strict" : false
+				},
+				{
 					"name" : "A1",
 					"strict" : false
 				},
 				{
 					"name" : "A2",
+					"strict" : false
+				},
+				{
+					"name" : "B2",
 					"strict" : false
 				},
 				{
