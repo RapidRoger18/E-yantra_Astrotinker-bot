@@ -71,15 +71,9 @@ always@(posedge clk_50M)begin
 					else begin
 						msg_state <=1'b1;														//initiate msg FSM
 						flag <= 1;																//turn all the LEDs blue
-						led1_R1 <= 1'b0;
-						led1_B1 <= 1'b1;
-						led1_G1 <= 1'b0;
-						led2_R2 <= 1'b0;
-						led2_B2 <= 1'b1;
-						led2_G2 <= 1'b0;
-						led3_R3 <= 1'b0;
-						led3_B3 <= 1'b1;
-						led3_G3 <= 1'b0;
+					{led1_R1,led2_R2,led3_R3} <= 2'b000;
+				   {led1_B1,led2_B2,led3_B3} <= 3'b111;
+					{led1_G1,led2_G2,led3_G3} <= 3'b000;
 					end
 				end
 				prev_time_counter <= time_counter;

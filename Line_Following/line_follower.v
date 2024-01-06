@@ -19,6 +19,7 @@
 
 module line_follower(
 	clk_50M,
+	key,
 	dout,
 	adc_cs_n,
 	din,
@@ -37,13 +38,14 @@ module line_follower(
 	B2,
 	clk_3125Khz,
 	UV_echo,
-	UV_trig
-	
+	UV_trig,
+	fpga_LED
 );
 
 
 input wire	clk_50M;
 input wire	dout;
+input wire key;
 input wire UV_echo;
 output wire UV_trig;
 output wire	adc_cs_n;
@@ -62,6 +64,7 @@ output wire	B1;
 output wire	A2;
 output wire	B2;
 output wire	clk_3125Khz;
+output wire [7:0] fpga_LED;
 
 wire	SYNTHESIZED_WIRE_14;
 wire	[11:0] SYNTHESIZED_WIRE_1;
@@ -76,7 +79,7 @@ wire	SYNTHESIZED_WIRE_9;
 wire	[3:0] SYNTHESIZED_WIRE_11;
 wire	[3:0] SYNTHESIZED_WIRE_13;
 wire node_flag;
-wire [3:0] node;
+wire [7:0] node;
 
 assign	clk_3125Khz = SYNTHESIZED_WIRE_14;
 
@@ -92,29 +95,8 @@ ADC_Controller	b2v_inst(
 	.left_value(SYNTHESIZED_WIRE_1),
 	.right_value(SYNTHESIZED_WIRE_3));
 
-
-//Line_Following	b2v_inst2(
-//	.left(SYNTHESIZED_WIRE_1),
-//	.middle(SYNTHESIZED_WIRE_2),
-//	.right(SYNTHESIZED_WIRE_3),
-//	.m1_a(SYNTHESIZED_WIRE_5),
-//	.m1_b(SYNTHESIZED_WIRE_6),
-//	.m2_a(SYNTHESIZED_WIRE_8),
-//	.m2_b(SYNTHESIZED_WIRE_9),
-//	.led1_R1(led1_R1),
-//	.led1_G1(led1_G1),
-//	.led1_B1(led1_B1),
-//	.led2_R2(led2_R2),
-//	.led2_G2(led2_G2),
-//	.led2_B2(led2_B2),
-//	.led3_R3(led3_R3),
-//	.led3_G3(led3_G3),
-//	.led3_B3(led3_B3),
-//	.dc1(SYNTHESIZED_WIRE_11),
-//	.dc2(SYNTHESIZED_WIRE_13));
-
 Line_Following	b2v_inst2(
-//	.clk_3125(SYNTHESIZED_WIRE_14),
+	.clk_3125KHz(SYNTHESIZED_WIRE_14),
 	.left(SYNTHESIZED_WIRE_1),
 	.middle(SYNTHESIZED_WIRE_2),
 	.right(SYNTHESIZED_WIRE_3),
@@ -122,22 +104,15 @@ Line_Following	b2v_inst2(
 	.m1_b(SYNTHESIZED_WIRE_6),
 	.m2_a(SYNTHESIZED_WIRE_8),
 	.m2_b(SYNTHESIZED_WIRE_9),
-//	.led1_R1(led1_R1),
-//	.led1_G1(led1_G1),
-//	.led1_B1(led1_B1),
-//	.led2_R2(led2_R2),
-//	.led2_G2(led2_G2),
-//	.led2_B2(led2_B2),
-//	.led3_R3(led3_R3),
-//	.led3_G3(led3_G3),
-//	.led3_B3(led3_B3),
 	.dc1(SYNTHESIZED_WIRE_11),
 	.dc2(SYNTHESIZED_WIRE_13),
 	.node_flag(node_flag),
-	.node(node));
+	.node(node),
+	.fpga_LED(fpga_LED));
 
 
 demux	b2v_inst3(
+	.key(key),
 	.pwm_195(SYNTHESIZED_WIRE_4),
 	.m1a1(SYNTHESIZED_WIRE_5),
 	.m1b1(SYNTHESIZED_WIRE_6),
@@ -146,6 +121,7 @@ demux	b2v_inst3(
 
 
 demux	b2v_inst4(
+	.key(key),
 	.pwm_195(SYNTHESIZED_WIRE_7),
 	.m1a1(SYNTHESIZED_WIRE_8),
 	.m1b1(SYNTHESIZED_WIRE_9),
