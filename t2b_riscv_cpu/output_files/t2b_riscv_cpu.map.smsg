@@ -1,0 +1,2 @@
+Warning (10273): Verilog HDL warning at control_unit.v(86): extended using "x" or "z" File: /home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 86
+Warning (10273): Verilog HDL warning at control_unit.v(92): extended using "x" or "z" File: /home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes/control_unit.v Line: 92
