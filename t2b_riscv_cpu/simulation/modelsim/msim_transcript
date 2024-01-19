@@ -1,0 +1,319 @@
+# do t2b_riscv_cpu_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying /home/atharvak/Quartus/intelFPGA/20.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes {/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes/pc.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:29:06 on Jan 14,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes" /home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes/pc.v 
+# -- Compiling module PC
+# 
+# Top level modules:
+# 	PC
+# End time: 10:29:06 on Jan 14,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes {/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes/decoder.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:29:06 on Jan 14,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes" /home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes/decoder.v 
+# -- Compiling module decoder
+# 
+# Top level modules:
+# 	decoder
+# End time: 10:29:06 on Jan 14,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes {/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes/control_unit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:29:06 on Jan 14,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes" /home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes/control_unit.v 
+# -- Compiling module control_unit
+# 
+# Top level modules:
+# 	control_unit
+# End time: 10:29:06 on Jan 14,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes {/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes/alu.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:29:06 on Jan 14,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes" /home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes/alu.v 
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 10:29:06 on Jan 14,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes {/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes/registerfile.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:29:06 on Jan 14,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes" /home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes/registerfile.v 
+# -- Compiling module registerfile
+# 
+# Top level modules:
+# 	registerfile
+# End time: 10:29:06 on Jan 14,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/t2b_riscv_cpu {/home/atharvak/E-yantra23/t2b_riscv_cpu/data_mem.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:29:06 on Jan 14,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/t2b_riscv_cpu" /home/atharvak/E-yantra23/t2b_riscv_cpu/data_mem.v 
+# -- Compiling module data_mem
+# 
+# Top level modules:
+# 	data_mem
+# End time: 10:29:06 on Jan 14,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/t2b_riscv_cpu {/home/atharvak/E-yantra23/t2b_riscv_cpu/riscv_cpu.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:29:06 on Jan 14,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/t2b_riscv_cpu" /home/atharvak/E-yantra23/t2b_riscv_cpu/riscv_cpu.v 
+# -- Compiling module riscv_cpu
+# 
+# Top level modules:
+# 	riscv_cpu
+# End time: 10:29:06 on Jan 14,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/t2b_riscv_cpu {/home/atharvak/E-yantra23/t2b_riscv_cpu/t2b_riscv_cpu.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:29:06 on Jan 14,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/t2b_riscv_cpu" /home/atharvak/E-yantra23/t2b_riscv_cpu/t2b_riscv_cpu.v 
+# -- Compiling module t2b_riscv_cpu
+# 
+# Top level modules:
+# 	t2b_riscv_cpu
+# End time: 10:29:06 on Jan 14,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/t2b_riscv_cpu {/home/atharvak/E-yantra23/t2b_riscv_cpu/instr_mem.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:29:06 on Jan 14,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/t2b_riscv_cpu" /home/atharvak/E-yantra23/t2b_riscv_cpu/instr_mem.v 
+# -- Compiling module instr_mem
+# 
+# Top level modules:
+# 	instr_mem
+# End time: 10:29:06 on Jan 14,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/t2b_riscv_cpu/simulation/modelsim {/home/atharvak/E-yantra23/t2b_riscv_cpu/simulation/modelsim/tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:29:06 on Jan 14,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/t2b_riscv_cpu/simulation/modelsim" /home/atharvak/E-yantra23/t2b_riscv_cpu/simulation/modelsim/tb.v 
+# -- Compiling module tb
+# 
+# Top level modules:
+# 	tb
+# End time: 10:29:06 on Jan 14,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" tb 
+# Start time: 10:29:07 on Jan 14,2024
+# Loading work.tb
+# Loading work.t2b_riscv_cpu
+# Loading work.riscv_cpu
+# Loading work.PC
+# Loading work.alu
+# Loading work.control_unit
+# Loading work.decoder
+# Loading work.registerfile
+# Loading work.instr_mem
+# Loading work.data_mem
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run 5 ms
+# Expected NODE POINT =  0, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  1, Actual NODE POINT =          0
+# Error Count            1 -> Mismatch in Node Points, Check your design.
+# 
+# Expected NODE POINT =  2, Actual NODE POINT =          0
+# Error Count            2 -> Mismatch in Node Points, Check your design.
+# 
+# Expected NODE POINT =  3, Actual NODE POINT =          0
+# Error Count            3 -> Mismatch in Node Points, Check your design.
+# 
+# Expected NODE POINT =  4, Actual NODE POINT =          0
+# Error Count            4 -> Mismatch in Node Points, Check your design.
+# 
+# Expected NODE POINT =  6, Actual NODE POINT =          0
+# Error Count            5 -> Mismatch in Node Points, Check your design.
+# 
+# Expected NODE POINT =  7, Actual NODE POINT =          0
+# Error Count            6 -> Mismatch in Node Points, Check your design.
+# 
+# Expected NODE POINT =  0, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  0, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  0, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  0, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  0, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  0, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  0, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  0, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  0, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  x, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  x, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  x, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  x, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  x, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  x, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  x, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  x, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  x, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  x, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  x, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  x, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  x, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  x, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# 
+# stdin: <EOF>
+restart
+do /home/atharvak/E-yantra23/t2b_riscv_cpu/simulation/modelsim/wave.do
+restart
+run
+# Expected NODE POINT =  0, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  1, Actual NODE POINT =          0
+# Error Count            1 -> Mismatch in Node Points, Check your design.
+# 
+# Expected NODE POINT =  2, Actual NODE POINT =          0
+# Error Count            2 -> Mismatch in Node Points, Check your design.
+# 
+# Expected NODE POINT =  3, Actual NODE POINT =          0
+# Error Count            3 -> Mismatch in Node Points, Check your design.
+# 
+# Expected NODE POINT =  4, Actual NODE POINT =          0
+# Error Count            4 -> Mismatch in Node Points, Check your design.
+# 
+# Expected NODE POINT =  6, Actual NODE POINT =          0
+# Error Count            5 -> Mismatch in Node Points, Check your design.
+# 
+# Expected NODE POINT =  7, Actual NODE POINT =          0
+# Error Count            6 -> Mismatch in Node Points, Check your design.
+# 
+# Expected NODE POINT =  0, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  0, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  0, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  0, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  0, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  0, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  0, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  0, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  0, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  x, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  x, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  x, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  x, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  x, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  x, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  x, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  x, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  x, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  x, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  x, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  x, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  x, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
+# Expected NODE POINT =  x, Actual NODE POINT =          0
+# No Error in this Node Point.
+# 
