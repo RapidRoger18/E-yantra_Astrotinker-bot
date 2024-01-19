@@ -67,12 +67,11 @@ set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb
 set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "5 ms" -section_id tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb -section_id tb
 set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/tb.v -section_id tb
-set_global_assignment -name BDF_FILE riscv_cpu_block.bdf
-set_global_assignment -name VERILOG_FILE verilog_codes/registerfile.v
 set_global_assignment -name VERILOG_FILE verilog_codes/pc.v
 set_global_assignment -name VERILOG_FILE verilog_codes/decoder.v
 set_global_assignment -name VERILOG_FILE verilog_codes/control_unit.v
 set_global_assignment -name VERILOG_FILE verilog_codes/alu.v
+set_global_assignment -name VERILOG_FILE verilog_codes/registerfile.v
 set_global_assignment -name VERILOG_FILE instr_mem.v
 set_global_assignment -name VERILOG_FILE data_mem.v
 set_global_assignment -name VERILOG_FILE riscv_cpu.v

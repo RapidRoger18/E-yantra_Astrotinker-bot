@@ -2,8 +2,8 @@
 
 [ ! -z "${1}" ] && infile="${1}" || infile="t1b_path_planner.c"
 
-ARCH=rv32im
-ROM=2048 # 2048
+ARCH=rv32i
+ROM=2048
 RAM=256
 STACK=64
 

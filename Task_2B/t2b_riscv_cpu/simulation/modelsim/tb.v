@@ -42,16 +42,20 @@ initial begin
 
     reset = 1;
 
-    // write START_POINT variable as zero in the memory address 02000001
-    Ext_MemWrite = 1; Ext_WriteData = SP; Ext_DataAdr = 32'h02000001; #10;
+    // write START_POINT in the memory address 02000000
+    Ext_MemWrite = 1; Ext_WriteData = SP; Ext_DataAdr = 32'h02000000; #10;
     Ext_MemWrite = 0; Ext_WriteData = 00; Ext_DataAdr = 32'h0; #10;
 
-    // write END_POINT as 07 in the memory address 02000002
-    Ext_MemWrite = 1; Ext_WriteData = EP; Ext_DataAdr = 32'h02000002; #10;
+    // write END_POINT in the memory address 02000004
+    Ext_MemWrite = 1; Ext_WriteData = EP; Ext_DataAdr = 32'h02000004; #10;
     Ext_MemWrite = 0; Ext_WriteData = 00; Ext_DataAdr = 32'h0; #10;
 
-    // write NODE_POINT as 00 in the memory address 02000003
-    Ext_MemWrite = 1; Ext_WriteData = 00; Ext_DataAdr = 32'h02000003; #10;
+    // write NODE_POINT as 00 in the memory address 02000008
+    Ext_MemWrite = 1; Ext_WriteData = 00; Ext_DataAdr = 32'h02000008; #10;
+    Ext_MemWrite = 0; Ext_WriteData = 00; Ext_DataAdr = 32'h0; #10;
+
+    // write CPU_DONE as 00 in the memory address 0200000c
+    Ext_MemWrite = 1; Ext_WriteData = 00; Ext_DataAdr = 32'h0200000c; #10;
     Ext_MemWrite = 0; Ext_WriteData = 00; Ext_DataAdr = 32'h0; #10;
 
     reset = 0;
@@ -62,7 +66,7 @@ end
 
 always @(negedge clk) begin
     if(MemWrite && !reset) begin
-        if (DataAdr === 32'h02000003) begin
+        if (DataAdr === 32'h02000008) begin
             $display("Expected NODE POINT = %d, Actual NODE POINT = %d", register_array[i], WriteData);
             if (register_array[i] != WriteData || WriteData[0] === 1'bx) begin
                 error_count = error_count + 1'b1;
@@ -71,7 +75,7 @@ always @(negedge clk) begin
             else $display("No Error in this Node Point.\n");
             i = i + 1'b1;
         end
-        if (DataAdr === 32'h02000004 & WriteData === 32'h1) begin
+        if (DataAdr === 32'h0200000c & WriteData === 32'h1) begin
             fw = $fopen("results.txt","w");
             if (error_count === 0 && i != 0) begin
                 $fdisplay(fw, "%02h", "No Errors");

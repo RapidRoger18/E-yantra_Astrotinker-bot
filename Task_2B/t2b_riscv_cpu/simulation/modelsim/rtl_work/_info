@@ -8,51 +8,51 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 d/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/simulation/modelsim
+Z0 d/home/atharvak/E-yantra23/t2b_riscv_cpu/simulation/modelsim
 valu
-Z1 !s110 1700032965
+Z1 !s110 1705465122
 !i10b 1
 !s100 YI7f71@<KCS?^0fcjPH]i1
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
-I<BeR[agjZ7=CDN;`>7_421
+I>hl9FhQncE`6>eOf0SMf_0
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1700030977
-8/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/alu.v
-F/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/alu.v
-!i122 4
+w1700030976
+8/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes/alu.v
+F/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes/alu.v
+!i122 3
 L0 2 46
 Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1700032965.000000
-!s107 /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/alu.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes|/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/alu.v|
+Z5 !s108 1705465122.000000
+!s107 /home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes/alu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes|/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes/alu.v|
 !i113 1
 Z6 o-vlog01compat -work work
-Z7 !s92 -vlog01compat -work work +incdir+/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes
+Z7 !s92 -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes
 Z8 tCvgOpt 0
 vcontrol_unit
 R1
 !i10b 1
-!s100 `Da=CgjHOBII80jNodzDN2
+!s100 V[T@_5e]lcZbYanLHY[9o0
 R2
-IiD=L[BjeMd][Z=mT1AmJ72
+IYddbL1Uc=>0W2GzX6zD^K1
 R3
 R0
-w1700030842
-8/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v
-F/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v
-!i122 3
-L0 1 144
+w1705464608
+8/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes/control_unit.v
+F/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes/control_unit.v
+!i122 2
+L0 1 200
 R4
 r1
 !s85 0
 31
 R5
-!s107 /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes|/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/control_unit.v|
+!s107 /home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes/control_unit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes|/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes/control_unit.v|
 !i113 1
 R6
 R7
@@ -62,12 +62,12 @@ R1
 !i10b 1
 !s100 cSgAMTM]e`<Hged1CI=SB3
 R2
-IjT9Vch=aS=d[@=9Ja`U5z1
+IlkG>?h0k5bAaXegS15;EC2
 R3
 R0
-Z9 w1699846823
-8/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/data_mem.v
-F/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/data_mem.v
+w1705175331
+8/home/atharvak/E-yantra23/t2b_riscv_cpu/data_mem.v
+F/home/atharvak/E-yantra23/t2b_riscv_cpu/data_mem.v
 !i122 5
 L0 4 19
 R4
@@ -75,32 +75,32 @@ r1
 !s85 0
 31
 R5
-!s107 /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/data_mem.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu|/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/data_mem.v|
+!s107 /home/atharvak/E-yantra23/t2b_riscv_cpu/data_mem.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/atharvak/E-yantra23/t2b_riscv_cpu|/home/atharvak/E-yantra23/t2b_riscv_cpu/data_mem.v|
 !i113 1
 R6
-Z10 !s92 -vlog01compat -work work +incdir+/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu
+Z9 !s92 -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/t2b_riscv_cpu
 R8
 vdecoder
 R1
 !i10b 1
 !s100 ^[iiXiln<6bKa@?f[?<>d3
 R2
-Iao@KUPz4chcgIa=YINhAc2
+IXR<jR>3<i=2@3Re9fRo=h0
 R3
 R0
-R9
-8/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/decoder.v
-F/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/decoder.v
-!i122 2
+w1699846822
+8/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes/decoder.v
+F/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes/decoder.v
+!i122 1
 L0 1 94
 R4
 r1
 !s85 0
 31
 R5
-!s107 /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/decoder.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes|/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/decoder.v|
+!s107 /home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes/decoder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes|/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes/decoder.v|
 !i113 1
 R6
 R7
@@ -108,47 +108,47 @@ R8
 vinstr_mem
 R1
 !i10b 1
-!s100 Zm@]cALDSVe?ldIn==65P3
+!s100 34=WC5DP3=:>R;n=f:<;01
 R2
-IPE>ePYjAZI<4NjDoUNJEM2
+IdQ];^^Yc6OT1WFAPBdfi40
 R3
 R0
-R9
-8/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/instr_mem.v
-F/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/instr_mem.v
+w1698211750
+8/home/atharvak/E-yantra23/t2b_riscv_cpu/instr_mem.v
+F/home/atharvak/E-yantra23/t2b_riscv_cpu/instr_mem.v
 !i122 8
-L0 4 18
+L0 4 17
 R4
 r1
 !s85 0
 31
 R5
-!s107 /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/instr_mem.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu|/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/instr_mem.v|
+!s107 /home/atharvak/E-yantra23/t2b_riscv_cpu/instr_mem.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/atharvak/E-yantra23/t2b_riscv_cpu|/home/atharvak/E-yantra23/t2b_riscv_cpu/instr_mem.v|
 !i113 1
 R6
-R10
+R9
 R8
 vPC
 R1
 !i10b 1
-!s100 UEKR<bGNk_4>TjJ2]DeAM0
+!s100 2eMHQD`V6EHCclW6DZ<_h1
 R2
-Ifl5d<<>3cI4D994k9?[D;2
+IhW_QRDnWWSV`Fnn>1CgY43
 R3
 R0
-R9
-8/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v
-F/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v
-!i122 1
+w1700070891
+8/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes/pc.v
+F/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes/pc.v
+!i122 0
 L0 1 23
 R4
 r1
 !s85 0
 31
 R5
-!s107 /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes|/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/pc.v|
+!s107 /home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes/pc.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes|/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes/pc.v|
 !i113 1
 R6
 R7
@@ -159,21 +159,21 @@ R1
 !i10b 1
 !s100 i97J:4[A@Q<bf=lhPd2k90
 R2
-I1o>31NBR@m^P3g4EA`Kf61
+IaZ?nPWb^bSCQCh7e5L6m71
 R3
 R0
-w1700030491
-8/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v
-F/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v
-!i122 0
+w1700068259
+8/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes/registerfile.v
+F/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes/registerfile.v
+!i122 4
 L0 2 62
 R4
 r1
 !s85 0
 31
 R5
-!s107 /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes|/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/verilog_codes/registerfile.v|
+!s107 /home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes/registerfile.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes|/home/atharvak/E-yantra23/t2b_riscv_cpu/verilog_codes/registerfile.v|
 !i113 1
 R6
 R7
@@ -181,38 +181,38 @@ R8
 vriscv_cpu
 R1
 !i10b 1
-!s100 _3`=EXY^[]PR?D7:o<ETg0
+!s100 kiQJ8Wh8S@bJgV6LA5]CV0
 R2
-I>L[^^4C<oda=zg@F[Co^53
+IR_T3i8om[9YDF^?iTB2Rz1
 R3
 R0
-w1700031017
-8/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/riscv_cpu.v
-F/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/riscv_cpu.v
+w1700071318
+8/home/atharvak/E-yantra23/t2b_riscv_cpu/riscv_cpu.v
+F/home/atharvak/E-yantra23/t2b_riscv_cpu/riscv_cpu.v
 !i122 6
-L0 20 108
+L0 4 110
 R4
 r1
 !s85 0
 31
 R5
-!s107 /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/riscv_cpu.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu|/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/riscv_cpu.v|
+!s107 /home/atharvak/E-yantra23/t2b_riscv_cpu/riscv_cpu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/atharvak/E-yantra23/t2b_riscv_cpu|/home/atharvak/E-yantra23/t2b_riscv_cpu/riscv_cpu.v|
 !i113 1
 R6
-R10
+R9
 R8
 vt2b_riscv_cpu
 R1
 !i10b 1
-!s100 mf>MVAQFXSkg^_@H8@5VU1
+!s100 Ok;H?=kWRhRcddT@L3;W81
 R2
-IXU5e9Q<dk[nIW<H<ePn9g3
+IN?iiZ5;]:S`5WPh2U=?D23
 R3
 R0
-R9
-8/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/t2b_riscv_cpu.v
-F/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/t2b_riscv_cpu.v
+w1698142454
+8/home/atharvak/E-yantra23/t2b_riscv_cpu/t2b_riscv_cpu.v
+F/home/atharvak/E-yantra23/t2b_riscv_cpu/t2b_riscv_cpu.v
 !i122 7
 L0 17 24
 R4
@@ -220,33 +220,33 @@ r1
 !s85 0
 31
 R5
-!s107 /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/t2b_riscv_cpu.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu|/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/t2b_riscv_cpu.v|
+!s107 /home/atharvak/E-yantra23/t2b_riscv_cpu/t2b_riscv_cpu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/atharvak/E-yantra23/t2b_riscv_cpu|/home/atharvak/E-yantra23/t2b_riscv_cpu/t2b_riscv_cpu.v|
 !i113 1
 R6
-R10
+R9
 R8
 vtb
 R1
 !i10b 1
-!s100 IXeF0cCKQW`:8hZegckC?1
+!s100 YmX5GZ5knY=g?g6]ho1EK0
 R2
-I7;T:LEfH>[fFV=7PU8M^f3
+IFX[N75kMX0_:Y1]gj>Ba83
 R3
 R0
-R9
-8/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/simulation/modelsim/tb.v
-F/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/simulation/modelsim/tb.v
+w1698162269
+8/home/atharvak/E-yantra23/t2b_riscv_cpu/simulation/modelsim/tb.v
+F/home/atharvak/E-yantra23/t2b_riscv_cpu/simulation/modelsim/tb.v
 !i122 9
-L0 3 88
+L0 3 92
 R4
 r1
 !s85 0
 31
 R5
-!s107 /home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/simulation/modelsim/tb.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/simulation/modelsim|/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/simulation/modelsim/tb.v|
+!s107 /home/atharvak/E-yantra23/t2b_riscv_cpu/simulation/modelsim/tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/atharvak/E-yantra23/t2b_riscv_cpu/simulation/modelsim|/home/atharvak/E-yantra23/t2b_riscv_cpu/simulation/modelsim/tb.v|
 !i113 1
 R6
-!s92 -vlog01compat -work work +incdir+/home/saish_k/E-yantra_Astrotinker-bot/Task_2B/t2b_riscv_cpu/simulation/modelsim
+!s92 -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/t2b_riscv_cpu/simulation/modelsim
 R8

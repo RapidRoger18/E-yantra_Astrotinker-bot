@@ -6,7 +6,7 @@ module PC(
 	
 	output[31:0] out
 );
-   reg [31:0] next_pc = 32'b0;
+   reg [31:0] next_pc = 32'd0;
    
    always @ (posedge clk) begin
 		if(reset)

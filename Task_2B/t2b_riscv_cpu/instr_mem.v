@@ -10,7 +10,6 @@ module instr_mem #(parameter DATA_WIDTH = 32, ADDR_WIDTH = 32, MEM_SIZE = 512) (
 reg [DATA_WIDTH-1:0] instr_ram [0:MEM_SIZE-1];
 
 initial begin
-    // $readmemh("riscv_cpu_test.hex", RAM);
     $readmemh("program_dump.hex", instr_ram);
 end
 
