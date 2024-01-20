@@ -159,7 +159,7 @@ int temp;
         }
     }
     temp=START_POINT;
-   
+    
     for(int z=0;z<30;z++){                        // loop to print planned path
         if(parent[temp]==-1)
         { path_planned[z]=(temp);
