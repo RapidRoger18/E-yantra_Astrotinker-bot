@@ -1,0 +1,121 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "UV_trig",
+					"strict" : false
+				},
+				{
+					"name" : "adc_cs_n",
+					"strict" : false
+				},
+				{
+					"name" : "adc_din",
+					"strict" : false
+				},
+				{
+					"name" : "led1_G1",
+					"strict" : false
+				},
+				{
+					"name" : "led2_G2",
+					"strict" : false
+				},
+				{
+					"name" : "led3_G3",
+					"strict" : false
+				},
+				{
+					"name" : "motor_A1",
+					"strict" : false
+				},
+				{
+					"name" : "motor_B1",
+					"strict" : false
+				},
+				{
+					"name" : "motor_A2",
+					"strict" : false
+				},
+				{
+					"name" : "motor_B2",
+					"strict" : false
+				},
+				{
+					"name" : "adc_clk_3125Khz",
+					"strict" : false
+				},
+				{
+					"name" : "fpga_LED[0]",
+					"strict" : false
+				},
+				{
+					"name" : "fpga_LED[1]",
+					"strict" : false
+				},
+				{
+					"name" : "fpga_LED[2]",
+					"strict" : false
+				},
+				{
+					"name" : "fpga_LED[3]",
+					"strict" : false
+				},
+				{
+					"name" : "fpga_LED[4]",
+					"strict" : false
+				},
+				{
+					"name" : "fpga_LED[5]",
+					"strict" : false
+				},
+				{
+					"name" : "fpga_LED[6]",
+					"strict" : false
+				},
+				{
+					"name" : "fpga_LED[7]",
+					"strict" : false
+				},
+				{
+					"name" : "transmit_data",
+					"strict" : false
+				},
+				{
+					"name" : "clk_50M",
+					"strict" : false
+				},
+				{
+					"name" : "key",
+					"strict" : false
+				},
+				{
+					"name" : "UV_echo",
+					"strict" : false
+				},
+				{
+					"name" : "adc_dout",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tms",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tck",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdi",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdo",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

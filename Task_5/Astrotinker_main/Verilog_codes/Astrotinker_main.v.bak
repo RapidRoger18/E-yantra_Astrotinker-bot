@@ -1,0 +1,97 @@
+module Astrotinker_main(
+	clk_50M,
+	adc_dout,
+	key,
+	UV_echo,
+	UV_trig,
+	adc_cs_n,
+	adc_din,
+	led1_R1,
+	led1_G1,
+	led1_B1,
+	led2_R2,
+	led2_G2,
+	led2_B2,
+	led3_R3,
+	led3_G3,
+	led3_B3,
+	motor_A1,
+	motor_B1,
+	motor_A2,
+	motor_B2,
+	adc_clk_3125Khz,
+	fpga_LED,
+	transmit_data,
+	receive_data,
+);
+
+input wire	clk_50M;
+input wire	adc_dout;
+input wire key;
+input wire UV_echo;
+output wire UV_trig;
+output wire	adc_cs_n;
+output wire	adc_din;
+output wire	led1_R1;
+output wire	led1_G1;
+output wire	led1_B1;
+output wire	led2_R2;
+output wire	led2_G2;
+output wire	led2_B2;
+output wire	led3_R3;
+output wire	led3_G3;
+output wire	led3_B3;
+output wire	motor_A1;
+output wire	motor_B1;
+output wire	motor_A2;
+output wire	motor_B2;
+output wire	adc_clk_3125Khz;
+output wire [7:0] fpga_LED;
+output wire transmit_data;
+output wire receive_data;
+
+wire CPU_reset;
+wire CPU_Ext_MemWrite_flag;
+wire [31:0] CPU_Ext_WriteData, CPU_Ext_DataAdr;
+wire CPU_MemWrite_flag;
+wire [31:0] CPU_WriteData, CPU_DataAdr, CPU_ReadData;
+
+main_module b2v_inst1(
+	.clk_50M(clk_50M),
+	.key(key),
+	.dout(adc_dout),
+	.adc_cs_n(adc_cs_in),
+	.din(adc_din),
+	.led1_R1(led1_R1),
+	.led1_G1(led1_G1),
+	.led1_B1(led1_B1),
+	.led2_R2(led2_R2),
+	.led2_G2(led2_G2),
+	.led2_B2(led2_B2),
+	.led3_R3(led3_R3),
+	.led3_G3(led3_G3),
+	.led3_B3(led3_B3),
+	.A1(motor_A1),
+	.B1(motor_B1),
+	.A2(motor_A2),
+	.B2(motor_B2),
+	.clk_3125Khz(adc_clk_3125Khz),
+	.UV_echo(UV_echo),
+	.UV_trig(UV_trig),
+	.fpga_LED(fpga_LED),
+	.transmit_data(transmit_data),
+	.receive_data(receive_data)
+);
+
+t2b_riscv_cpu b2v_inst2(
+	.clk(clk_50M),
+	.reset(CPU_reset),
+   .Ext_MemWrite(CPU_Ext_MemWrite_flag),
+   .Ext_WriteData(CPU_Ext_WriteData), 
+	.Ext_DataAdr(CPU_Ext_DataAdr),
+   .MemWrite(CPU_MemWrite_flag),
+   .WriteData(CPU_WriteData), 
+	.DataAdr(CPU_DataAdr), 
+	.ReadData(CPU_ReadData)
+);
+endmodule 
