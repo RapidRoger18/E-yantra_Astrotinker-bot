@@ -16,7 +16,19 @@
 					"strict" : false
 				},
 				{
+					"name" : "led1_R1",
+					"strict" : false
+				},
+				{
 					"name" : "led1_G1",
+					"strict" : false
+				},
+				{
+					"name" : "led1_B1",
+					"strict" : false
+				},
+				{
+					"name" : "led2_R2",
 					"strict" : false
 				},
 				{
@@ -24,7 +36,19 @@
 					"strict" : false
 				},
 				{
+					"name" : "led2_B2",
+					"strict" : false
+				},
+				{
+					"name" : "led3_R3",
+					"strict" : false
+				},
+				{
 					"name" : "led3_G3",
+					"strict" : false
+				},
+				{
+					"name" : "led3_B3",
 					"strict" : false
 				},
 				{
@@ -84,15 +108,19 @@
 					"strict" : false
 				},
 				{
+					"name" : "EM_A1",
+					"strict" : false
+				},
+				{
 					"name" : "clk_50M",
 					"strict" : false
 				},
 				{
-					"name" : "key",
+					"name" : "UV_echo",
 					"strict" : false
 				},
 				{
-					"name" : "UV_echo",
+					"name" : "key",
 					"strict" : false
 				},
 				{
