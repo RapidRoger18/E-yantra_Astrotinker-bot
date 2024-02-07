@@ -20,10 +20,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "led1_G1",
-					"strict" : false
-				},
-				{
 					"name" : "led1_B1",
 					"strict" : false
 				},
@@ -32,19 +28,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "led2_G2",
-					"strict" : false
-				},
-				{
 					"name" : "led2_B2",
 					"strict" : false
 				},
 				{
 					"name" : "led3_R3",
-					"strict" : false
-				},
-				{
-					"name" : "led3_G3",
 					"strict" : false
 				},
 				{
@@ -69,38 +57,6 @@
 				},
 				{
 					"name" : "adc_clk_3125Khz",
-					"strict" : false
-				},
-				{
-					"name" : "fpga_LED[0]",
-					"strict" : false
-				},
-				{
-					"name" : "fpga_LED[1]",
-					"strict" : false
-				},
-				{
-					"name" : "fpga_LED[2]",
-					"strict" : false
-				},
-				{
-					"name" : "fpga_LED[3]",
-					"strict" : false
-				},
-				{
-					"name" : "fpga_LED[4]",
-					"strict" : false
-				},
-				{
-					"name" : "fpga_LED[5]",
-					"strict" : false
-				},
-				{
-					"name" : "fpga_LED[6]",
-					"strict" : false
-				},
-				{
-					"name" : "fpga_LED[7]",
 					"strict" : false
 				},
 				{

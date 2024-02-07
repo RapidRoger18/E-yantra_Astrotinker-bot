@@ -73,7 +73,7 @@ wire	[4:0] SYNTHESIZED_WIRE_11;
 wire	[4:0] SYNTHESIZED_WIRE_13;
 wire clk_95Hz;
 wire node_flag;
-wire turn_flag;
+wire [1:0] turn_flag;
 wire [7:0] node;
 wire key_flag;
 wire fault_detect;
@@ -82,6 +82,7 @@ wire object_drop;
 wire [7:0] tx_data;
 wire [7:0] rx_msg;
 wire rx_complete;
+wire node_changed;
 
 t2b_riscv_cpu b2v_inst0(
 	.clk(clk_50M),
@@ -124,7 +125,7 @@ ADC_Controller	b2v_inst2(
 Line_Following	b2v_inst3(
 	.key(key),
 	.switch_on(key_flag),
-	.clk_3125KHz(adc_clk_3125Khz),
+	.clk_50M(clk_50M),
 	.left(SYNTHESIZED_WIRE_1),
 	.middle(SYNTHESIZED_WIRE_2),
 	.right(SYNTHESIZED_WIRE_3),
@@ -136,8 +137,9 @@ Line_Following	b2v_inst3(
 	.dc1(SYNTHESIZED_WIRE_11),
 	.dc2(SYNTHESIZED_WIRE_13),
 	.node_flag(node_flag),
-	.node(node),
-	.fpga_LED(fpga_LED)
+//	.node(node),
+//	.fpga_LED(fpga_LED),
+	.node_changed(node_changed)
 );
 frequency_scaling	b2v_inst4(
 	.clk_50M(clk_50M),
@@ -159,7 +161,8 @@ pwm_generator	b2v_inst6(
 	.motor_a(SYNTHESIZED_WIRE_8),
 	.motor_b(SYNTHESIZED_WIRE_9),
 	.motor_A(motor_A2),
-	.motor_B(motor_B2));
+	.motor_B(motor_B2)
+	);
 
 Fault_detection b2v_inst7(
 	.key_flag(key_flag),
@@ -204,12 +207,13 @@ uart_rx b2v_inst10(
 );
 path_mapping b2v_inst11(
 	.clk_50M(clk_50M),
-	.CPU_start(CPU_start),
+//	.CPU_start(CPU_start),
 	.node_flag(node_flag),
 	.turn_flag(turn_flag),
-	.path_planned(path_planned),
-	.path_input(CPU_stop_flag),
-	.SP(CPU_dijkstra_SP),
-	.EP(CPU_dijkstra_EP)
+	.node_changed(node_changed),
+//	.path_planned(path_planned),
+//	.path_input(CPU_stop_flag),
+//	.SP(CPU_dijkstra_SP),
+//	.EP(CPU_dijkstra_EP)
 );
 endmodule 

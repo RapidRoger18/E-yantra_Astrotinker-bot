@@ -1,4 +1,10 @@
 
+State Machine - |Astrotinker_main|path_mapping:b2v_inst11|STATE
+Name STATE.00 STATE.10 STATE.01 
+STATE.00 0 0 0 
+STATE.01 1 0 1 
+STATE.10 1 1 0 
+
 State Machine - |Astrotinker_main|uart_rx:b2v_inst10|state
 Name state.11 state.10 state.01 state.00 
 state.00 0 0 0 0 
