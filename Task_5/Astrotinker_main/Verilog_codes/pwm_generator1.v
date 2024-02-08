@@ -32,7 +32,7 @@ end
 //////////////////DO NOT MAKE ANY CHANGES ABOVE THIS LINE//////////////////
 
 
-reg [8:0] counter=0;
+reg [11:0] counter=0;
 
 always @(posedge clk_3125KHz) begin
 	if (!counter) clk_95Hz = ~clk_95Hz;

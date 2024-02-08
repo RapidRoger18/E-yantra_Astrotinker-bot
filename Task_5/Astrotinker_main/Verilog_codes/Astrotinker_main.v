@@ -83,6 +83,7 @@ wire [7:0] tx_data;
 wire [7:0] rx_msg;
 wire rx_complete;
 wire node_changed;
+assign fpga_led= turn_flag;
 
 t2b_riscv_cpu b2v_inst0(
 	.clk(clk_50M),
@@ -125,7 +126,7 @@ ADC_Controller	b2v_inst2(
 Line_Following	b2v_inst3(
 	.key(key),
 	.switch_on(key_flag),
-	.clk_50M(clk_50M),
+	.clk_3125KHz(adc_clk_3125Khz),
 	.left(SYNTHESIZED_WIRE_1),
 	.middle(SYNTHESIZED_WIRE_2),
 	.right(SYNTHESIZED_WIRE_3),
@@ -206,7 +207,7 @@ uart_rx b2v_inst10(
 	.rx_complete(rx_complete)
 );
 path_mapping b2v_inst11(
-	.clk_50M(clk_50M),
+	.clk_3125KHz(adc_clk_3125Khz),
 //	.CPU_start(CPU_start),
 	.node_flag(node_flag),
 	.turn_flag(turn_flag),

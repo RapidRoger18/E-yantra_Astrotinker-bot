@@ -1,28 +1,25 @@
 module path_mapping(
 		input node_flag,
-		input clk_50M,
+		input clk_3125KHz,
 //		input path_input,
 //		input CPU_start,
 //		input [4:0] path_planned,
 		input node_changed,
-		output reg [1:0] turn_flag,
+		output  [1:0] turn_flag,
 		output reg [4:0] realtime_pos 
 //		output [4:0] SP,EP
 );
-parameter STRAIGHT = 0;
-parameter LEFT = 3;
-parameter RIGHT = 1;
-parameter U_TURN = 2;
-
 reg [1:0] STATE = 0;
-reg [1:0] curr_dir=0,next_dir=0;
-reg [1:0] diff;
+reg [1:0] curr_dir=0;
+reg [1:0] next_dir=0;
 reg [19:0] node_rel [29:0];
-reg [4:0] path_planned_array [15:0];
+reg [4:0] path_planned_array [4:0];
 reg [4:0] j=0,k=0;
 reg [4:0] curr_node,next_node;
 reg [19:0] temp;
 reg [3:0] idx = 0;
+reg [1:0] turn;
+reg [1:0] diff;
 
 
  initial begin
@@ -69,7 +66,7 @@ reg [3:0] idx = 0;
 //		path_planned_array[8] <= 5'd0;
 end 
 
-always @(posedge clk_50M) begin
+always @(posedge clk_3125KHz) begin
 //		if (path_input) begin
 //			path_planned_array[idx] <= path_planned;
 //			idx <= idx + 1;
@@ -85,14 +82,9 @@ always @(posedge clk_50M) begin
 				curr_node<=path_planned_array[j];
 				next_node<=path_planned_array[j+1];
 				k<=0;
-//				if (j != 0) begin
-					STATE <= 2'b10;
-					curr_dir<=next_dir;
-//				end
-				
+				STATE <= 2'b01;
+				curr_dir<= next_dir;
 			end
-//			if (j==0)
-//			STATE<=2'b01;
 			case(STATE)
 				2'b00:begin
 				end
@@ -104,76 +96,31 @@ always @(posedge clk_50M) begin
 							5'd10 : next_dir <= 1;                             
 							5'd15 : next_dir <= 0;                             
 						endcase
-						j <= j + 1;
-						STATE <= 2'b00;
+						STATE <= 2'b10;
 					end
 					else k <= k + 5;
 				end
-				2'b10: begin
-					if ( {temp[k+4],temp[k+3],temp[k+2],temp[k+1],temp[k]}==next_node ) begin
-						case(k) 
-							5'd0  : next_dir <= 3; 									  
-							5'd5  : next_dir <= 2;                              
-							5'd10 : next_dir <= 1;                             
-							5'd15 : next_dir <= 0;                             
-						endcase
-						if(next_dir > curr_dir) begin 
-							diff <= next_dir - curr_dir;
-							case (diff)
-								2'd0: turn_flag <= 2'd0;                   //redundant
-								2'd1: turn_flag <= 2'd1;
-								2'd2: turn_flag <= 2'd2;
-								2'd3: turn_flag <= 2'd3;
+				2'b10:begin 
+					if(next_dir > curr_dir) begin
+							case (next_dir - curr_dir)
+								2'd0: turn <= 2'd0;                   //redundant
+								2'd1: turn <= 2'd1;
+								2'd2: turn <= 2'd2;
+								2'd3: turn <= 2'd3;
 							endcase
-						end
-						else begin
-							diff <= curr_dir - next_dir;
-							case (diff)
-								2'd0: turn_flag <= 2'd0;
-								2'd1: turn_flag <= 2'd3;
-								2'd2: turn_flag <= 2'd2;
-								2'd3: turn_flag <= 2'd1;
-							endcase 
-						end
-						STATE <= 2'b00;
-						j <= j + 1;
 					end
-					else k <= k + 5;
+					else begin
+						case (curr_dir - next_dir)
+							2'd0: turn <= 2'd0;
+							2'd1: turn <= 2'd3;
+							2'd2: turn <= 2'd2;
+							2'd3: turn <= 2'b1;
+						endcase 
+					end
+					STATE <= 1'b0;
+					j <= j + 1;
 				end
 			endcase
-//			node_changed<=0;
-						
-//					next_node<=path_planned_array[j+1];
-//					if ({temp[k+4],temp[k+3],temp[k+2],temp[k+1],temp[k]}==next_node) begin
-//							case(k+4) 
-//									5'd4  : curr_dir[d]<=3; 									  
-//									5'd9  : curr_dir[d]<=2;                              
-//									5'd14 : curr_dir[d]<=1;                             
-//									5'd19 : curr_dir[d]<=0;                             
-//							endcase
-//							if (d!=0) prev_dir<=curr_dir[d-1];
-//							else prev_dir<=2'dx;
-//							d<=d+1;
-//							if(prev_dir>curr_dir) begin
-//									diff<= prev_dir - curr_dir;
-//									case (diff) 
-//											0 : turn_flag<=0;
-//											1 : turn_flag<=3; 
-//											2 : turn_flag<=2;
-//									endcase
-//							end
-//							else begin
-//									diff<=curr_dir - prev_dir;
-//									case (diff) 
-//											0 : turn_flag<=0;
-//											1 : turn_flag<=1;
-//											2 : turn_flag<=2;	
-//									endcase
-//							end
-//					end
-//					else k<=k+5;
-//					j<=j+1;
-//			end
-//		end
 end
+assign turn_flag=turn;
 endmodule 

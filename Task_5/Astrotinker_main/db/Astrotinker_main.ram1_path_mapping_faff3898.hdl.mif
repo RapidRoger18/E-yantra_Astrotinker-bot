@@ -2,23 +2,12 @@
 -- path_mapping
 -- end_signature
 WIDTH=5;
-DEPTH=16;
+DEPTH=5;
 
 ADDRESS_RADIX=UNS;
 DATA_RADIX=BIN;
 
 CONTENT BEGIN
-	15 :	XXXXX;
-	14 :	XXXXX;
-	13 :	XXXXX;
-	12 :	XXXXX;
-	11 :	XXXXX;
-	10 :	XXXXX;
-	9 :	XXXXX;
-	8 :	XXXXX;
-	7 :	XXXXX;
-	6 :	XXXXX;
-	5 :	XXXXX;
 	4 :	00111;
 	3 :	01000;
 	2 :	00010;

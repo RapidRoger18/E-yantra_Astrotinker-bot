@@ -1,6 +1,6 @@
 
 module Line_Following(
-		input clk_50M,
+		input clk_3125KHz,
 		input key,
 		input   [11:0] left,		// LFA left sensor
 		input   [11:0] middle,		// LFA middle sensor
@@ -23,7 +23,7 @@ reg [9:0] node_delay;
 reg is_str,is_left,is_right,all_white = 0;
 
 
-always @(posedge clk_50M) begin
+always @(posedge clk_3125KHz) begin
 	if(key)begin
 		switch_on <= 1;
 	end
@@ -42,20 +42,20 @@ always @(posedge clk_50M) begin
 		if (node_flag) begin
 								case(turn_flag)
 										0: begin
-												m1_a<=1;
-												m1_b<=0;
-												m2_a<=1;
-												m2_b<=0; 
-												dutycyc_left<=5'd16;
-												dutycyc_right<=5'd16;
+												m1_a<=0;
+												m1_b<=1;
+												m2_a<=0;
+												m2_b<=1; 
+												dutycyc_left<=5'd10;
+												dutycyc_right<=5'd10;
 										end
 										1: begin
 												m1_a<=1;
 												m1_b<=0;
 												m2_a<=0;
 												m2_b<=1;
-												dutycyc_left<=5'd18;
-												dutycyc_right<=5'd1;
+												dutycyc_left<=5'd20;
+												dutycyc_right<=5'd10;
 										end
 										2: begin
 												m1_a<=1;
@@ -70,8 +70,8 @@ always @(posedge clk_50M) begin
 												m1_b<=1;
 												m2_a<=1;
 												m2_b<=0;
-												dutycyc_left<=5'd1;
-												dutycyc_right<=5'd18;
+												dutycyc_left<=5'd10;
+												dutycyc_right<=5'd20;
 										end
 								endcase
 		end
@@ -84,7 +84,7 @@ always @(posedge clk_50M) begin
 							dutycyc_left<=5'd20;
 							dutycyc_right<=5'd10;
 							is_right<=0;
-							node_flag<=0;
+//							node_flag<=0;
 		end
 		else if (is_left) begin
 							m1_a<=0; // *
@@ -94,20 +94,20 @@ always @(posedge clk_50M) begin
 							dutycyc_left<=5'd10;
 							dutycyc_right<=5'd20;
 							is_left<=0;
-							node_flag<=0;
+//							node_flag<=0;
 		end
 		else if (is_str) begin
 							m1_a<=1;
 							m1_b<=0;
 							m2_a<=1;
 							m2_b<=0;
-							dutycyc_left <= 5'd16;
-							dutycyc_right<= 5'd16;
+							dutycyc_left <= 5'd10;
+							dutycyc_right<= 5'd10;
 							node_delay <=0;
 							is_str<=0;
 							is_left<=0;
 							is_right<=0;
-							node_flag<=0;
+//							node_flag<=0;
 		end
 		dc1<=dutycyc_left;
 		dc2<=dutycyc_right;
