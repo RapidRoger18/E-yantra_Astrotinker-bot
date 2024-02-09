@@ -1,0 +1,16 @@
+-- begin_signature
+-- Line_Following
+-- end_signature
+WIDTH=5;
+DEPTH=5;
+
+ADDRESS_RADIX=UNS;
+DATA_RADIX=BIN;
+
+CONTENT BEGIN
+	4 :	XXXXX;
+	3 :	00010;
+	2 :	00011;
+	1 :	00001;
+	0 :	00011;
+END;
