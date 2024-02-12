@@ -1,5 +1,5 @@
 EDA Netlist Writer report for Astrotinker_main
-Fri Feb  9 11:40:04 2024
+Fri Feb  9 18:27:21 2024
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Fri Feb  9 11:40:04 2024 ;
+; EDA Netlist Writer Status ; Successful - Fri Feb  9 18:27:21 2024 ;
 ; Revision Name             ; Astrotinker_main                      ;
 ; Top-level Entity Name     ; Astrotinker_main                      ;
 ; Family                    ; Cyclone IV E                          ;
@@ -81,14 +81,14 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Fri Feb  9 11:40:02 2024
+    Info: Processing started: Fri Feb  9 18:27:19 2024
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off Astrotinker_main -c Astrotinker_main
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file Astrotinker_main.vo in folder "/home/atharv/e-yantra/Task_5/Astrotinker_main/simulation/modelsim/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 611 megabytes
-    Info: Processing ended: Fri Feb  9 11:40:04 2024
+    Info: Peak virtual memory: 608 megabytes
+    Info: Processing ended: Fri Feb  9 18:27:21 2024
     Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
 
 

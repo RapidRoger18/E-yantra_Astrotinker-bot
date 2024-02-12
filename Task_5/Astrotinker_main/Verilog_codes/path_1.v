@@ -13,7 +13,7 @@ reg [1:0] STATE = 0;
 reg [1:0] curr_dir=0;
 reg [1:0] next_dir=0;
 reg [19:0] node_rel [29:0];
-reg [4:0] path_planned_array [5:0];
+reg [4:0] path_planned_array [4:0];
 reg [4:0] j=0,k=0;
 reg [4:0] curr_node,next_node;
 reg [19:0] temp;
@@ -60,7 +60,6 @@ reg [1:0] diff;
 		path_planned_array[2] <= 5'd2;
 		path_planned_array[3] <= 5'd8;
 		path_planned_array[4] <= 5'd7;
-		path_planned_array[5] <= 5'd6;
 //		path_planned_array[5] <= 5'd8;
 //		path_planned_array[6] <= 5'd2;
 //		path_planned_array[7] <= 5'd1;
@@ -69,8 +68,8 @@ end
 
 always @(posedge clk_3125KHz) begin
 //		if (path_input) begin
-//			path_planned_array[idx] <path_planned;
-//			idx <= idx + 1;
+//			path_planned_array[idx] <= path_planned;
+//			idx <= idx + 1;`
 //		end
 //		else begin
 			idx <= 0;

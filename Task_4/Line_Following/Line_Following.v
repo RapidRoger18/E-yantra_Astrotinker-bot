@@ -8,8 +8,8 @@ module Line_Following(
 		output  reg m1_b,
 		output  reg m2_a,
 		output  reg m2_b,
-		output reg [3:0]dc1,
-		output reg [3:0]dc2,
+		output reg [3:0] dc1,
+		output reg [3:0] dc2,
 		output reg node_flag=0,
 		output reg [7:0] node = 0,
 		output reg [7:0] fpga_LED,
@@ -22,7 +22,7 @@ always @(posedge clk_3125KHz) begin
 		switch_on <= 1;
 	end
 	if(switch_on) begin	
-		if (left>12'd1000 && middle>12'd1000 && right>12'd1000) begin
+		if (left > 12'd1000 && middle > 12'd1000 && right > 12'd1000) begin
 						if (node != 5) begin
 							m1_a<=1;
 							m1_b<=0;

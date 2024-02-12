@@ -124,8 +124,8 @@ ADC_Controller	b2v_inst2(
 	.right_value(SYNTHESIZED_WIRE_3));
 
 Line_Following	b2v_inst3(
-//	.key(key),
-//	.switch_on(key_flag),
+	.key(key),
+	.switch_on(key_flag),
 	.clk_3125KHz(adc_clk_3125Khz),
 	.left(SYNTHESIZED_WIRE_1),
 	.middle(SYNTHESIZED_WIRE_2),
@@ -207,7 +207,7 @@ uart_rx b2v_inst10(
 	.rx_complete(rx_complete)
 );
 path_mapping b2v_inst11(
-	.clk_3125KHz(clk_3125Khz),
+	.clk_3125KHz(adc_clk_3125Khz),
 //	.CPU_start(CPU_start),
 	.node_flag(node_flag),
 	.turn_flag(turn_flag),

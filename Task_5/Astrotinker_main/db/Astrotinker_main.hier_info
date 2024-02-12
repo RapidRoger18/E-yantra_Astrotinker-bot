@@ -1,7 +1,7 @@
 |Astrotinker_main
 clk_50M => clk_50M.IN6
 adc_dout => adc_dout.IN1
-key => ~NO_FANOUT~
+key => key.IN1
 UV_echo => UV_echo.IN1
 UV_trig <= Fault_detection:b2v_inst7.UV_trig
 adc_cs_n <= ADC_Controller:b2v_inst2.adc_cs_n
@@ -7409,6 +7409,8 @@ clk_3125KHz => is_str.CLK
 clk_3125KHz => is_left.CLK
 clk_3125KHz => is_right.CLK
 clk_3125KHz => node_flag~reg0.CLK
+clk_3125KHz => switch_on~reg0.CLK
+key => switch_on~reg0.ENA
 left[0] => LessThan1.IN24
 left[0] => LessThan3.IN24
 left[1] => LessThan1.IN23
@@ -7482,15 +7484,14 @@ right[10] => LessThan5.IN14
 right[11] => LessThan0.IN13
 right[11] => LessThan5.IN13
 turn_flag[0] => Decoder0.IN1
-turn_flag[0] => dutycyc_left.DATAB
 turn_flag[1] => Decoder0.IN0
-turn_flag[1] => dutycyc_left.DATAB
 turn_flag[1] => dutycyc_right.DATAB
 turn_flag[1] => dutycyc_left.DATAB
 end_path => m1_a.OUTPUTSELECT
 end_path => m1_b.OUTPUTSELECT
 end_path => m2_a.OUTPUTSELECT
 end_path => m2_b.OUTPUTSELECT
+end_path => dutycyc_left.OUTPUTSELECT
 end_path => dutycyc_left.OUTPUTSELECT
 end_path => dutycyc_left.OUTPUTSELECT
 end_path => dutycyc_left.OUTPUTSELECT
@@ -7516,7 +7517,7 @@ dc2[3] <= dc2[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dc2[4] <= dc2[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 node_flag <= node_flag~reg0.DB_MAX_OUTPUT_PORT_TYPE
 node_changed <= node_changed~reg0.DB_MAX_OUTPUT_PORT_TYPE
-switch_on <= <GND>
+switch_on <= switch_on~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Astrotinker_main|frequency_scaling:b2v_inst4

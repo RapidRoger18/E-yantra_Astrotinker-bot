@@ -1,16 +1,16 @@
-Fitter Status : Successful - Fri Feb  9 11:39:57 2024
+Fitter Status : Successful - Fri Feb  9 18:27:15 2024
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : Astrotinker_main
 Top-level Entity Name : Astrotinker_main
 Family : Cyclone IV E
 Device : EP4CE22F17C6
 Timing Models : Final
-Total logic elements : 2,190 / 22,320 ( 10 % )
-    Total combinational functions : 976 / 22,320 ( 4 % )
-    Dedicated logic registers : 1,911 / 22,320 ( 9 % )
-Total registers : 1911
+Total logic elements : 2,200 / 22,320 ( 10 % )
+    Total combinational functions : 1,179 / 22,320 ( 5 % )
+    Dedicated logic registers : 1,809 / 22,320 ( 8 % )
+Total registers : 1809
 Total pins : 33 / 154 ( 21 % )
 Total virtual pins : 0
-Total memory bits : 59,392 / 608,256 ( 10 % )
+Total memory bits : 47,616 / 608,256 ( 8 % )
 Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
 Total PLLs : 0 / 4 ( 0 % )
