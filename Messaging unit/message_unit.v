@@ -7,9 +7,9 @@ input clk_50M,
 //input led_3, // for ru
 //input node_flag,
 //input [4:0] node,
-input [3:0] esu_block_id,
-input [3:0] csu_block_id,
-input [3:0] rsu_block_id,
+input [7:0] esu_block_id,
+input [7:0] csu_block_id,
+input [7:0] rsu_block_id,
 input EM_active,  // when em is on
 input EM_drop,   // when em is switched off with a load
 input fault_detect, // when a fault is detected by U.S.
@@ -19,9 +19,9 @@ input RU_active, // in RU section
 //output reg [7:0] msg_FIM, 
 //output  reg [7:0] msg_FSM,
 //output reg [7:0] msg_BDM,
-output reg  [20:0] msg,
-output reg [1:0] blue_light,
-output reg [1:0] green_light
+output reg  [7:0] msg
+//output reg [1:0] blue_light,
+//output reg [1:0] green_light
 
 );
 reg [7:0] text_FIM[3:0]; // FIM-  
@@ -92,8 +92,8 @@ text_BPM[3] <= 8'h2D;
 text_CSU[0] <= 8'h43;
 text_CSU[1] <= 8'h53;
 text_CSU[2] <= 8'h55;
-blue_light <=0;
-green_light <=0;
+//blue_light <=0;
+//green_light <=0;
 
 text_ESU[0] <= 8'h45;
 text_ESU[1] <= 8'h53;
@@ -144,7 +144,7 @@ end
 
   if ( fault_detect) begin   // to send FIM message 
 //   msg <= {text_FIM[index_fim],text_ESU[index_esu],node};	
-	blue_light <= 1;
+	//blue_light <= 1;
 	case(state) 
 
 		2'b00: begin 
@@ -205,7 +205,7 @@ end
 			 
 		 
 					  if ( msg_delay == 4339) begin
-						 msg <= {increment_su1 , text_hash[index_1]} ;
+						 msg <=  { increment_su1, text_hash[index_1]};
 						  index_1 <= index_1+1;
 						  msg_delay <= 0;
 						  increment_su1 <= increment_su1 +1;
@@ -230,6 +230,8 @@ end
 						
 				end
 		2'b11: begin
+		
+		
 			state <= 2'b00;
 		end 
 
@@ -327,8 +329,8 @@ else if ( EM_active ) begin
 end 
 		
 else if ( EM_drop ) begin 
-	blue_light <=0;
-	green_light <=1;
+	//blue_light <=0;
+	//green_light <=1;
 case(state) 
 
 2'b00: begin 
@@ -395,7 +397,7 @@ end
  
   if ( fault_detect) begin   // to send FIM message 
 //   msg <= {text_FIM[index_fim],text_ESU[index_esu],node};	
-	blue_light <= 1;
+	//blue_light <= 1;
 	case(state) 
 
 2'b00: begin 
@@ -451,7 +453,7 @@ end
  2'b10: begin
  
            if ( msg_delay == 4339) begin
-              msg <= {increment_su2 , text_hash[index_1]} ;
+              msg <= text_hash[index_1];
               index_1 <= index_1+1;
 			  msg_delay<=0;
 			  increment_su2 <= increment_su2 +1;
@@ -564,9 +566,8 @@ else if ( EM_active ) begin
 		end 
 		
 else if ( EM_drop ) begin 
-	blue_light <= 0;
-	
-	green_light <= 1;
+	//blue_light <= 0;
+	//green_light <= 1;
 	case(state) 
 
 2'b00: begin 
@@ -629,7 +630,7 @@ end
   
   if ( fault_detect) begin   // to send FIM message 
 //   msg <= {text_FIM[index_fim],text_ESU[index_esu],node};	
-	blue_light <= 1;
+	//blue_light <= 1;
 	case(state) 
 
 2'b00: begin 
@@ -689,7 +690,7 @@ end
     
  
            if ( msg_delay == 4339) begin
-              msg <= {increment_su3 , text_hash[index_1]} ;
+              msg <=  text_hash[index_1] ;
               index_1 <= index_1+1;
 			  msg_delay<= 0 ;
 			  increment_su3 <= increment_su3 +1;
@@ -806,8 +807,8 @@ else if ( EM_active ) begin
 		end 
 		
 else if ( EM_drop ) begin 
-blue_light <=0;
-	green_light <=1;
+//blue_light <=0;
+	//green_light <=1;
 	case(state) 
 
 2'b00: begin 
