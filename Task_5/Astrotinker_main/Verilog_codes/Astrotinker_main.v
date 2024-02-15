@@ -31,6 +31,7 @@ input wire	clk_50M;
 input wire	adc_dout;
 input wire key;
 input wire UV_echo;
+input wire receive_data;
 output wire UV_trig;
 output wire	adc_cs_n;
 output wire	adc_din;
@@ -50,9 +51,14 @@ output wire	motor_B2;
 output wire	adc_clk_3125Khz;
 output wire [7:0] fpga_LED;
 output wire transmit_data;
-output wire receive_data;
 output wire EM_A1;
 output wire EM_B1;
+
+
+wire EU_fault_flag, CU_fault_flag, RU_fault_flag;
+wire EU_done_flag, CU_done_flag, RU_done_flag, run_complete;
+wire pick_block_flag, block_picked;
+wire [1:0] block_location;
 
 wire CPU_reset, CPU_start;
 wire [31:0] CPU_Ext_WriteData, CPU_Ext_DataAdr;
@@ -73,20 +79,20 @@ wire	[4:0] SYNTHESIZED_WIRE_11;
 wire	[4:0] SYNTHESIZED_WIRE_13;
 wire clk_95Hz;
 wire node_flag;
-wire [1:0] turn_flag;
-wire [7:0] node;
-wire key_flag;
 wire fault_detect;
 wire object_drop;
-
+wire [4:0] now_position;
 wire [7:0] tx_data;
 wire [7:0] rx_msg;
 wire rx_complete;
+wire data_send;
 wire node_changed;
-assign fpga_led= turn_flag;
+wire key_flag;
+
+assign fpga_LED = now_position;
 
 t2b_riscv_cpu b2v_inst0(
-	.clk(clk_50M),
+	.clk(adc_clk_3125Khz),
 	.reset(CPU_reset),
    .Ext_MemWrite(CPU_Ext_MemWrite_flag),
    .Ext_WriteData(CPU_Ext_WriteData), 
@@ -96,9 +102,8 @@ t2b_riscv_cpu b2v_inst0(
 	.DataAdr(CPU_DataAdr), 
 	.ReadData(CPU_ReadData)
 );
-
 CPU_driver b2v_inst1(
-	.clk_50M(clk_50M),
+	.clk_3125KHz(adc_clk_3125Khz),
 	.CPU_start(CPU_start),
 	.CPU_MemWrite(CPU_MemWrite_flag),
 	.CPU_WriteData(CPU_WriteData), 
@@ -124,13 +129,11 @@ ADC_Controller	b2v_inst2(
 	.right_value(SYNTHESIZED_WIRE_3));
 
 Line_Following	b2v_inst3(
-	.key(key),
-	.switch_on(key_flag),
+	.switch_key(key_flag),
 	.clk_3125KHz(adc_clk_3125Khz),
 	.left(SYNTHESIZED_WIRE_1),
 	.middle(SYNTHESIZED_WIRE_2),
 	.right(SYNTHESIZED_WIRE_3),
-	.turn_flag(turn_flag),
 	.m1_a(SYNTHESIZED_WIRE_5),
 	.m1_b(SYNTHESIZED_WIRE_6),
 	.m2_a(SYNTHESIZED_WIRE_8),
@@ -138,8 +141,6 @@ Line_Following	b2v_inst3(
 	.dc1(SYNTHESIZED_WIRE_11),
 	.dc2(SYNTHESIZED_WIRE_13),
 	.node_flag(node_flag),
-//	.node(node),
-//	.fpga_LED(fpga_LED),
 	.node_changed(node_changed)
 );
 frequency_scaling	b2v_inst4(
@@ -162,16 +163,15 @@ pwm_generator	b2v_inst6(
 	.motor_a(SYNTHESIZED_WIRE_8),
 	.motor_b(SYNTHESIZED_WIRE_9),
 	.motor_A(motor_A2),
-	.motor_B(motor_B2)
-	);
+	.motor_B(motor_B2));
 
 Fault_detection b2v_inst7(
-	.key_flag(key_flag),
 	.clk_50M(clk_50M),
 	.UV_echo(UV_echo),
 	.UV_trig(UV_trig),
 	.fault_detect(fault_detect),
-	.msg(tx_data),
+	.fault_count(fault_count),
+	.block_picked (block_picked),
 	.object_drop(object_drop),
 	.EM_a1(EM_A1),
 	.EM_b1(EM_B1)
@@ -181,8 +181,9 @@ LED_driver b2v_inst8(
 	.clk_3125KHz(adc_clk_3125Khz),
 	.fault_detect(fault_detect),
 	.node_flag(node_flag),
-	.node(node),
 	.object_drop(object_drop),
+	.run_complete(run_complete),
+	.EU_fault_flag (EU_fault_flag),
 	.led1_R1(led1_R1),
 	.led1_G1(led1_G1),
 	.led1_B1(led1_B1),
@@ -196,6 +197,7 @@ LED_driver b2v_inst8(
 
 uart_tx b2v_inst9(
 	.clk_50M(clk_50M),
+	.data_send(data_send),
 	.data(tx_data),
 	.tx(transmit_data)
 );
@@ -208,13 +210,54 @@ uart_rx b2v_inst10(
 );
 path_mapping b2v_inst11(
 	.clk_3125KHz(adc_clk_3125Khz),
-//	.CPU_start(CPU_start),
 	.node_flag(node_flag),
+	.switch_key(key_flag),
 	.turn_flag(turn_flag),
+	.path_planned(path_planned),
+	.path_input(CPU_stop_flag),
 	.node_changed(node_changed),
-//	.path_planned(path_planned),
-//	.path_input(CPU_stop_flag),
-//	.SP(CPU_dijkstra_SP),
-//	.EP(CPU_dijkstra_EP)
+	.realtime_pos(now_position)
+);
+
+Dijkstra_handler b2v_inst12(
+	.clk_3125KHz(adc_clk_3125Khz),
+	.CPU_start(CPU_start),
+	.switch_key(key_flag),
+	.EU_fault_flag(EU_fault_flag),
+	.CU_fault_flag(CU_fault_flag),
+	.RU_fault_flag(RU_fault_flag),
+	.pick_block_flag(pick_block_flag),
+	.block_location(block_location),
+	.block_picked(block_picked),
+	.realtime_pos(now_position),
+	.start_point(CPU_dijkstra_SP),
+	.end_point(CPU_dijkstra_EP),
+	.ALL_DONE_FLAG(run_complete)
+);
+
+msg_rx b2v_inst13(
+	.clk_50M(clk_50M),
+   .rx_msg(rx_msg),
+	.switch_key(key_flag),
+	.rx_complete(rx_complete),
+	.EU_fault_flag(EU_fault_flag), 
+	.CU_fault_flag(CU_fault_flag),
+	.RU_fault_flag(RU_fault_flag),
+	.pick_block_flag(pick_block_flag),
+	.block_location(block_location)
+);
+
+message_unit b2v_inst14(
+	.clk_50M(clk_50M),
+   .fault_detect(fault_detect), 
+	.fault_id(fault_id),
+	.block_picked(block_picked),
+	.end_run_interrupt(run_complete),
+	.block_location(block_location),
+	.EU_fault_flag(EU_fault_flag), 												
+	.CU_fault_flag(CU_fault_flag), 												
+	.RU_fault_flag(RU_fault_flag), 												
+	.msg(tx_data),
+	.data_send(data_send)
 );
 endmodule 

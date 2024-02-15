@@ -24,6 +24,7 @@ Output: tx      - UART Transmission Line
 // module declaration
 module uart_tx(
     input  clk_50M,
+	 input data_send,
     input  [7:0] data,
     output reg tx
 );
@@ -43,7 +44,7 @@ always@(posedge clk_50M) begin
 	case (state) 
 		2'd0: begin 
 			index<=4'd0;
-			state<=2'd1;
+			if (data_send) state<=2'd1;
 			count<=9'b0;
 			tx <=0;
 			end 

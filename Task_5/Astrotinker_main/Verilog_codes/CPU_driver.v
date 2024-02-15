@@ -1,5 +1,5 @@
 module CPU_driver(
-	input clk_50M,
+	input clk_3125KHz,
 	input CPU_MemWrite,
 	input CPU_start,
 	input [4:0] SP, EP,
@@ -10,14 +10,28 @@ module CPU_driver(
 	output reg CPU_stop = 0,
 	output reg [31:0] CPU_Ext_WriteData, CPU_Ext_DataAdr
 );
-reg CPU_initiate = 0;
 reg start_mem = 0;
 reg [1:0] state = 0;
 reg [3:0] index = 0;
 reg [3:0] idx = 0;
 reg [4:0] path_planned_array [15:0] ;
-always @(posedge clk_50M) begin
-	if (CPU_start && !CPU_initiate) begin
+reg CPU_start_state = 0;
+reg [3:0] CPU_state_counter = 0;
+reg CPU_state_flag = 0;
+always @(posedge clk_3125KHz) begin
+	if ( CPU_start && !CPU_state_flag) begin
+		if( CPU_state_counter == 8 ) begin
+			CPU_state_counter <= 0;
+			CPU_start_state <= 0;
+			CPU_state_flag <= 1;
+		end
+		else begin
+			CPU_state_counter <= CPU_state_counter + 1;
+			CPU_start_state <= 1;
+		end
+	end
+	else if( !CPU_start ) CPU_state_flag <= 0;
+	if ( CPU_start_state ) begin
 		CPU_reset <= 1;
 		case (state)
 			2'b00: begin                   // write START_POINT in the memory address 02000000
@@ -62,7 +76,6 @@ always @(posedge clk_50M) begin
 					CPU_Ext_MemWrite <= 0; CPU_Ext_WriteData <= 00; CPU_Ext_DataAdr <= 32'h0;
 					start_mem <= 0;
 					state <= 2'b00;
-					CPU_initiate <= 1;
 					CPU_reset <= 0;
 				end
 			end

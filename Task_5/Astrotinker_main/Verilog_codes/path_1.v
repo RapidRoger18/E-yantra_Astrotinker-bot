@@ -1,19 +1,19 @@
 module path_mapping(
 		input node_flag,
 		input clk_3125KHz,
-//		input path_input,
-//		input CPU_start,
-//		input [4:0] path_planned,
+		input path_input,
+		input switch_key,
+		input CPU_start,
+		input [4:0] path_planned,
 		input node_changed,
 		output  [1:0] turn_flag,
-		output reg [4:0] realtime_pos 
-//		output [4:0] SP,EP
+		output reg [4:0] realtime_pos = 0 
 );
 reg [1:0] STATE = 0;
 reg [1:0] curr_dir=0;
 reg [1:0] next_dir=0;
 reg [19:0] node_rel [29:0];
-reg [4:0] path_planned_array [4:0];
+reg [4:0] path_planned_array [5:0];
 reg [4:0] j=0,k=0;
 reg [4:0] curr_node,next_node;
 reg [19:0] temp;
@@ -54,30 +54,21 @@ reg [1:0] diff;
         node_rel[27] = {5'dx,5'dx,5'd26,5'dx};
         node_rel[28] = {5'd29,5'd26,5'dx,5'd3};
         node_rel[29] = {5'd20,5'dx,5'd28,5'd1};
-
-		path_planned_array[0] <= 5'd0;
-		path_planned_array[1] <= 5'd1;
-		path_planned_array[2] <= 5'd2;
-		path_planned_array[3] <= 5'd8;
-		path_planned_array[4] <= 5'd7;
-//		path_planned_array[5] <= 5'd8;
-//		path_planned_array[6] <= 5'd2;
-//		path_planned_array[7] <= 5'd1;
-//		path_planned_array[8] <= 5'd0;
 end 
 
 always @(posedge clk_3125KHz) begin
-//		if (path_input) begin
-//			path_planned_array[idx] <= path_planned;
-//			idx <= idx + 1;`
-//		end
-//		else begin
+	if (switch_key) begin	
+		if (path_input) begin
+			path_planned_array[idx] <= path_planned;
+			idx <= idx + 1;
+		end
+		else begin
 			idx <= 0;
 			temp<=node_rel[curr_node];
 			if (node_flag) begin
 				realtime_pos <= curr_node;
 			end
-			
+			if (realtime_pos == 0) j <= 2;
 			if (node_changed) begin
 				curr_node<=path_planned_array[j];
 				next_node<=path_planned_array[j+1];
@@ -121,6 +112,8 @@ always @(posedge clk_3125KHz) begin
 					j <= j + 1;
 				end
 			endcase
+		end
+	end
 end
-assign turn_flag=turn;
+assign turn_flag = turn;
 endmodule 

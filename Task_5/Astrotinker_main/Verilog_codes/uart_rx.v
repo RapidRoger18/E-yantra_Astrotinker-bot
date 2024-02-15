@@ -1,4 +1,4 @@
-	// AstroTinker Bot : Task 2A : UART Receiver
+// AstroTinker Bot : Task 2A : UART Receiver
 /*
 Instructions
 -------------------
@@ -48,20 +48,20 @@ end
 always@(posedge clk_50M)begin
 	case(state)
 		2'b00: begin
-			if(rx == 1'b0) begin
-				state <= 2'b01;
-			end
+			state <= 2'b01;
 		end
 		2'b01:begin         //start
 			rx_complete <= 1'b0;
-			if (count == 433) begin 
-				count <= 0;
-				state <= 2'b10;
+			if(rx == 1'b0) begin
+				if (count == 433) begin 
+					count <= 0;
+					state <= 2'b10;
+				end
+				else begin
+					count <= count + 1;
+					state <= 2'b01;
+			   end
 			end
-			else begin
-				count <= count + 1;
-				state <= 2'b01;
-			  end
 		end
 		2'b10:begin       //read data
 			if (count < 433) begin
@@ -98,4 +98,4 @@ always@(posedge clk_50M)begin
 end
 //////////////////DO NOT MAKE ANY CHANGES BELOW THIS LINE//////////////////
 
-endmodule
+endmodule 

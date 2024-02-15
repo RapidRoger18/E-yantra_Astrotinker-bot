@@ -8,7 +8,8 @@ input [1:0] block_location,
 input EU_fault_flag, 												// in EU section
 input CU_fault_flag, 												// in CU section
 input RU_fault_flag, 												// in RU section
-output reg  [7:0] msg
+output reg  [7:0] msg = 0,
+output reg data_send = 0
 );
 parameter B = 8'h42;
 parameter C = 8'h43;
@@ -29,7 +30,7 @@ parameter N4 = 8'h34;
 parameter DASH = 8'h2D;
 parameter HASH = 8'h23;
 
-parameter IDLE_State = 2'b00;
+parameter IDLE_state = 2'b00;
 parameter FAULT_state = 2'b01;
 parameter PICKUP_state = 2'b10;
 parameter DEPOSIT_state = 2'b11;
@@ -38,6 +39,8 @@ reg [15:0] msg_delay =0;
 reg [7:0] msg_container [12:0];
 reg [1:0] STATE = 2'd0;
 reg [3:0] idx = 0; 
+reg msg_sent = 0;
+
 always@( clk_50M ) begin
 
 	if ( end_run_interrupt ) begin
@@ -50,7 +53,7 @@ always@( clk_50M ) begin
 	else if ( fault_detect && !block_picked ) STATE <= FAULT_state;
 	else if ( block_picked && !fault_detect ) STATE <= PICKUP_state;
 	else if ( block_picked && fault_detect ) STATE <= DEPOSIT_state;
-	else STATE <= IDLE_state;
+	if ( msg_sent ) STATE <= IDLE_state;
 
 	case (STATE)
 			IDLE_state: begin
@@ -67,6 +70,7 @@ always@( clk_50M ) begin
 				msg_container[10] <= 8'h0;
 				msg_container[11] <= 8'h0;
 				msg_container[12] <= 8'h0;
+				msg_sent <= 0;
 			end
 			FAULT_state: begin
 				msg_container[0] <= F;
