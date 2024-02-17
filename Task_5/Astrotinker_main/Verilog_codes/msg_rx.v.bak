@@ -2,40 +2,24 @@ module msg_rx (
     input clk_50M,
     input [7:0] rx_msg,
 	 input rx_complete,
-	 output reg EU_fault_flag = 0, 
-	 output reg CU_fault_flag = 0,
-	 output reg RU_fault_flag = 0,
-	 output reg pick_block_flag = 0,
+	 output reg EU_fault_flag, 
+	 output reg CU_fault_flag,
+	 output reg RU_fault_flag,
+	 output reg pick_block_flag,
 	 output reg switch_key,
 	 output reg [1:0] block_location
 ); 
 reg [7:0] msg_mem [11:0] ;
 reg [1:0] state = 0;
 reg [4:0] idx = 0;
-reg [15:0] delay_count = 0;
-initial begin
-			msg_mem[0] <= 0;
-			msg_mem[1] <= 0;
-			msg_mem[2] <= 0;
-			msg_mem[3] <= 0;
-			msg_mem[4] <= 0;
-			msg_mem[5] <= 0;
-			msg_mem[6] <= 0;
-			msg_mem[7] <= 0;
-			msg_mem[8] <= 0;
-			msg_mem[9] <= 0;
-			msg_mem[10] <= 0;
-			msg_mem[11] <= 0;
-end
 always @(posedge clk_50M) begin
     case (state)
 		2'd0: begin
 			if (rx_complete) state<=2'd1;
 		end
       2'd1: begin
-			if (delay_count == 4339) idx <= idx + 1 ;
-			else delay_count <= delay_count + 1;
 			msg_mem[idx] <= rx_msg;
+         idx <= idx + 1 ;
          if (rx_msg == 8'h23) begin
 				idx <= 0;
 				state <= 2'd2;

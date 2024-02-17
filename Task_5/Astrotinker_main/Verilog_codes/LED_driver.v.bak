@@ -47,7 +47,7 @@ always@(*)begin
 		else begin
 			{led1_R1,led2_R2,led3_R3} <= 3'b0;
 			{led1_B1,led2_B2,led3_B3} <= 3'b0;
-			{led1_G1,led2_G2,led3_G3} <= 3'b000;
+			{led1_G1,led2_G2,led3_G3} <= 3'b111;
 		end
 	end
 	if (EU_fault_flag) begin
