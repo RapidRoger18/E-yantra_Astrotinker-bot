@@ -5,10 +5,11 @@ module Dijkstra_handler(
 	input RU_fault_flag,
 	input pick_block_flag,
 	input [1:0] block_location,
-	input block_picked,
+//	input block_picked,
 	input switch_key,
 	input [4:0] realtime_pos,                 // realtime node position of the bot  
-
+	input [4:0] curr_node,
+	
 	output reg CPU_start,             
 	output reg [4:0] start_point,        
 	output reg [4:0] end_point,
@@ -34,14 +35,15 @@ reg [1:0] counter_EU_rectify = 0;
 reg [1:0] counter_CU_rectify = 0;
 reg [1:0] counter_RU_rectify = 0;
 reg check_flag = 0;
+reg EU_rectify = 0;
 
 always@(posedge clk_3125KHz) begin
 	if (switch_key) begin
 		case (SWITCH_STATE) 
 			IDLE_STATE: begin											//idle state for begining and ending stages 
-				if(EU_fault_flag) SWITCH_STATE <= EU_FAULT;
-				else if(CU_fault_flag) SWITCH_STATE <= CU_FAULT;
-				else if(RU_fault_flag) SWITCH_STATE <= RU_FAULT;
+				if(EU_fault_flag && !EU_rectify) SWITCH_STATE <= EU_FAULT;
+//				else if(CU_fault_flag) SWITCH_STATE <= CU_FAULT;
+//				else if(RU_fault_flag) SWITCH_STATE <= RU_FAULT;
 				else begin
 					if(realtime_pos != 0) begin
 						start_point <= realtime_pos;
@@ -62,7 +64,7 @@ always@(posedge clk_3125KHz) begin
 						start_point <= realtime_pos;
 						end_point <= 5'd29;
 						check_flag <= 1;
-						if( (realtime_pos == end_point) && check_flag ) begin 
+						if( (curr_node == end_point) && check_flag ) begin 
 							CPU_start <= 0;
 							counter_EU_fault <= 2'b01;
 							check_flag <= 0;
@@ -70,10 +72,10 @@ always@(posedge clk_3125KHz) begin
 					end
 					2'b01: begin                        
 						CPU_start <= 1;
-						start_point <= realtime_pos;
+						start_point <= curr_node;
 						end_point <= 5'd27;
 						check_flag <= 1;
-						if ((realtime_pos == end_point) && check_flag ) begin 
+						if ((curr_node == end_point) && check_flag ) begin 
 							CPU_start <= 0;
 							check_flag <= 0;
 							counter_EU_fault <= 2'b10;
@@ -81,14 +83,14 @@ always@(posedge clk_3125KHz) begin
 					end
 					2'b10: begin
 						CPU_start <= 1;
-						start_point <= realtime_pos;
+						start_point <= curr_node;
 						end_point <= 5'd24;
 						check_flag <= 1;
-						if ( (realtime_pos == end_point) && check_flag ) begin
+						if ( (curr_node == end_point) && check_flag ) begin
 							CPU_start <= 0;
 							check_flag <= 0;
 							counter_EU_fault <= 2'b00;
-							PREV_SWITCH_STATE <= SWITCH_STATE;
+//							PREV_SWITCH_STATE <= SWITCH_STATE;
 							SWITCH_STATE <= PICK_BLOCK;                           //switches state once traversing and detection is completed
 						end
 					end
@@ -98,10 +100,10 @@ always@(posedge clk_3125KHz) begin
 				case (counter_CU_fault)
 					2'b00: begin
 						CPU_start <= 1;
-						start_point <= realtime_pos;
+						start_point <= curr_node;
 						end_point <= 5'd7;
 						check_flag <= 1;
-						if( (realtime_pos == end_point) && check_flag ) begin 
+						if( (curr_node == end_point) && check_flag ) begin 
 							CPU_start <= 0;
 							check_flag <= 0;
 							counter_CU_fault <= 2'b01; 
@@ -109,10 +111,10 @@ always@(posedge clk_3125KHz) begin
 					end
 					2'b01: begin
 						CPU_start <= 1;
-						start_point <= realtime_pos;
+						start_point <= curr_node;
 						end_point <= 5'd5;
 						check_flag <= 1;
-						if ((realtime_pos == end_point) && check_flag ) begin 
+						if ((curr_node == end_point) && check_flag ) begin 
 							CPU_start <= 0;
 							check_flag <= 0;
 							counter_CU_fault <= 2'b10;
@@ -120,14 +122,14 @@ always@(posedge clk_3125KHz) begin
 					end
 					2'b10: begin
 						CPU_start <= 1;
-						start_point <= realtime_pos;
+						start_point <= curr_node;
 						end_point <= 5'd2;
 						check_flag <= 1;
-						if ((realtime_pos == end_point) && check_flag ) begin 
+						if ((curr_node == end_point) && check_flag ) begin 
 							CPU_start <= 0;
 							check_flag <= 0;
 							counter_CU_fault <= 2'b00;
-							PREV_SWITCH_STATE <= SWITCH_STATE;
+//							PREV_SWITCH_STATE <= SWITCH_STATE;
 							SWITCH_STATE <= PICK_BLOCK;
 						end
 					end
@@ -137,10 +139,10 @@ always@(posedge clk_3125KHz) begin
 				case (counter_RU_fault)
 					2'b00: begin
 						CPU_start <= 1;
-						start_point <= realtime_pos;
+						start_point <= curr_node;
 						end_point <= 5'd19;
 						check_flag <= 1;
-						if( (realtime_pos == end_point) && check_flag )begin
+						if( (curr_node == end_point) && check_flag )begin
 							CPU_start <= 0;
 							check_flag <= 0;
 							counter_RU_fault <= 2'b01; 
@@ -148,10 +150,10 @@ always@(posedge clk_3125KHz) begin
 					end
 					2'b01: begin
 						CPU_start <= 1;
-						start_point <= realtime_pos;
+						start_point <= curr_node;
 						end_point <= 5'd17;
 						check_flag <= 1;
-						if ((realtime_pos == end_point) && check_flag ) begin
+						if ((curr_node == end_point) && check_flag ) begin
 							CPU_start <= 0;
 							check_flag <= 0;
 							counter_RU_fault <= 2'b10;
@@ -159,10 +161,10 @@ always@(posedge clk_3125KHz) begin
 					end
 					2'b10: begin
 						CPU_start <= 1;
-						start_point <= realtime_pos;
+						start_point <= curr_node;
 						end_point <= 5'd15;
 						check_flag <= 1;
-						if ((realtime_pos == end_point) && check_flag ) begin
+						if ((curr_node == end_point) && check_flag ) begin
 							counter_RU_fault <= 2'b11;
 							CPU_start <= 0;
 							check_flag <= 0;
@@ -170,13 +172,13 @@ always@(posedge clk_3125KHz) begin
 					end
 					2'b11 :begin
 						CPU_start <= 1;
-						start_point <= realtime_pos;
+						start_point <= curr_node;
 						end_point <= 5'd12;
 						check_flag <= 1;
-						if ((realtime_pos == end_point) && check_flag ) begin
+						if ((curr_node == end_point) && check_flag ) begin
 							CPU_start <= 0;
 							check_flag <= 0;
-							PREV_SWITCH_STATE <= SWITCH_STATE;
+//							PREV_SWITCH_STATE <= SWITCH_STATE;
 							SWITCH_STATE <= PICK_BLOCK;
 							counter_RU_fault <= 2'b00;
 						end
@@ -188,10 +190,10 @@ always@(posedge clk_3125KHz) begin
 					case ( block_location )
 						2'd0: begin
 							CPU_start <= 1;
-							start_point <= realtime_pos;
+							start_point <= curr_node;
 							end_point <= 5'd22;
 							check_flag <= 1;
-							if((realtime_pos == end_point) && check_flag) begin
+							if((curr_node == end_point) && check_flag) begin
 								CPU_start <= 0;
 								check_flag <= 0;
 								block_pick_counter <= 1'b1;
@@ -199,10 +201,10 @@ always@(posedge clk_3125KHz) begin
 						end
 						2'd01: begin
 							CPU_start <= 1;
-							start_point <= realtime_pos;
+							start_point <= curr_node;
 							end_point <= 5'd10;
 							check_flag <= 1;
-							if((realtime_pos == end_point) && check_flag) begin
+							if((curr_node == end_point) && check_flag) begin
 								CPU_start <= 0;
 								check_flag <= 0;
 								block_pick_counter <= 1'b1;
@@ -210,10 +212,10 @@ always@(posedge clk_3125KHz) begin
 						end
 						2'd2: begin
 							CPU_start <= 1;
-							start_point <= realtime_pos;
+							start_point <= curr_node;
 							end_point <= 5'd23;
 							check_flag <= 1;
-							if((realtime_pos == end_point) && check_flag) begin
+							if((curr_node == end_point) && check_flag) begin
 								CPU_start <= 0;
 								check_flag <= 0;
 								block_pick_counter <= 1'b1;
@@ -221,10 +223,10 @@ always@(posedge clk_3125KHz) begin
 						end
 						2'd3: begin
 							CPU_start <= 1;
-							start_point <= realtime_pos;
+							start_point <= curr_node;
 							end_point <= 5'd11;
 							check_flag <= 1;
-							if((realtime_pos == end_point) && check_flag) begin
+							if((curr_node == end_point) && check_flag) begin
 								CPU_start <= 0;
 								check_flag <= 0;
 								block_pick_counter <= 1'b1;
@@ -233,9 +235,10 @@ always@(posedge clk_3125KHz) begin
 					endcase	
 				end
 				if (block_pick_counter) begin
-					if(PREV_SWITCH_STATE == EU_FAULT) SWITCH_STATE <= EU_RECTIFY;
-					else if(PREV_SWITCH_STATE == CU_FAULT)	SWITCH_STATE <= CU_RECTIFY;
-					else if(PREV_SWITCH_STATE == RU_FAULT) SWITCH_STATE <= RU_RECTIFY;
+					SWITCH_STATE <= EU_RECTIFY;
+//					if(PREV_SWITCH_STATE == EU_FAULT) SWITCH_STATE <= EU_RECTIFY;
+//					else if(PREV_SWITCH_STATE == CU_FAULT)	SWITCH_STATE <= CU_RECTIFY;
+//					else if(PREV_SWITCH_STATE == RU_FAULT) SWITCH_STATE <= RU_RECTIFY;
 					block_pick_counter <= 1'b0;
 				end
 			end
@@ -243,10 +246,10 @@ always@(posedge clk_3125KHz) begin
 				case (counter_EU_rectify)
 					2'b00: begin
 						CPU_start <= 1;
-						start_point <= realtime_pos;
+						start_point <= curr_node;
 						end_point <= 5'd29;
 						check_flag <= 1;
-						if( (realtime_pos == end_point) && check_flag ) begin 
+						if( (curr_node == end_point) && check_flag ) begin 
 							counter_EU_rectify <= 2'b01;
 							CPU_start <= 0;
 							check_flag <= 0;
@@ -254,10 +257,10 @@ always@(posedge clk_3125KHz) begin
 					end
 					2'b01: begin
 						CPU_start <= 1;
-						start_point <= realtime_pos;
+						start_point <= curr_node;
 						end_point <= 5'd27;
 						check_flag <= 1;
-						if ((realtime_pos == end_point) && check_flag ) begin 
+						if ((curr_node == end_point) && check_flag ) begin 
 							CPU_start <= 0;
 							check_flag <= 0;
 							counter_EU_rectify <= 2'b10;
@@ -265,14 +268,15 @@ always@(posedge clk_3125KHz) begin
 					end
 					2'b10: begin
 						CPU_start <= 1;
-						start_point <= realtime_pos;
+						start_point <= curr_node;
 						end_point <= 5'd24;
 						check_flag <= 1;
-						if ((realtime_pos == end_point) && check_flag ) begin
+						if ((curr_node == end_point) && check_flag ) begin
 							CPU_start <= 0;
 							check_flag <= 0;
 							counter_EU_rectify <= 2'b00;
 							SWITCH_STATE <= IDLE_STATE;
+							EU_rectify <= 1;
 						end
 					end
 				endcase
@@ -281,10 +285,10 @@ always@(posedge clk_3125KHz) begin
 				case (counter_CU_rectify)
 					2'b00: begin
 						CPU_start <= 1;
-						start_point <= realtime_pos;
+						start_point <= curr_node;
 						end_point <= 5'd7;
 						check_flag <= 1;
-						if( (realtime_pos == end_point) && check_flag ) begin
+						if( (curr_node == end_point) && check_flag ) begin
 							CPU_start <= 0;
 							check_flag <= 0;
 							counter_CU_rectify <= 2'b01;
@@ -292,10 +296,10 @@ always@(posedge clk_3125KHz) begin
 					end
 					2'b01: begin
 						CPU_start <= 1;
-						start_point <= realtime_pos;
+						start_point <= curr_node;
 						end_point <= 5'd5;
 						check_flag <= 1;
-						if ((realtime_pos == end_point) && check_flag ) begin
+						if ((curr_node == end_point) && check_flag ) begin
 							CPU_start <= 0;
 							check_flag <= 0;
 							counter_CU_rectify <= 2'b10;
@@ -303,10 +307,10 @@ always@(posedge clk_3125KHz) begin
 					end
 					2'b10: begin
 						CPU_start <= 1;
-						start_point <= realtime_pos;
+						start_point <= curr_node;
 						end_point <= 5'd2;
 						check_flag <= 1;
-						if ((realtime_pos == end_point) && check_flag ) begin
+						if ((curr_node == end_point) && check_flag ) begin
 							CPU_start <= 0;
 							check_flag <= 0;
 							counter_CU_rectify <= 2'b00;
@@ -319,10 +323,10 @@ always@(posedge clk_3125KHz) begin
 				case (counter_RU_rectify)
 					2'b00: begin
 						CPU_start <= 1;
-						start_point <= realtime_pos;
+						start_point <= curr_node;
 						end_point <= 5'd19;
 						check_flag <= 1;
-						if( (realtime_pos == end_point) && check_flag ) begin 
+						if( (curr_node == end_point) && check_flag ) begin 
 							CPU_start <= 0;
 							check_flag <= 0;
 							counter_RU_rectify <= 2'b01; 
@@ -330,10 +334,10 @@ always@(posedge clk_3125KHz) begin
 					end
 					2'b01: begin
 						CPU_start <= 1;
-						start_point <= realtime_pos;
+						start_point <= curr_node;
 						end_point <= 5'd17;
 						check_flag <= 1;
-						if ((realtime_pos == end_point) && check_flag ) begin
+						if ((curr_node == end_point) && check_flag ) begin
 							CPU_start <= 0;
 							check_flag <= 0;
 							counter_RU_rectify <= 2'b10;
@@ -341,10 +345,10 @@ always@(posedge clk_3125KHz) begin
 					end
 					2'b10: begin
 						CPU_start <= 1;
-						start_point <= realtime_pos;
+						start_point <= curr_node;
 						end_point <= 5'd15;
 						check_flag <= 1;
-						if ((realtime_pos == end_point) && check_flag ) begin
+						if ((curr_node == end_point) && check_flag ) begin
 							counter_RU_rectify <= 2'b11;
 							CPU_start <= 0;
 							check_flag <= 0;
@@ -352,10 +356,10 @@ always@(posedge clk_3125KHz) begin
 					end
 					2'b11 :begin
 						CPU_start <= 1;
-						start_point <= realtime_pos;
+						start_point <= curr_node;
 						end_point <= 5'd12;
 						check_flag <= 1;
-						if (realtime_pos == end_point ) begin
+						if (curr_node == end_point ) begin
 							counter_RU_rectify <= 2'b00;
 							SWITCH_STATE <= IDLE_STATE;
 							CPU_start <= 0;

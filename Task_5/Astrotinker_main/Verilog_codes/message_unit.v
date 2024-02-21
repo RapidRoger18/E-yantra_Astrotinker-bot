@@ -42,7 +42,7 @@ reg [3:0] idx = 0;
 reg msg_sent = 0;
 
 always@( clk_50M ) begin
-
+	
 	if ( end_run_interrupt ) begin
 		msg_container[0] <= E;
 		msg_container[1] <= N;
@@ -133,6 +133,7 @@ always@( clk_50M ) begin
 	if (msg_container[idx] != 8'h0 && !msg_sent) begin
 		if (msg_delay == 4339) begin
 			msg <= msg_container[idx];
+			data_send <= 0;
 			if(msg_container[idx] == HASH) begin
 				msg_sent <= 1;
 				idx <= 0;
@@ -140,7 +141,9 @@ always@( clk_50M ) begin
 			else idx <= idx + 1;
 			msg_delay <= 0;
 		end
-		else msg_delay <= msg_delay + 1;
+		else begin 
+			msg_delay <= msg_delay + 1;
+		end
 	end 
 end
 endmodule  

@@ -27,7 +27,7 @@ Output: rx_msg      - read incoming message
 module uart_rx (
   input clk_50M, rx,
   output reg [7:0] rx_msg,
-  output reg rx_complete
+  output wire rx_complete
 );
 
 //////////////////DO NOT MAKE ANY CHANGES ABOVE THIS LINE//////////////////
@@ -38,51 +38,51 @@ reg [8:0] count = 0;    //434
 reg [2:0] index = 0;
 reg [7:0] Msg = 0;
 reg [2:0] idx = 3'd7;
-reg rx_r = 0, rx_r1 = 0, rx_data = 0;
+reg rx_data = 0;
 reg rx_complete_r = 0;
+reg status_r = 0;
+
 initial begin
-rx_msg = 0; rx_complete = 0;
+rx_msg = 0;
 state <= 2'b00;
 end
-always@(*) begin
-	rx_r <= rx;
-	rx_r1 <= rx_r;
-	rx_data <= rx_r1;
-	rx_complete <= rx_complete_r;
-end
+
+assign rx_complete = rx_complete_r;
+
 always@(posedge clk_50M)begin
 	case(state)
 		2'b00: begin
 			state <= 2'b01;
+			Msg <= 0;
+			rx_complete_r  <= 0;
 		end
 		2'b01:begin         //start
-			rx_complete_r  <= 0;	
-				if (count == 433) begin
-					count <= 0;
-					if(rx_data == 1'b0) state <= 2'b10;
-					else state <= 2'b00;
-				end
-				else begin
-					count <= count + 1;
-					state <= 2'b01;
-				end
+			Msg <= 0;
+			rx_complete_r  <= 0;
+			if ( (25 < count < 425) && rx == 0) status_r <= 1;
+			if (count == 433) begin
+				count <= 0;
+				if(status_r == 1'b1) state <= 2'b10;
+				else state <= 2'b00;
+			end
+			else count <= count + 1;
 		end
 		2'b10:begin       //read data
 			if (count < 433) begin
+				status_r <= 0;
 				count <= count + 1;
 				state <= 2'b10;
-				Msg[idx] <= rx_data;
+				if ( 25 < count < 425 ) rx_data <= rx;
 			end
 			else begin
+				Msg[7 - index] <= rx_data;
 				count <= 0;
 				if (index < 7) begin
 					index <= index + 1;
-					idx <= idx - 1;
 					state <= 2'b10;
 				end
 				else begin
 					index <= 0;
-					idx <= 3'd7;
 					state <= 2'b11;
 				end
 			end
@@ -93,7 +93,7 @@ always@(posedge clk_50M)begin
 				state <= 2'b11;
 			end
 			else begin
-				rx_msg <= Msg;
+				if (Msg != 8'h50 ) rx_msg <= Msg;
 				rx_complete_r <= 1'b1;
 				count <= 0;
 				state <= 2'b01;

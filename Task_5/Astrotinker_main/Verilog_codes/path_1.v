@@ -2,24 +2,27 @@ module path_mapping(
 		input node_flag,
 		input clk_3125KHz,
 		input path_input,
-		input switch_key,
 		input CPU_start,
 		input [4:0] path_planned,
 		input node_changed,
+		input switch_key,
 		output  [1:0] turn_flag,
-		output reg [4:0] realtime_pos = 0 
+		output  [4:0] realtime_pos,
+		output reg [4:0] curr_node
+//		output [4:0] SP,EP
 );
 reg [1:0] STATE = 0;
 reg [1:0] curr_dir=0;
 reg [1:0] next_dir=0;
 reg [19:0] node_rel [29:0];
-reg [4:0] path_planned_array [5:0];
+reg [4:0] path_planned_array [15:0];
 reg [4:0] j=0,k=0;
-reg [4:0] curr_node,next_node;
+reg [4:0] next_node;
 reg [19:0] temp;
 reg [3:0] idx = 0;
 reg [1:0] turn;
 reg [1:0] diff;
+reg [4:0] pos = 0;
 
 
  initial begin
@@ -48,27 +51,30 @@ reg [1:0] diff;
         node_rel[21] = {5'd23,5'd20,5'd22,5'dx};
         node_rel[22] = {5'd21,5'dx,5'dx,5'dx};
         node_rel[23] = {5'dx,5'dx,5'd21,5'dx};
-        node_rel[24] = {5'dx,5'dx,5'd25,5'd20};
+        node_rel[24] = {5'dx,5'd25,5'dx,5'd20};		// ??recheck after test
         node_rel[25] = {5'd24,5'dx,5'd26,5'dx};
         node_rel[26] = {5'd27,5'd25,5'dx,5'd28};
         node_rel[27] = {5'dx,5'dx,5'd26,5'dx};
-        node_rel[28] = {5'd29,5'd26,5'dx,5'd3};
-        node_rel[29] = {5'd20,5'dx,5'd28,5'd1};
+        node_rel[28] = {5'd29,5'dx,5'd26,5'd3};
+        node_rel[29] = {5'd20,5'dx,5'd28,5'd1};		
 end 
 
 always @(posedge clk_3125KHz) begin
-	if (switch_key) begin	
 		if (path_input) begin
 			path_planned_array[idx] <= path_planned;
 			idx <= idx + 1;
+			next_node<=path_planned_array[1];
+			j <= 0;
+			k <= 0;
+			STATE <= 2'b01;
 		end
 		else begin
 			idx <= 0;
 			temp<=node_rel[curr_node];
 			if (node_flag) begin
-				realtime_pos <= curr_node;
+				pos <= curr_node;
 			end
-			if (realtime_pos == 0) j <= 2;
+			if ( pos == 0 && j == 0 ) j <= 1;
 			if (node_changed) begin
 				curr_node<=path_planned_array[j];
 				next_node<=path_planned_array[j+1];
@@ -112,8 +118,9 @@ always @(posedge clk_3125KHz) begin
 					j <= j + 1;
 				end
 			endcase
-		end
 	end
 end
-assign turn_flag = turn;
+assign turn_flag=turn;
+assign realtime_pos=pos;
+
 endmodule 

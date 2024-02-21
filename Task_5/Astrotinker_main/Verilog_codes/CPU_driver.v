@@ -7,7 +7,7 @@ module CPU_driver(
 	output reg CPU_reset,
 	output reg CPU_Ext_MemWrite,
 	output reg [4:0] path_planned,
-	output reg CPU_stop = 0,
+	output reg CPU_stop_flag = 0,
 	output reg [31:0] CPU_Ext_WriteData, CPU_Ext_DataAdr
 );
 reg start_mem = 0;
@@ -18,6 +18,8 @@ reg [4:0] path_planned_array [15:0] ;
 reg CPU_start_state = 0;
 reg [3:0] CPU_state_counter = 0;
 reg CPU_state_flag = 0;
+reg CPU_stop = 0; 
+reg read_state = 0;
 always @(posedge clk_3125KHz) begin
 	if ( CPU_start && !CPU_state_flag) begin
 		if( CPU_state_counter == 8 ) begin
@@ -77,32 +79,36 @@ always @(posedge clk_3125KHz) begin
 					start_mem <= 0;
 					state <= 2'b00;
 					CPU_reset <= 0;
+					read_state <= 1;
 				end
 			end
 		endcase
 		// External Memory Access Disabled
 //		CPU_Ext_MemWrite <= 0; CPU_Ext_WriteData <= 0; CPU_Ext_DataAdr <= 0;
 	end
-	if(CPU_MemWrite && !CPU_reset) begin
+	if(CPU_MemWrite && !CPU_reset && read_state) begin
         if (CPU_DataAdr === 32'h02000008) begin
             path_planned_array [index] <= CPU_WriteData;
 				index <= index + 1;
         end
         if (CPU_DataAdr === 32'h0200000c & CPU_WriteData === 32'h1) begin
 				CPU_stop <= 1;
+				read_state <= 0;
 				index <= 0;
         end
     end
-	 
 	 if (CPU_stop) begin
-		if (path_planned[idx] == 5'bx) begin
+		if (path_planned_array[idx] == EP) begin
+			path_planned <= path_planned_array [idx];
 			idx <= 0;
 			CPU_stop <= 0;
 		end
 		else begin
+			CPU_stop_flag <= 1;
 			path_planned <= path_planned_array [idx];
 			idx <= idx + 1;
 		end
 	end
+	else CPU_stop_flag <= 0;
 end
 endmodule 

@@ -1,7 +1,8 @@
 module Astrotinker_main(
 	clk_50M,
 	adc_dout,
-	key,
+	key0,
+	key1,
 	UV_echo,
 	UV_trig,
 	adc_cs_n,
@@ -29,7 +30,8 @@ module Astrotinker_main(
 
 input wire	clk_50M;
 input wire	adc_dout;
-input wire key;
+input wire key0;
+input wire key1;
 input wire UV_echo;
 input wire receive_data;
 output wire UV_trig;
@@ -82,6 +84,7 @@ wire node_flag;
 wire fault_detect;
 wire object_drop;
 wire [4:0] now_position;
+wire [4:0] curr_node;
 wire [7:0] tx_data;
 wire [7:0] rx_msg;
 wire rx_complete;
@@ -110,7 +113,7 @@ CPU_driver b2v_inst1(
 	.CPU_DataAdr(CPU_DataAdr),
 	.CPU_ReadData(CPU_ReadData),
 	.CPU_reset(CPU_reset),
-	.CPU_stop(CPU_stop_flag),
+	.CPU_stop_flag(CPU_stop_flag),
 	.path_planned(path_planned),
 	.CPU_Ext_MemWrite(CPU_Ext_MemWrite_flag),
 	.CPU_Ext_WriteData(CPU_Ext_WriteData), 
@@ -216,7 +219,8 @@ path_mapping b2v_inst11(
 	.path_planned(path_planned),
 	.path_input(CPU_stop_flag),
 	.node_changed(node_changed),
-	.realtime_pos(now_position)
+	.realtime_pos(now_position),
+	.curr_node(curr_node)
 );
 
 Dijkstra_handler b2v_inst12(
@@ -228,16 +232,18 @@ Dijkstra_handler b2v_inst12(
 	.RU_fault_flag(RU_fault_flag),
 	.pick_block_flag(pick_block_flag),
 	.block_location(block_location),
-	.block_picked(block_picked),
+//	.block_picked(block_picked),
 	.realtime_pos(now_position),
 	.start_point(CPU_dijkstra_SP),
 	.end_point(CPU_dijkstra_EP),
+	.curr_node(curr_node),
 	.ALL_DONE_FLAG(run_complete)
 );
 
 msg_rx b2v_inst13(
 	.clk_50M(clk_50M),
    .rx_msg(rx_msg),
+	.key0(key0),
 	.switch_key(key_flag),
 	.rx_complete(rx_complete),
 	.EU_fault_flag(EU_fault_flag), 
