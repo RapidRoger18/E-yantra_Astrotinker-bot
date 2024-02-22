@@ -54,7 +54,7 @@ reg [4:0] pos;
         node_rel[25] = {5'd24,5'dx,5'd26,5'dx};
         node_rel[26] = {5'd27,5'd25,5'dx,5'd28};
         node_rel[27] = {5'dx,5'dx,5'd26,5'dx};
-        node_rel[28] = {5'd29,5'dx,5'd26,5'd3};
+        node_rel[28] = {5'd29,5'd26,5'dx,5'd3};
         node_rel[29] = {5'd20,5'dx,5'd28,5'd1};
 
 		path_planned_array[0] <= 5'd0;

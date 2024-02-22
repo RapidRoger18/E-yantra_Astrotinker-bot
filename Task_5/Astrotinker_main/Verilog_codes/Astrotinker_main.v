@@ -168,12 +168,12 @@ pwm_generator	b2v_inst6(
 	);
 
 Fault_detection b2v_inst7(
-//	.key_flag(key_flag),
 	.clk_50M(clk_50M),
 	.UV_echo(UV_echo),
 	.UV_trig(UV_trig),
 	.fault_detect(fault_detect),
-//	.msg(tx_data),
+	.fault_count(fault_count),
+	.block_picked (block_picked),
 	.object_drop(object_drop),
 	.EM_a1(EM_A1),
 	.EM_b1(EM_B1)
@@ -183,8 +183,9 @@ LED_driver b2v_inst8(
 	.clk_3125KHz(adc_clk_3125Khz),
 	.fault_detect(fault_detect),
 	.node_flag(node_flag),
-//	.node(node),
-//	.object_drop(object_drop),
+	.object_drop(object_drop),
+	.run_complete(run_complete),
+	.EU_fault_flag (EU_fault_flag),
 	.led1_R1(led1_R1),
 	.led1_G1(led1_G1),
 	.led1_B1(led1_B1),
@@ -198,6 +199,7 @@ LED_driver b2v_inst8(
 
 uart_tx b2v_inst9(
 	.clk_50M(clk_50M),
+	.data_send(data_send),
 	.data(tx_data),
 	.tx(transmit_data)
 );
@@ -220,4 +222,46 @@ path_mapping b2v_inst11(
 //	.SP(CPU_dijkstra_SP),
 //	.EP(CPU_dijkstra_EP)
 );
+//
+//Dijkstra_handler b2v_inst12(
+//	.clk_3125KHz(adc_clk_3125Khz),
+//	.CPU_start(CPU_start),
+//	.switch_key(key_flag),
+//	.EU_fault_flag(EU_fault_flag),
+//	.CU_fault_flag(CU_fault_flag),
+//	.RU_fault_flag(RU_fault_flag),
+//	.pick_block_flag(pick_block_flag),
+//	.block_location(block_location),
+//	.block_picked(block_picked),
+//	.realtime_pos(now_position),
+//	.start_point(CPU_dijkstra_SP),
+//	.end_point(CPU_dijkstra_EP),
+//	.ALL_DONE_FLAG(run_complete)
+//);
+//
+//msg_rx b2v_inst13(
+//	.clk_50M(clk_50M),
+//   .rx_msg(rx_msg),
+//	.switch_key(key_flag),
+//	.rx_complete(rx_complete),
+//	.EU_fault_flag(EU_fault_flag), 
+//	.CU_fault_flag(CU_fault_flag),
+//	.RU_fault_flag(RU_fault_flag),
+//	.pick_block_flag(pick_block_flag),
+//	.block_location(block_location)
+//);
+//
+//message_unit b2v_inst14(
+//	.clk_50M(clk_50M),
+//   .fault_detect(fault_detect), 
+//	.fault_id(fault_id),
+//	.block_picked(block_picked),
+//	.end_run_interrupt(run_complete),
+//	.block_location(block_location),
+//	.EU_fault_flag(EU_fault_flag), 												
+//	.CU_fault_flag(CU_fault_flag), 												
+//	.RU_fault_flag(RU_fault_flag), 												
+//	.msg(tx_data),
+//	.data_send(data_send)
+//);
 endmodule 

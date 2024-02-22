@@ -1,5 +1,5 @@
 Fitter report for Line_Following
-Mon Feb 19 16:43:09 2024
+Wed Feb 21 16:33:58 2024
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Mon Feb 19 16:43:09 2024       ;
+; Fitter Status                      ; Successful - Wed Feb 21 16:33:58 2024       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; Line_Following                              ;
 ; Top-level Entity Name              ; main_module                                 ;
@@ -154,19 +154,19 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 10          ;
 ;                            ;             ;
-; Average used               ; 1.16        ;
+; Average used               ; 1.20        ;
 ; Maximum used               ; 10          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   2.2%      ;
-;     Processor 3            ;   1.9%      ;
-;     Processor 4            ;   1.8%      ;
-;     Processor 5            ;   1.8%      ;
-;     Processor 6            ;   1.7%      ;
-;     Processor 7            ;   1.7%      ;
-;     Processor 8            ;   1.7%      ;
-;     Processors 9-10        ;   1.6%      ;
+;     Processor 2            ;   2.7%      ;
+;     Processor 3            ;   2.4%      ;
+;     Processor 4            ;   2.3%      ;
+;     Processor 5            ;   2.3%      ;
+;     Processor 6            ;   2.2%      ;
+;     Processor 7            ;   2.2%      ;
+;     Processor 8            ;   2.1%      ;
+;     Processors 9-10        ;   2.1%      ;
 +----------------------------+-------------+
 
 
@@ -1457,7 +1457,7 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.44 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.32 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1465,10 +1465,10 @@ Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Info (144001): Generated suppressed messages file /home/atharv/E-yantra_Astrotinker-bot/Task_4/Line_Following/output_files/Line_Following.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 13 warnings
-    Info: Peak virtual memory: 1440 megabytes
-    Info: Processing ended: Mon Feb 19 16:43:10 2024
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:13
+    Info: Peak virtual memory: 1441 megabytes
+    Info: Processing ended: Wed Feb 21 16:33:58 2024
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:10
 
 
 +----------------------------+
