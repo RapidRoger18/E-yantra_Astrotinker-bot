@@ -1,4 +1,3 @@
-
 module Line_Following(
 		input clk_3125KHz,
 		input key,
@@ -73,32 +72,30 @@ always @(posedge clk_3125KHz) begin
 												end
 										end
 										1: begin
-												m1_a<=1;
-												m1_b<=0;
-												m2_a<=0;
-												m2_b<=1;
-												dutycyc_left<=5'd24;
-												dutycyc_right<=5'd3;
-										end
-										2: begin
-												if( node_delay == 1000 ) begin
+												if(realtime_pos == 5'd21 ) begin														
 														m1_a<=1;
 														m1_b<=0;
 														m2_a<=1;
 														m2_b<=0;
-														dutycyc_left<=5'd10;
-														dutycyc_right<=5'd10;
-														node_delay<=0;
+														dutycyc_left<=5'd18;
+														dutycyc_right<=5'd1;
 												end
-												else begin 
+												else begin
 														m1_a<=1;
 														m1_b<=0;
 														m2_a<=0;
 														m2_b<=1;
-														dutycyc_left<=5'd15;
-														dutycyc_right<=5'd20;
-														node_delay<=node_delay+1;
+														dutycyc_left<=5'd18;
+														dutycyc_right<=5'd3;
 												end
+										end
+										2: begin
+														m1_a<=1;
+														m1_b<=0;
+														m2_a<=0;
+														m2_b<=1;
+														dutycyc_left<=5'd10;
+														dutycyc_right<=5'd20;
 										end
 										3: begin
 												if ( realtime_pos == 5'd20 ) begin
@@ -109,13 +106,21 @@ always @(posedge clk_3125KHz) begin
 														dutycyc_left<=5'd10;
 														dutycyc_right<=5'd30;
 												end
+												else if ( realtime_pos == 5'd28) begin
+														m1_a<=1;
+														m1_b<=0;
+														m2_a<=0;
+														m2_b<=1;
+														dutycyc_left<= 5'd20;
+														dutycyc_right<= 5'd5;
+												end		
 												else begin
 														m1_a<=0; 
 														m1_b<=1;
 														m2_a<=1;
 														m2_b<=0;
 														dutycyc_left<=5'd3;
-														dutycyc_right<=5'd20;
+														dutycyc_right<=5'd24;
 												end
 										end
 								endcase
