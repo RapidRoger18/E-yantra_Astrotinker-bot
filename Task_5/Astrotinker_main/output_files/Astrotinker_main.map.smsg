@@ -1,32 +1,35 @@
-Warning (10268): Verilog HDL information at pwm_generator1.v(43): always construct contains both blocking and non-blocking assignments File: /home/atharv/e-yantra/Task_5/Astrotinker_main/Verilog_codes/pwm_generator1.v Line: 43
-Info (10281): Verilog HDL Declaration information at pwm_generator1.v(23): object "motor_a" differs only in case from object "motor_A" in the same scope File: /home/atharv/e-yantra/Task_5/Astrotinker_main/Verilog_codes/pwm_generator1.v Line: 23
-Info (10281): Verilog HDL Declaration information at pwm_generator1.v(23): object "motor_b" differs only in case from object "motor_B" in the same scope File: /home/atharv/e-yantra/Task_5/Astrotinker_main/Verilog_codes/pwm_generator1.v Line: 23
-Warning (10273): Verilog HDL warning at path_1.v(27): extended using "x" or "z" File: /home/atharv/e-yantra/Task_5/Astrotinker_main/Verilog_codes/path_1.v Line: 27
-Warning (10273): Verilog HDL warning at path_1.v(28): extended using "x" or "z" File: /home/atharv/e-yantra/Task_5/Astrotinker_main/Verilog_codes/path_1.v Line: 28
-Warning (10273): Verilog HDL warning at path_1.v(29): extended using "x" or "z" File: /home/atharv/e-yantra/Task_5/Astrotinker_main/Verilog_codes/path_1.v Line: 29
-Warning (10273): Verilog HDL warning at path_1.v(30): extended using "x" or "z" File: /home/atharv/e-yantra/Task_5/Astrotinker_main/Verilog_codes/path_1.v Line: 30
-Warning (10273): Verilog HDL warning at path_1.v(31): extended using "x" or "z" File: /home/atharv/e-yantra/Task_5/Astrotinker_main/Verilog_codes/path_1.v Line: 31
-Warning (10273): Verilog HDL warning at path_1.v(32): extended using "x" or "z" File: /home/atharv/e-yantra/Task_5/Astrotinker_main/Verilog_codes/path_1.v Line: 32
-Warning (10273): Verilog HDL warning at path_1.v(33): extended using "x" or "z" File: /home/atharv/e-yantra/Task_5/Astrotinker_main/Verilog_codes/path_1.v Line: 33
-Warning (10273): Verilog HDL warning at path_1.v(34): extended using "x" or "z" File: /home/atharv/e-yantra/Task_5/Astrotinker_main/Verilog_codes/path_1.v Line: 34
-Warning (10273): Verilog HDL warning at path_1.v(36): extended using "x" or "z" File: /home/atharv/e-yantra/Task_5/Astrotinker_main/Verilog_codes/path_1.v Line: 36
-Warning (10273): Verilog HDL warning at path_1.v(37): extended using "x" or "z" File: /home/atharv/e-yantra/Task_5/Astrotinker_main/Verilog_codes/path_1.v Line: 37
-Warning (10273): Verilog HDL warning at path_1.v(38): extended using "x" or "z" File: /home/atharv/e-yantra/Task_5/Astrotinker_main/Verilog_codes/path_1.v Line: 38
-Warning (10273): Verilog HDL warning at path_1.v(39): extended using "x" or "z" File: /home/atharv/e-yantra/Task_5/Astrotinker_main/Verilog_codes/path_1.v Line: 39
-Warning (10273): Verilog HDL warning at path_1.v(40): extended using "x" or "z" File: /home/atharv/e-yantra/Task_5/Astrotinker_main/Verilog_codes/path_1.v Line: 40
-Warning (10273): Verilog HDL warning at path_1.v(41): extended using "x" or "z" File: /home/atharv/e-yantra/Task_5/Astrotinker_main/Verilog_codes/path_1.v Line: 41
-Warning (10273): Verilog HDL warning at path_1.v(42): extended using "x" or "z" File: /home/atharv/e-yantra/Task_5/Astrotinker_main/Verilog_codes/path_1.v Line: 42
-Warning (10273): Verilog HDL warning at path_1.v(43): extended using "x" or "z" File: /home/atharv/e-yantra/Task_5/Astrotinker_main/Verilog_codes/path_1.v Line: 43
-Warning (10273): Verilog HDL warning at path_1.v(44): extended using "x" or "z" File: /home/atharv/e-yantra/Task_5/Astrotinker_main/Verilog_codes/path_1.v Line: 44
-Warning (10273): Verilog HDL warning at path_1.v(45): extended using "x" or "z" File: /home/atharv/e-yantra/Task_5/Astrotinker_main/Verilog_codes/path_1.v Line: 45
-Warning (10273): Verilog HDL warning at path_1.v(46): extended using "x" or "z" File: /home/atharv/e-yantra/Task_5/Astrotinker_main/Verilog_codes/path_1.v Line: 46
-Warning (10273): Verilog HDL warning at path_1.v(48): extended using "x" or "z" File: /home/atharv/e-yantra/Task_5/Astrotinker_main/Verilog_codes/path_1.v Line: 48
-Warning (10273): Verilog HDL warning at path_1.v(49): extended using "x" or "z" File: /home/atharv/e-yantra/Task_5/Astrotinker_main/Verilog_codes/path_1.v Line: 49
-Warning (10273): Verilog HDL warning at path_1.v(50): extended using "x" or "z" File: /home/atharv/e-yantra/Task_5/Astrotinker_main/Verilog_codes/path_1.v Line: 50
-Warning (10273): Verilog HDL warning at path_1.v(51): extended using "x" or "z" File: /home/atharv/e-yantra/Task_5/Astrotinker_main/Verilog_codes/path_1.v Line: 51
-Warning (10273): Verilog HDL warning at path_1.v(52): extended using "x" or "z" File: /home/atharv/e-yantra/Task_5/Astrotinker_main/Verilog_codes/path_1.v Line: 52
-Warning (10273): Verilog HDL warning at path_1.v(53): extended using "x" or "z" File: /home/atharv/e-yantra/Task_5/Astrotinker_main/Verilog_codes/path_1.v Line: 53
-Warning (10273): Verilog HDL warning at path_1.v(54): extended using "x" or "z" File: /home/atharv/e-yantra/Task_5/Astrotinker_main/Verilog_codes/path_1.v Line: 54
-Warning (10273): Verilog HDL warning at path_1.v(55): extended using "x" or "z" File: /home/atharv/e-yantra/Task_5/Astrotinker_main/Verilog_codes/path_1.v Line: 55
-Warning (10273): Verilog HDL warning at path_1.v(56): extended using "x" or "z" File: /home/atharv/e-yantra/Task_5/Astrotinker_main/Verilog_codes/path_1.v Line: 56
-Warning (10273): Verilog HDL warning at CPU_driver.v(85): extended using "x" or "z" File: /home/atharv/e-yantra/Task_5/Astrotinker_main/Verilog_codes/CPU_driver.v Line: 85
+Warning (10268): Verilog HDL information at uart_rx.v(52): always construct contains both blocking and non-blocking assignments File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/uart_rx.v Line: 52
+Warning (10268): Verilog HDL information at pwm_generator1.v(42): always construct contains both blocking and non-blocking assignments File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/pwm_generator1.v Line: 42
+Info (10281): Verilog HDL Declaration information at pwm_generator1.v(23): object "motor_a" differs only in case from object "motor_A" in the same scope File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/pwm_generator1.v Line: 23
+Info (10281): Verilog HDL Declaration information at pwm_generator1.v(23): object "motor_b" differs only in case from object "motor_B" in the same scope File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/pwm_generator1.v Line: 23
+Warning (10273): Verilog HDL warning at path_1.v(30): extended using "x" or "z" File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/path_1.v Line: 30
+Warning (10273): Verilog HDL warning at path_1.v(31): extended using "x" or "z" File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/path_1.v Line: 31
+Warning (10273): Verilog HDL warning at path_1.v(32): extended using "x" or "z" File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/path_1.v Line: 32
+Warning (10273): Verilog HDL warning at path_1.v(33): extended using "x" or "z" File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/path_1.v Line: 33
+Warning (10273): Verilog HDL warning at path_1.v(34): extended using "x" or "z" File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/path_1.v Line: 34
+Warning (10273): Verilog HDL warning at path_1.v(35): extended using "x" or "z" File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/path_1.v Line: 35
+Warning (10273): Verilog HDL warning at path_1.v(36): extended using "x" or "z" File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/path_1.v Line: 36
+Warning (10273): Verilog HDL warning at path_1.v(37): extended using "x" or "z" File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/path_1.v Line: 37
+Warning (10273): Verilog HDL warning at path_1.v(39): extended using "x" or "z" File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/path_1.v Line: 39
+Warning (10273): Verilog HDL warning at path_1.v(40): extended using "x" or "z" File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/path_1.v Line: 40
+Warning (10273): Verilog HDL warning at path_1.v(41): extended using "x" or "z" File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/path_1.v Line: 41
+Warning (10273): Verilog HDL warning at path_1.v(42): extended using "x" or "z" File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/path_1.v Line: 42
+Warning (10273): Verilog HDL warning at path_1.v(43): extended using "x" or "z" File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/path_1.v Line: 43
+Warning (10273): Verilog HDL warning at path_1.v(44): extended using "x" or "z" File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/path_1.v Line: 44
+Warning (10273): Verilog HDL warning at path_1.v(45): extended using "x" or "z" File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/path_1.v Line: 45
+Warning (10273): Verilog HDL warning at path_1.v(46): extended using "x" or "z" File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/path_1.v Line: 46
+Warning (10273): Verilog HDL warning at path_1.v(47): extended using "x" or "z" File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/path_1.v Line: 47
+Warning (10273): Verilog HDL warning at path_1.v(48): extended using "x" or "z" File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/path_1.v Line: 48
+Warning (10273): Verilog HDL warning at path_1.v(49): extended using "x" or "z" File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/path_1.v Line: 49
+Warning (10273): Verilog HDL warning at path_1.v(51): extended using "x" or "z" File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/path_1.v Line: 51
+Warning (10273): Verilog HDL warning at path_1.v(52): extended using "x" or "z" File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/path_1.v Line: 52
+Warning (10273): Verilog HDL warning at path_1.v(53): extended using "x" or "z" File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/path_1.v Line: 53
+Warning (10273): Verilog HDL warning at path_1.v(54): extended using "x" or "z" File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/path_1.v Line: 54
+Warning (10273): Verilog HDL warning at path_1.v(55): extended using "x" or "z" File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/path_1.v Line: 55
+Warning (10273): Verilog HDL warning at path_1.v(56): extended using "x" or "z" File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/path_1.v Line: 56
+Warning (10273): Verilog HDL warning at path_1.v(57): extended using "x" or "z" File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/path_1.v Line: 57
+Warning (10273): Verilog HDL warning at path_1.v(58): extended using "x" or "z" File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/path_1.v Line: 58
+Warning (10273): Verilog HDL warning at path_1.v(59): extended using "x" or "z" File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/path_1.v Line: 59
+Info (10281): Verilog HDL Declaration information at Dijkstra_handler.v(25): object "EU_RECTIFY" differs only in case from object "EU_rectify" in the same scope File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/Dijkstra_handler.v Line: 25
+Info (10281): Verilog HDL Declaration information at Dijkstra_handler.v(26): object "CU_RECTIFY" differs only in case from object "CU_rectify" in the same scope File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/Dijkstra_handler.v Line: 26
+Info (10281): Verilog HDL Declaration information at Dijkstra_handler.v(27): object "RU_RECTIFY" differs only in case from object "RU_rectify" in the same scope File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/Dijkstra_handler.v Line: 27

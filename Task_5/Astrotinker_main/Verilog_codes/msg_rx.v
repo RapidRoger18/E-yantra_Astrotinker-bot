@@ -1,5 +1,6 @@
 module msg_rx (
     input clk_50M,
+	 input clk_3125KHz,
     input [7:0] rx_msg,
 	 input rx_complete,
 	 input key0,
@@ -8,13 +9,18 @@ module msg_rx (
 	 output reg CU_fault_flag = 0,
 	 output reg RU_fault_flag = 0,
 	 output reg pick_block_flag = 0,
-	 output reg switch_key,
+	 output reg switch_key = 0,
 	 output reg [1:0] block_location
 ); 
 reg [7:0] msg_mem [11:0] ;
 reg [1:0] state = 0;
 reg [4:0] idx = 0;
-reg [15:0] delay_count = 0;
+reg [31:0] delay_count = 0;
+//reg [31:0] delay_cycles = 32'd93750000; 
+reg flag_counter = 0;
+reg [1:0] count = 0;
+reg EU_fault_count = 0;
+
 initial begin
 			msg_mem[0] <= 0;
 			msg_mem[1] <= 0;
@@ -31,13 +37,18 @@ initial begin
 			EU_fault_flag <= 0;
 			pick_block_flag <= 0;
 end
-always @(*) begin
-	if (!key0) begin
-		switch_key <= 1;
-		EU_fault_flag <= 1;
-		pick_block_flag <= 1;
-		block_location <= 0;
-	end
+always @(posedge clk_3125KHz) begin
+		if ( delay_count < 32'd93750000 ) begin	
+			delay_count <= delay_count + 1;
+		   switch_key <= 0;
+		end
+		else if (delay_count == 32'd93750000) switch_key <= 1;	
+		
+		if ( count < 2 ) begin 
+			EU_fault_flag <= 1;
+			count <= count + 1;
+		end
+		else EU_fault_flag <= 0;
 //	else if (!key1) begin
 //		pick_block_flag <= 1;
 //		block_location <= 0;

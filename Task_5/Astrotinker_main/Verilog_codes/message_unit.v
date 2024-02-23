@@ -1,13 +1,11 @@
 module message_unit( 
 input clk_50M,
 input fault_detect, 											// when a fault is detected by U.S.
-input [1:0] fault_id,
+input [2:0] fault_id,
 input block_picked,
 input end_run_interrupt,
 input [1:0] block_location,
-input EU_fault_flag, 												// in EU section
-input CU_fault_flag, 												// in CU section
-input RU_fault_flag, 												// in RU section
+input [1:0] fault_location,
 output reg  [7:0] msg = 0,
 output reg data_send = 0
 );
@@ -40,8 +38,20 @@ reg [7:0] msg_container [12:0];
 reg [1:0] STATE = 2'd0;
 reg [3:0] idx = 0; 
 reg msg_sent = 0;
+reg EU_fault_flag = 0;
+reg CU_fault_flag = 0;
+reg RU_fault_flag = 0;
 
 always@( clk_50M ) begin
+	
+	if( fault_location == 2'd1 ) EU_fault_flag <= 1;
+	if( fault_location == 2'd2 ) CU_fault_flag <= 1;
+	if( fault_location == 2'd3 ) RU_fault_flag <= 1;
+	else begin
+		EU_fault_flag <= 0;
+		CU_fault_flag <= 0;
+		RU_fault_flag <= 0;
+	end
 	
 	if ( end_run_interrupt ) begin
 		msg_container[0] <= E;
@@ -53,6 +63,7 @@ always@( clk_50M ) begin
 	else if ( fault_detect && !block_picked ) STATE <= FAULT_state;
 	else if ( block_picked && !fault_detect ) STATE <= PICKUP_state;
 	else if ( block_picked && fault_detect ) STATE <= DEPOSIT_state;
+	else STATE <= IDLE_state;
 	if ( msg_sent ) STATE <= IDLE_state;
 
 	case (STATE)
@@ -82,10 +93,10 @@ always@( clk_50M ) begin
 				else if (RU_fault_flag) msg_container[4] <= R;
 				msg_container[5] <= S;
 				msg_container[6] <= U;
-				if (fault_id == 2'd0) msg_container[7] <= N1; 
-				else if (fault_id == 2'd1) msg_container[7] <= N2;
-				else if (fault_id == 2'd2) msg_container[7] <= N3;
-				else if (fault_id == 2'd3) msg_container[7] <= N4;
+				if (fault_id == 3'd1) msg_container[7] <= N1; 
+				else if (fault_id == 3'd2) msg_container[7] <= N2;
+				else if (fault_id == 3'd3) msg_container[7] <= N3;
+				else if (fault_id == 3'd4) msg_container[7] <= N4;
 				msg_container[8] <= DASH;
 				msg_container[9] <= HASH;
 			end
@@ -115,10 +126,10 @@ always@( clk_50M ) begin
 				else if (RU_fault_flag) msg_container[4] <= R;
 				msg_container[5] <= S;
 				msg_container[6] <= U;
-				if (fault_id == 2'd0) msg_container[7] <= N1; 
-				else if (fault_id == 2'd1) msg_container[7] <= N2;
-				else if (fault_id == 2'd2) msg_container[7] <= N3;
-				else if (fault_id == 2'd3) msg_container[7] <= N4;
+				if (fault_id == 3'd1) msg_container[7] <= N1; 
+				else if (fault_id == 3'd2) msg_container[7] <= N2;
+				else if (fault_id == 3'd3) msg_container[7] <= N3;
+				else if (fault_id == 3'd4) msg_container[7] <= N4;
 				msg_container[8] <= DASH;
 				msg_container[9] <= B;
 				if (block_location == 0) msg_container[10] <= N1;

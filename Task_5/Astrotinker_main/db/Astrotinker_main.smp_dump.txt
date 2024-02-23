@@ -1,9 +1,58 @@
 
+State Machine - |Astrotinker_main|Dijkstra_handler:b2v_inst12|counter_RU_rectify
+Name counter_RU_rectify.11 counter_RU_rectify.10 counter_RU_rectify.01 counter_RU_rectify.00 
+counter_RU_rectify.00 0 0 0 0 
+counter_RU_rectify.01 0 0 1 1 
+counter_RU_rectify.10 0 1 0 1 
+counter_RU_rectify.11 1 0 0 1 
+
+State Machine - |Astrotinker_main|Dijkstra_handler:b2v_inst12|counter_CU_rectify
+Name counter_CU_rectify.00 counter_CU_rectify.10 counter_CU_rectify.01 
+counter_CU_rectify.00 0 0 0 
+counter_CU_rectify.01 1 0 1 
+counter_CU_rectify.10 1 1 0 
+
+State Machine - |Astrotinker_main|Dijkstra_handler:b2v_inst12|counter_EU_rectify
+Name counter_EU_rectify.00 counter_EU_rectify.10 counter_EU_rectify.01 
+counter_EU_rectify.00 0 0 0 
+counter_EU_rectify.01 1 0 1 
+counter_EU_rectify.10 1 1 0 
+
+State Machine - |Astrotinker_main|Dijkstra_handler:b2v_inst12|counter_RU_fault
+Name counter_RU_fault.11 counter_RU_fault.10 counter_RU_fault.01 counter_RU_fault.00 
+counter_RU_fault.00 0 0 0 0 
+counter_RU_fault.01 0 0 1 1 
+counter_RU_fault.10 0 1 0 1 
+counter_RU_fault.11 1 0 0 1 
+
+State Machine - |Astrotinker_main|Dijkstra_handler:b2v_inst12|counter_CU_fault
+Name counter_CU_fault.00 counter_CU_fault.10 counter_CU_fault.01 
+counter_CU_fault.00 0 0 0 
+counter_CU_fault.01 1 0 1 
+counter_CU_fault.10 1 1 0 
+
+State Machine - |Astrotinker_main|Dijkstra_handler:b2v_inst12|counter_EU_fault
+Name counter_EU_fault.00 counter_EU_fault.10 counter_EU_fault.01 
+counter_EU_fault.00 0 0 0 
+counter_EU_fault.01 1 0 1 
+counter_EU_fault.10 1 1 0 
+
+State Machine - |Astrotinker_main|Dijkstra_handler:b2v_inst12|SWITCH_STATE
+Name SWITCH_STATE.RU_RECTIFY SWITCH_STATE.CU_RECTIFY SWITCH_STATE.EU_RECTIFY SWITCH_STATE.PICK_BLOCK SWITCH_STATE.RU_FAULT SWITCH_STATE.CU_FAULT SWITCH_STATE.EU_FAULT SWITCH_STATE.IDLE_STATE 
+SWITCH_STATE.IDLE_STATE 0 0 0 0 0 0 0 0 
+SWITCH_STATE.EU_FAULT 0 0 0 0 0 0 1 1 
+SWITCH_STATE.CU_FAULT 0 0 0 0 0 1 0 1 
+SWITCH_STATE.RU_FAULT 0 0 0 0 1 0 0 1 
+SWITCH_STATE.PICK_BLOCK 0 0 0 1 0 0 0 1 
+SWITCH_STATE.EU_RECTIFY 0 0 1 0 0 0 0 1 
+SWITCH_STATE.CU_RECTIFY 0 1 0 0 0 0 0 1 
+SWITCH_STATE.RU_RECTIFY 1 0 0 0 0 0 0 1 
+
 State Machine - |Astrotinker_main|path_mapping:b2v_inst11|STATE
 Name STATE.00 STATE.10 STATE.01 
-STATE.00 0 0 0 
-STATE.01 1 0 1 
-STATE.10 1 1 0 
+STATE.01 0 0 0 
+STATE.00 1 0 1 
+STATE.10 0 1 1 
 
 State Machine - |Astrotinker_main|uart_rx:b2v_inst10|state
 Name state.11 state.10 state.01 state.00 

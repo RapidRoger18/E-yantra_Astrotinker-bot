@@ -5,6 +5,8 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
+vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/message_unit.v}
+vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/msg_rx.v}
 vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/uart_tx.v}
 vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/uart_rx.v}
 vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/t2b_riscv_cpu.v}
@@ -24,6 +26,7 @@ vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main
 vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/adc_controller.v}
 vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/Astrotinker_main.v}
 vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/CPU_driver.v}
+vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/Dijkstra_handler.v}
 vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/instr_mem.v}
 
 vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim {/home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v}

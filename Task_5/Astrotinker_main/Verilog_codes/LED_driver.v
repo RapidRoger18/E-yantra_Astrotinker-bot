@@ -37,7 +37,7 @@ always@ (posedge clk_3125KHz) begin
 end
 
 always@(*)begin
-	if (run_complete) run_complete_flag <= 1;
+	if (run_complete) run_complete_flag <= 0;
 	if (run_complete_flag) begin
 		if (switch) begin
 			{led1_R1,led2_R2,led3_R3} <= 3'b0;

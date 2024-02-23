@@ -55,15 +55,15 @@ reg [4:0] pos = 0;
         node_rel[25] = {5'd24,5'dx,5'd26,5'dx};
         node_rel[26] = {5'd27,5'd25,5'dx,5'd28};
         node_rel[27] = {5'dx,5'dx,5'd26,5'dx};
-        node_rel[28] = {5'd29,5'dx,5'd26,5'd3};
-        node_rel[29] = {5'd20,5'dx,5'd28,5'd1};		
+        node_rel[28] = {5'd29,5'd26,5'dx,5'd3};
+        node_rel[29] = {5'd20,5'dx,5'd28,5'd1};	
 end 
 
 always @(posedge clk_3125KHz) begin
 		if (path_input) begin
 			path_planned_array[idx] <= path_planned;
 			idx <= idx + 1;
-			next_node<=path_planned_array[1];
+			next_node <= path_planned_array[1];
 			j <= 0;
 			k <= 0;
 			STATE <= 2'b01;
@@ -74,7 +74,7 @@ always @(posedge clk_3125KHz) begin
 			if (node_flag) begin
 				pos <= curr_node;
 			end
-			if ( pos == 0 && j == 0 ) j <= 1;
+//			if ( pos == 0 && j == 0 ) j <= 1;
 			if (node_changed) begin
 				curr_node<=path_planned_array[j];
 				next_node<=path_planned_array[j+1];

@@ -9,381 +9,43 @@
 # Copying /home/atharvak/Quartus/intelFPGA/20.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
+# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/message_unit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:29:53 on Feb 15,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes" /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/message_unit.v 
+# -- Compiling module message_unit
+# 
+# Top level modules:
+# 	message_unit
+# End time: 18:29:53 on Feb 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/msg_rx.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:29:53 on Feb 15,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes" /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/msg_rx.v 
+# -- Compiling module msg_rx
+# 
+# Top level modules:
+# 	msg_rx
+# End time: 18:29:53 on Feb 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/uart_tx.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:09:12 on Jan 24,2024
+# Start time: 18:29:53 on Feb 15,2024
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes" /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/uart_tx.v 
 # -- Compiling module uart_tx
 # 
 # Top level modules:
 # 	uart_tx
-# End time: 16:09:12 on Jan 24,2024, Elapsed time: 0:00:00
+# End time: 18:29:53 on Feb 15,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/uart_rx.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:09:12 on Jan 24,2024
+# Start time: 18:29:53 on Feb 15,2024
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes" /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/uart_rx.v 
 # -- Compiling module uart_rx
 # 
 # Top level modules:
 # 	uart_rx
-# End time: 16:09:12 on Jan 24,2024, Elapsed time: 0:00:00
+# End time: 18:29:53 on Feb 15,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/t2b_riscv_cpu.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:09:12 on Jan 24,2024
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes" /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/t2b_riscv_cpu.v 
-# -- Compiling module t2b_riscv_cpu
-# 
-# Top level modules:
-# 	t2b_riscv_cpu
-# End time: 16:09:12 on Jan 24,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/riscv_cpu.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:09:12 on Jan 24,2024
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes" /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/riscv_cpu.v 
-# -- Compiling module riscv_cpu
-# 
-# Top level modules:
-# 	riscv_cpu
-# End time: 16:09:13 on Jan 24,2024, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/registerfile.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:09:13 on Jan 24,2024
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes" /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/registerfile.v 
-# -- Compiling module registerfile
-# 
-# Top level modules:
-# 	registerfile
-# End time: 16:09:13 on Jan 24,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/pwm_generator1.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:09:13 on Jan 24,2024
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes" /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/pwm_generator1.v 
-# -- Compiling module pwm_generator
-# 
-# Top level modules:
-# 	pwm_generator
-# End time: 16:09:13 on Jan 24,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/pc.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:09:13 on Jan 24,2024
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes" /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/pc.v 
-# -- Compiling module PC
-# 
-# Top level modules:
-# 	PC
-# End time: 16:09:13 on Jan 24,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/path_1.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:09:13 on Jan 24,2024
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes" /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/path_1.v 
-# -- Compiling module path_mapping
-# 
-# Top level modules:
-# 	path_mapping
-# End time: 16:09:13 on Jan 24,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/Line_Following.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:09:13 on Jan 24,2024
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes" /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/Line_Following.v 
-# -- Compiling module Line_Following
-# 
-# Top level modules:
-# 	Line_Following
-# End time: 16:09:13 on Jan 24,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/LED_driver.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:09:13 on Jan 24,2024
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes" /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/LED_driver.v 
-# -- Compiling module LED_driver
-# 
-# Top level modules:
-# 	LED_driver
-# End time: 16:09:13 on Jan 24,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/frequency_scaling.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:09:13 on Jan 24,2024
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes" /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/frequency_scaling.v 
-# -- Compiling module frequency_scaling
-# 
-# Top level modules:
-# 	frequency_scaling
-# End time: 16:09:13 on Jan 24,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/Fault_detection.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:09:13 on Jan 24,2024
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes" /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/Fault_detection.v 
-# -- Compiling module Fault_detection
-# 
-# Top level modules:
-# 	Fault_detection
-# End time: 16:09:13 on Jan 24,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/decoder.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:09:13 on Jan 24,2024
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes" /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/decoder.v 
-# -- Compiling module decoder
-# 
-# Top level modules:
-# 	decoder
-# End time: 16:09:13 on Jan 24,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/data_mem.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:09:13 on Jan 24,2024
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes" /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/data_mem.v 
-# -- Compiling module data_mem
-# 
-# Top level modules:
-# 	data_mem
-# End time: 16:09:13 on Jan 24,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/control_unit.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:09:13 on Jan 24,2024
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes" /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/control_unit.v 
-# -- Compiling module control_unit
-# 
-# Top level modules:
-# 	control_unit
-# End time: 16:09:13 on Jan 24,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/alu.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:09:13 on Jan 24,2024
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes" /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/alu.v 
-# -- Compiling module alu
-# 
-# Top level modules:
-# 	alu
-# End time: 16:09:13 on Jan 24,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/adc_controller.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:09:13 on Jan 24,2024
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes" /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/adc_controller.v 
-# -- Compiling module ADC_Controller
-# 
-# Top level modules:
-# 	ADC_Controller
-# End time: 16:09:13 on Jan 24,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/Astrotinker_main.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:09:13 on Jan 24,2024
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes" /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/Astrotinker_main.v 
-# -- Compiling module Astrotinker_main
-# 
-# Top level modules:
-# 	Astrotinker_main
-# End time: 16:09:13 on Jan 24,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/CPU_driver.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:09:13 on Jan 24,2024
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes" /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/CPU_driver.v 
-# -- Compiling module CPU_driver
-# 
-# Top level modules:
-# 	CPU_driver
-# End time: 16:09:13 on Jan 24,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/instr_mem.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:09:13 on Jan 24,2024
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes" /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/instr_mem.v 
-# -- Compiling module instr_mem
-# 
-# Top level modules:
-# 	instr_mem
-# End time: 16:09:13 on Jan 24,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim {/home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:09:13 on Jan 24,2024
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim" /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v 
-# -- Compiling module tb_clock
-# 
-# Top level modules:
-# 	tb_clock
-# End time: 16:09:13 on Jan 24,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  tb_clock
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" tb_clock 
-# Start time: 16:09:13 on Jan 24,2024
-# Loading work.tb_clock
-# Loading work.Astrotinker_main
-# Loading work.t2b_riscv_cpu
-# Loading work.riscv_cpu
-# Loading work.PC
-# Loading work.alu
-# Loading work.control_unit
-# Loading work.decoder
-# Loading work.registerfile
-# Loading work.instr_mem
-# Loading work.data_mem
-# Loading work.CPU_driver
-# Loading work.ADC_Controller
-# Loading work.Line_Following
-# Loading work.frequency_scaling
-# Loading work.pwm_generator
-# Loading work.Fault_detection
-# Loading work.LED_driver
-# Loading work.uart_tx
-# Loading work.uart_rx
-# Loading work.path_mapping
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 25, found 1.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_clock/uut File: /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v Line: 4
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'adc_dout'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'key'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'UV_echo'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'UV_trig'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'adc_cs_n'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'adc_din'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'led1_R1'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'led1_G1'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'led1_B1'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'led2_R2'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'led2_G2'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'led2_B2'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'led3_R3'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'led3_G3'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'led3_B3'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'motor_A1'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'motor_B1'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'motor_A2'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'motor_B2'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'adc_clk_3125Khz'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'fpga_LED'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'transmit_data'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'receive_data'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'b2v_inst6'.  Expected 7, found 6.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_clock/uut/b2v_inst6 File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/Astrotinker_main.v Line: 178
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/Astrotinker_main.v(178): [TFMPC] - Missing connection for port 'clk_95Hz'.
-# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'turn_flag'. The port definition is at: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/path_1.v(7).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_clock/uut/b2v_inst11 File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/Astrotinker_main.v Line: 223
-# 
-# add wave *
-# Unable to lock WLF file "vsim.wlf". Retrying 1 times, errno 11
-# Unable to lock WLF file "vsim.wlf". Retrying 2 times, errno 11
-# Unable to lock WLF file "vsim.wlf". Retrying 3 times, errno 11
-# Cannot lock WLF file: "vsim.wlf"
-#           errno 11: Resource temporarily unavailable.
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: atharvak  Hostname: ideapad  ProcessID: 11035
-#           Attempting to use alternate WLF file "./wlftMSef2z".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftMSef2z
-# view structure
-# .main_pane.structure.interior.cs.body.struct
-# view signals
-# .main_pane.objects.interior.cs.body.tree
-# run -all
-# Break key hit
-# Simulation stop requested.
-# 
-# stdin: <EOF>
-do /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/wave.do
-# ** UI-Msg: (vish-4014) No objects found matching '/tb_clock/uut/b2v_inst3/clk_50M'.
-# Executing ONERROR command at macro /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/wave.do line 4
-# ** UI-Msg: (vish-4014) No objects found matching '/tb_clock/uut/b2v_inst3/CPU_MemWrite'.
-# Executing ONERROR command at macro /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/wave.do line 5
-# ** UI-Msg: (vish-4014) No objects found matching '/tb_clock/uut/b2v_inst3/CPU_WriteData'.
-# Executing ONERROR command at macro /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/wave.do line 6
-# ** UI-Msg: (vish-4014) No objects found matching '/tb_clock/uut/b2v_inst3/CPU_DataAdr'.
-# Executing ONERROR command at macro /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/wave.do line 7
-# ** UI-Msg: (vish-4014) No objects found matching '/tb_clock/uut/b2v_inst3/CPU_ReadData'.
-# Executing ONERROR command at macro /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/wave.do line 8
-# ** UI-Msg: (vish-4014) No objects found matching '/tb_clock/uut/b2v_inst3/CPU_reset'.
-# Executing ONERROR command at macro /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/wave.do line 9
-# ** UI-Msg: (vish-4014) No objects found matching '/tb_clock/uut/b2v_inst3/CPU_Ext_MemWrite'.
-# Executing ONERROR command at macro /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/wave.do line 10
-# ** UI-Msg: (vish-4014) No objects found matching '/tb_clock/uut/b2v_inst3/CPU_Ext_WriteData'.
-# Executing ONERROR command at macro /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/wave.do line 11
-# ** UI-Msg: (vish-4014) No objects found matching '/tb_clock/uut/b2v_inst3/CPU_Ext_DataAdr'.
-# Executing ONERROR command at macro /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/wave.do line 12
-# ** UI-Msg: (vish-4014) No objects found matching '/tb_clock/uut/b2v_inst3/CPU_start'.
-# Executing ONERROR command at macro /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/wave.do line 13
-# ** UI-Msg: (vish-4014) No objects found matching '/tb_clock/uut/b2v_inst3/CPU_stop'.
-# Executing ONERROR command at macro /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/wave.do line 14
-# ** UI-Msg: (vish-4014) No objects found matching '/tb_clock/uut/b2v_inst3/start_mem'.
-# Executing ONERROR command at macro /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/wave.do line 15
-# ** UI-Msg: (vish-4014) No objects found matching '/tb_clock/uut/b2v_inst3/state'.
-# Executing ONERROR command at macro /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/wave.do line 16
-# ** UI-Msg: (vish-4014) No objects found matching '/tb_clock/uut/b2v_inst3/index'.
-# Executing ONERROR command at macro /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/wave.do line 17
-# ** UI-Msg: (vish-4014) No objects found matching '/tb_clock/uut/b2v_inst3/SP'.
-# Executing ONERROR command at macro /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/wave.do line 18
-# ** UI-Msg: (vish-4014) No objects found matching '/tb_clock/uut/b2v_inst3/EP'.
-# Executing ONERROR command at macro /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/wave.do line 19
-# ** UI-Msg: (vish-4014) No objects found matching '/tb_clock/uut/b2v_inst3/path_planned'.
-# Executing ONERROR command at macro /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/wave.do line 20
-add wave -position insertpoint  \
-sim:/tb_clock/uut/b2v_inst1/clk_50M \
-sim:/tb_clock/uut/b2v_inst1/CPU_MemWrite \
-sim:/tb_clock/uut/b2v_inst1/CPU_start \
-sim:/tb_clock/uut/b2v_inst1/SP \
-sim:/tb_clock/uut/b2v_inst1/EP \
-sim:/tb_clock/uut/b2v_inst1/CPU_WriteData \
-sim:/tb_clock/uut/b2v_inst1/CPU_DataAdr \
-sim:/tb_clock/uut/b2v_inst1/CPU_ReadData \
-sim:/tb_clock/uut/b2v_inst1/CPU_reset \
-sim:/tb_clock/uut/b2v_inst1/CPU_Ext_MemWrite \
-sim:/tb_clock/uut/b2v_inst1/path_planned \
-sim:/tb_clock/uut/b2v_inst1/CPU_stop \
-sim:/tb_clock/uut/b2v_inst1/CPU_Ext_WriteData \
-sim:/tb_clock/uut/b2v_inst1/CPU_Ext_DataAdr \
-sim:/tb_clock/uut/b2v_inst1/CPU_initiate \
-sim:/tb_clock/uut/b2v_inst1/start_mem \
-sim:/tb_clock/uut/b2v_inst1/state \
-sim:/tb_clock/uut/b2v_inst1/index \
-sim:/tb_clock/uut/b2v_inst1/idx \
-sim:/tb_clock/uut/b2v_inst1/path_planned_array
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 25, found 1.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_clock/uut File: /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v Line: 4
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'adc_dout'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'key'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'UV_echo'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'UV_trig'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'adc_cs_n'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'adc_din'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'led1_R1'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'led1_G1'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'led1_B1'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'led2_R2'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'led2_G2'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'led2_B2'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'led3_R3'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'led3_G3'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'led3_B3'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'motor_A1'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'motor_B1'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'motor_A2'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'motor_B2'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'adc_clk_3125Khz'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'fpga_LED'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'transmit_data'.
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim/clock_tb.v(4): [TFMPC] - Missing connection for port 'receive_data'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'b2v_inst6'.  Expected 7, found 6.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_clock/uut/b2v_inst6 File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/Astrotinker_main.v Line: 178
-# ** Warning: (vsim-3722) /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/Astrotinker_main.v(178): [TFMPC] - Missing connection for port 'clk_95Hz'.
-# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'turn_flag'. The port definition is at: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/path_1.v(7).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_clock/uut/b2v_inst11 File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/Astrotinker_main.v Line: 223
-run
-# End time: 16:10:57 on Jan 24,2024, Elapsed time: 0:01:44
-# Errors: 0, Warnings: 27

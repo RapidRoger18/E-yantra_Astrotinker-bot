@@ -91,6 +91,8 @@ wire rx_complete;
 wire data_send;
 wire node_changed;
 wire key_flag;
+wire [2:0] fault_id;
+wire [1:0] fault_location;
 
 assign fpga_LED = now_position;
 
@@ -170,6 +172,7 @@ pwm_generator	b2v_inst6(
 
 Fault_detection b2v_inst7(
 	.clk_50M(clk_50M),
+	.switch_key(key_flag),
 	.UV_echo(UV_echo),
 	.UV_trig(UV_trig),
 	.fault_detect(fault_detect),
@@ -237,11 +240,14 @@ Dijkstra_handler b2v_inst12(
 	.start_point(CPU_dijkstra_SP),
 	.end_point(CPU_dijkstra_EP),
 	.curr_node(curr_node),
-	.ALL_DONE_FLAG(run_complete)
+	.ALL_DONE_FLAG(run_complete),
+	.fault_id(fault_id),
+	.fault_location(fault_location)
 );
 
 msg_rx b2v_inst13(
 	.clk_50M(clk_50M),
+	.clk_3125KHz(adc_clk_3125Khz),
    .rx_msg(rx_msg),
 	.key0(key0),
 	.switch_key(key_flag),
@@ -255,14 +261,12 @@ msg_rx b2v_inst13(
 
 message_unit b2v_inst14(
 	.clk_50M(clk_50M),
+	.fault_location(fault_location),
    .fault_detect(fault_detect), 
 	.fault_id(fault_id),
 	.block_picked(block_picked),
 	.end_run_interrupt(run_complete),
-	.block_location(block_location),
-	.EU_fault_flag(EU_fault_flag), 												
-	.CU_fault_flag(CU_fault_flag), 												
-	.RU_fault_flag(RU_fault_flag), 												
+	.block_location(block_location), 												
 	.msg(tx_data),
 	.data_send(data_send)
 );
