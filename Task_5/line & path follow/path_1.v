@@ -14,7 +14,7 @@ reg [1:0] STATE = 0;
 reg [1:0] curr_dir=0;
 reg [1:0] next_dir=0;
 reg [19:0] node_rel [29:0];
-reg [4:0] path_planned_array [15:0];
+reg [4:0] path_planned_array [22:0];
 reg [4:0] j=0,k=0;
 reg [4:0] curr_node,next_node;
 reg [19:0] temp;
@@ -50,8 +50,8 @@ reg [4:0] pos;
         node_rel[21] = {5'd23,5'd20,5'd22,5'dx};
         node_rel[22] = {5'd21,5'dx,5'dx,5'dx};
         node_rel[23] = {5'dx,5'dx,5'd21,5'dx};
-        node_rel[24] = {5'dx,5'd25,5'dx,5'd20};		// ??recheck after test
-        node_rel[25] = {5'd24,5'dx,5'd26,5'dx};
+        node_rel[24] = {5'dx,5'd25,5'dx,5'd20};		
+        node_rel[25] = {5'dx,5'dx,5'd26,5'd24};
         node_rel[26] = {5'd27,5'd25,5'dx,5'd28};
         node_rel[27] = {5'dx,5'dx,5'd26,5'dx};
         node_rel[28] = {5'd29,5'd26,5'dx,5'd3};
@@ -60,19 +60,28 @@ reg [4:0] pos;
 		path_planned_array[0] <= 5'd0;
 		path_planned_array[1] <= 5'd1;
 		path_planned_array[2] <= 5'd29;
-		path_planned_array[3] <= 5'd20;
-		path_planned_array[4] <= 5'd21;
-		path_planned_array[5] <= 5'd22;
-		path_planned_array[6] <= 5'd21;
-		path_planned_array[7] <= 5'd20;
-		path_planned_array[8] <= 5'd29;
-		path_planned_array[9] <= 5'd28;
-		path_planned_array[10] <= 5'd26;
-		path_planned_array[11] <= 5'd25;
-		path_planned_array[12] <= 5'd24;
-		path_planned_array[13] <= 5'd20;
-		path_planned_array[14] <= 5'd29;
-		path_planned_array[15] <= 5'd1;
+		path_planned_array[3] <= 5'd28;
+		path_planned_array[4] <= 5'd26;
+		path_planned_array[5] <= 5'd27;
+		path_planned_array[6] <= 5'd25;
+		path_planned_array[7] <= 5'd24;
+		path_planned_array[8] <= 5'd20;
+		path_planned_array[9] <= 5'd21;
+		path_planned_array[10] <= 5'd22;
+		path_planned_array[11] <= 5'd21;
+		path_planned_array[12] <= 5'd20;
+		path_planned_array[13] <= 5'd29;
+		path_planned_array[14] <= 5'd28;
+		path_planned_array[15] <= 5'd26;
+		path_planned_array[16] <= 5'd27;
+		path_planned_array[17] <= 5'd25;
+		path_planned_array[18] <= 5'd24;
+		path_planned_array[19] <= 5'd20;
+		path_planned_array[20] <= 5'd29;
+		path_planned_array[21] <= 5'd1;
+		path_planned_array[22] <= 5'd0;
+		
+		
 		
 end 
 
@@ -80,7 +89,7 @@ always @(posedge clk_3125KHz) begin
 //		if (path_input) begin
 //			path_planned_array[idx] <= path_planned;
 //			idx <= idx + 1;`
-//		end
+//		endj
 //		else begin
 			idx <= 0;
 			temp<=node_rel[curr_node];
