@@ -36,6 +36,7 @@ reg [1:0] counter_EU_rectify = 0;
 reg [1:0] counter_CU_rectify = 0;
 reg [1:0] counter_RU_rectify = 0;
 reg check_flag = 0;
+reg end_state = 0;
 reg IDLE_state_counter = 0;
 
 reg EU_rectify = 0;
@@ -49,7 +50,6 @@ always@(posedge clk_3125KHz) begin
 	if (EU_fault_flag) EU_fault_count <= EU_fault_count + 1;
 	if (CU_fault_flag) CU_fault_count <= CU_fault_count + 1;
 	if (RU_fault_flag) RU_fault_count <= RU_fault_count + 1;
-	
 	if (switch_key) begin
 		case (SWITCH_STATE) 
 			IDLE_STATE: begin											//idle state for begining and ending stages 
@@ -69,17 +69,20 @@ always@(posedge clk_3125KHz) begin
 					IDLE_state_counter <= 1;
 				end
 				else begin
+					if (EU_fault_count == 0 && EU_fault_count == 0 && EU_fault_count == 0 && realtime_pos == 0) ALL_DONE_FLAG <= 1;
 					if( EU_fault_count != 0 ) SWITCH_STATE <= EU_FAULT;
 //					else if( CU_fault_count != 0 ) SWITCH_STATE <= CU_FAULT;
 //					else if( RU_fault_count != 0 ) SWITCH_STATE <= RU_FAULT;
 					else begin
-						if(realtime_pos != 0) begin
+						if(realtime_pos != 0) end_state <= 1;
+						if (end_state) begin
 							start_point <= realtime_pos;
 							end_point <= 5'd0;
 							CPU_start <= 1;
 							check_flag <= 1;
-							if ((realtime_pos == end_point) && check_flag) begin
-								ALL_DONE_FLAG <= 1;
+							if ((realtime_pos == 0) && check_flag) begin
+								ALL_DONE_FLAG <= 0;
+								end_state <= 0;
 								check_flag <= 0;
 							end
 						end

@@ -1,8 +1,10 @@
 module LED_driver(
 	input clk_3125KHz,
+	input clk_50M,
 	input fault_detect,
 	input block_picked,
 	input node_flag,
+	input switch_key,
 	input object_drop,
 	input run_complete,
 	input EU_fault_flag,
@@ -23,10 +25,16 @@ initial begin
 	{led1_B1,led2_B2,led3_B3} <= 3'b0;
 	{led1_G1,led2_G2,led3_G3} <= 3'b0;
 end
-reg [1:0] glow_flag = 2'b0;
+reg fault_detect_flag = 0;
+reg object_drop_flag = 0; 
 reg [31:0] counter = 0;
 reg switch = 0;
+reg EU_state = 0;
+reg CU_state = 0;
+reg RU_state = 0;
+reg counter_flag = 0;
 reg run_complete_flag = 0;
+
 always@ (posedge clk_3125KHz) begin
 	if (counter == 3125000) begin
 		switch <= ~switch;
@@ -36,52 +44,32 @@ always@ (posedge clk_3125KHz) begin
 		counter <= counter + 1;
 end
 
-always@(*)begin
-	if (run_complete) run_complete_flag <= 0;
-	if (run_complete_flag) begin
-		if (switch) begin
-			{led1_R1,led2_R2,led3_R3} <= 3'b0;
-			{led1_B1,led2_B2,led3_B3} <= 3'b0;
-			{led1_G1,led2_G2,led3_G3} <= 3'b111;
+always@(posedge clk_50M)begin
+	if (EU_fault_flag) EU_state <= 1;
+	if (CU_fault_flag) CU_state <= 1;
+	if (RU_fault_flag) RU_state <= 1;
+	if (switch_key) begin
+		if (run_complete) run_complete_flag <= 0;
+		if (run_complete_flag) begin
+			if (switch) begin
+				{led1_R1,led2_R2,led3_R3} <= 3'b0;
+				{led1_B1,led2_B2,led3_B3} <= 3'b0;
+				{led1_G1,led2_G2,led3_G3} <= 3'b111;
+			end
+			else begin
+				{led1_R1,led2_R2,led3_R3} <= 3'b0;
+				{led1_B1,led2_B2,led3_B3} <= 3'b0;
+				{led1_G1,led2_G2,led3_G3} <= 3'b000;
+			end
 		end
-		else begin
-			{led1_R1,led2_R2,led3_R3} <= 3'b0;
-			{led1_B1,led2_B2,led3_B3} <= 3'b0;
-			{led1_G1,led2_G2,led3_G3} <= 3'b000;
+		if (EU_state) begin 
+			if (fault_detect) fault_detect_flag <= 1;
+			if (object_drop) object_drop_flag <= 1;
+			
+			if (object_drop_flag) { led1_R1, led1_G1, led1_B1 } <= 3'b010; 
+			else if (fault_detect_flag) { led1_R1, led1_G1, led1_B1 } <= 3'b001;
+			else { led1_R1, led1_G1, led1_B1 } <= 3'b100;
 		end
 	end
-	if (EU_fault_flag) begin
-		if (glow_flag == 2'b00) 
-			glow_flag <= 2'b01;
-		
-		if (object_drop)
-			glow_flag <= 2'b11;
-		else if (fault_detect)
-			glow_flag <= 2'b10;		
-		
-		case (glow_flag)
-			2'b00: begin
-				{led1_R1,led2_R2,led3_R3} <= 3'b0;
-				{led1_B1,led2_B2,led3_B3} <= 3'b0;
-				{led1_G1,led2_G2,led3_G3} <= 3'b0;
-			end
-			2'b01: begin
-				{led1_R1,led2_R2,led3_R3} <= 3'b100;
-				{led1_B1,led2_B2,led3_B3} <= 3'b0;
-				{led1_G1,led2_G2,led3_G3} <= 3'b0;
-			end
-			2'b10: begin
-				{led1_R1,led2_R2,led3_R3} <= 3'b0;
-				{led1_B1,led2_B2,led3_B3} <= 3'b100;
-				{led1_G1,led2_G2,led3_G3} <= 3'b0;
-			end
-			2'b11: begin
-				{led1_R1,led2_R2,led3_R3} <= 3'b0;
-				{led1_B1,led2_B2,led3_B3} <= 3'b0;
-				{led1_G1,led2_G2,led3_G3} <= 3'b100;
-			end
-		endcase
-	end
-
 end
 endmodule 

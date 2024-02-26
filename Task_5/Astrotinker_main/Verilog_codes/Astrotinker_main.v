@@ -184,9 +184,11 @@ Fault_detection b2v_inst7(
 	);
 	
 LED_driver b2v_inst8(
+	.clk_50M(clk_50M),
 	.clk_3125KHz(adc_clk_3125Khz),
 	.fault_detect(fault_detect),
 	.node_flag(node_flag),
+	.switch_key(key_flag),
 	.object_drop(object_drop),
 	.run_complete(run_complete),
 	.EU_fault_flag (EU_fault_flag),
@@ -261,13 +263,16 @@ msg_rx b2v_inst13(
 
 message_unit b2v_inst14(
 	.clk_50M(clk_50M),
+	.clk_3125KHz(adc_clk_3125Khz),
 	.fault_location(fault_location),
    .fault_detect(fault_detect), 
+	.switch_key(key_flag),
 	.fault_id(fault_id),
 	.block_picked(block_picked),
 	.end_run_interrupt(run_complete),
 	.block_location(block_location), 												
 	.msg(tx_data),
+	.node_flag(node_flag),
 	.data_send(data_send)
 );
 endmodule 

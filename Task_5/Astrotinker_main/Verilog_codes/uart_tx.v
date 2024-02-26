@@ -46,11 +46,11 @@ always@(posedge clk_50M) begin
 			index<=4'd0;
 			if (data_send) state<=2'd1;
 			count<=9'b0;
-			tx <=0;
+			tx <=1;
 			end 
 		2'd1: begin 
 			tx<=0;
-			if(count<=431) begin
+			if(count<=432) begin
 				count<=count+1;
 				state<=2'd1;
 				end
@@ -92,4 +92,4 @@ always@(posedge clk_50M) begin
 end
 //////////////////DO NOT MAKE ANY CHANGES BELOW THIS LINE//////////////////
 
-endmodule 
+endmodule

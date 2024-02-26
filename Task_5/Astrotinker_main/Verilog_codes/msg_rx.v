@@ -38,12 +38,13 @@ initial begin
 			pick_block_flag <= 0;
 end
 always @(posedge clk_3125KHz) begin
-		if ( delay_count < 32'd93750000 ) begin	
+		if ( delay_count < 100 ) begin	//32'd93750000
 			delay_count <= delay_count + 1;
 		   switch_key <= 0;
 		end
-		else if (delay_count == 32'd93750000) switch_key <= 1;	
-		
+		else if (delay_count == 100) switch_key <= 1; //32'd93750000	
+		pick_block_flag <= 1;
+		block_location <= 0;
 		if ( count < 2 ) begin 
 			EU_fault_flag <= 1;
 			count <= count + 1;
