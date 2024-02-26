@@ -1,4 +1,5 @@
 module Dijkstra_handler(
+	input clk_50M,
 	input clk_3125KHz,                                       
 	input EU_fault_flag,                            
 	input CU_fault_flag,
@@ -45,27 +46,23 @@ reg RU_rectify = 0;
 reg [1:0] EU_fault_count = 0;
 reg [1:0] CU_fault_count = 0;
 reg [2:0] RU_fault_count = 0;
-
-always@(posedge clk_3125KHz) begin
+always@(posedge clk_50M) begin
 	if (EU_fault_flag) EU_fault_count <= EU_fault_count + 1;
 	if (CU_fault_flag) CU_fault_count <= CU_fault_count + 1;
 	if (RU_fault_flag) RU_fault_count <= RU_fault_count + 1;
+	if (EU_rectify) EU_fault_count <= EU_fault_count - 1;
+	if (CU_rectify) CU_fault_count <= CU_fault_count - 1;
+	if (RU_rectify) RU_fault_count <= RU_fault_count - 1;
+end
+always@(posedge clk_3125KHz) begin
 	if (switch_key) begin
 		case (SWITCH_STATE) 
 			IDLE_STATE: begin											//idle state for begining and ending stages 
+				fault_location <= 2'b00;
 				if (!IDLE_state_counter) begin
-					if (EU_rectify) begin
-						EU_fault_count <= EU_fault_count - 1;
-						EU_rectify <= 0;
-					end
-					if (CU_rectify) begin
-						EU_fault_count <= EU_fault_count - 1;
-						EU_rectify <= 0;
-					end
-					if (RU_rectify) begin
-						EU_fault_count <= EU_fault_count - 1;
-						EU_rectify <= 0;
-					end
+					if (EU_rectify) EU_rectify <= 0;
+					if (CU_rectify) CU_rectify <= 0;
+					if (RU_rectify) RU_rectify <= 0;
 					IDLE_state_counter <= 1;
 				end
 				else begin

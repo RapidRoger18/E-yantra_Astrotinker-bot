@@ -27,78 +27,63 @@ Output: rx_msg      - read incoming message
 module uart_rx (
   input clk_50M, rx,
   output reg [7:0] rx_msg,
-  output wire rx_complete
+  output reg rx_complete
 );
 
 //////////////////DO NOT MAKE ANY CHANGES ABOVE THIS LINE//////////////////
 
 ////////////////////////// Add your code here
+
+parameter IDLE = 2'b00;
+parameter START = 2'b01;
+parameter DATA = 2'b10;
+parameter STOP = 2'b11;
+
 reg [1:0] state = 0;
-reg [8:0] count = 0;    //434
-reg [2:0] index = 0;
-reg [7:0] Msg = 0;
-reg [2:0] idx = 3'd7;
-reg rx_data = 0;
-reg rx_complete_r = 0;
-reg status_r = 0;
-
-initial begin
-rx_msg = 0;
-state <= 2'b00;
-end
-
-assign rx_complete = rx_complete_r;
-
-always@(posedge clk_50M)begin
+reg [8:0] counter = 0;    //434
+reg [2:0] bit_count = 0 ;
+always@(posedge clk_50M) begin
 	case(state)
-		2'b00: begin
-			state <= 2'b01;
-			Msg <= 0;
-			rx_complete_r  <= 0;
+	IDLE: begin
+		if (rx == 0) begin
+			rx_complete <= 0;
+			state <= START;
 		end
-		2'b01:begin         //start
-			Msg <= 0;
-			rx_complete_r  <= 0;
-			if ( (25 < count < 425) && rx == 0) status_r <= 1;
-			if (count == 433) begin
-				count <= 0;
-				if(status_r == 1'b1) state <= 2'b10;
-				else state <= 2'b00;
+	end
+	START: begin
+		if( rx == 0 && counter == 9'd217) begin
+			state <= DATA;
+			counter <= 0;
+			bit_count <= 0;
+			rx_msg <= 0;
+		end 
+		else counter <= counter + 1;
+	end
+	DATA: begin
+		if(counter == 9'd433) begin
+			state <= DATA;
+			rx_msg <= {rx, rx_msg[7:1]};
+			bit_count <= bit_count + 1;
+			counter <= 0;
+			if(bit_count == 3'd7) begin
+			state <= STOP;
+			bit_count <= 0;
+			rx_complete <= 0;
 			end
-			else count <= count + 1;
+		end 
+		else begin
+			counter <= counter + 1;
 		end
-		2'b10:begin       //read data
-			if (count < 433) begin
-				status_r <= 0;
-				count <= count + 1;
-				state <= 2'b10;
-				if ( 25 < count < 425 ) rx_data <= rx;
-			end
-			else begin
-				Msg[7 - index] <= rx_data;
-				count <= 0;
-				if (index < 7) begin
-					index <= index + 1;
-					state <= 2'b10;
-				end
-				else begin
-					index <= 0;
-					state <= 2'b11;
-				end
-			end
+	end
+	STOP: begin
+		if(counter == 9'd433) begin
+			rx_complete <= 1;
+			state <= IDLE;
+			counter <= 0;
+		end else begin
+			counter <= counter + 1;
 		end
-		2'b11:begin
-			if (count < 433) begin
-				count = count + 1;
-				state <= 2'b11;
-			end
-			else begin
-				if (Msg != 8'h50 ) rx_msg <= Msg;
-				rx_complete_r <= 1'b1;
-				count <= 0;
-				state <= 2'b01;
-			end
-		end
+	end
 	endcase
 end
 //////////////////DO NOT MAKE ANY CHANGES BELOW THIS LINE//////////////////

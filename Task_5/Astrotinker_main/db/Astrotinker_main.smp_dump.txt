@@ -1,4 +1,17 @@
 
+State Machine - |Astrotinker_main|message_unit:b2v_inst14|STATE
+Name STATE.DEPOSIT_state STATE.PICKUP_state STATE.FAULT_state STATE.00 
+STATE.00 0 0 0 0 
+STATE.FAULT_state 0 0 1 1 
+STATE.PICKUP_state 0 1 0 1 
+STATE.DEPOSIT_state 1 0 0 1 
+
+State Machine - |Astrotinker_main|msg_rx:b2v_inst13|state
+Name state.00 state.10 state.01 
+state.00 0 0 0 
+state.01 1 0 1 
+state.10 1 1 0 
+
 State Machine - |Astrotinker_main|Dijkstra_handler:b2v_inst12|counter_RU_rectify
 Name counter_RU_rectify.11 counter_RU_rectify.10 counter_RU_rectify.01 counter_RU_rectify.00 
 counter_RU_rectify.00 0 0 0 0 
@@ -55,11 +68,11 @@ STATE.00 1 0 1
 STATE.10 0 1 1 
 
 State Machine - |Astrotinker_main|uart_rx:b2v_inst10|state
-Name state.11 state.10 state.01 state.00 
+Name state.STOP state.DATA state.START state.00 
 state.00 0 0 0 0 
-state.01 0 0 1 1 
-state.10 0 1 0 1 
-state.11 1 0 0 1 
+state.START 0 0 1 1 
+state.DATA 0 1 0 1 
+state.STOP 1 0 0 1 
 
 State Machine - |Astrotinker_main|uart_tx:b2v_inst9|state
 Name state.11 state.10 state.01 state.00 

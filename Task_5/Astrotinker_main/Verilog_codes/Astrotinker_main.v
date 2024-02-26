@@ -229,6 +229,7 @@ path_mapping b2v_inst11(
 );
 
 Dijkstra_handler b2v_inst12(
+	.clk_50M(clk_50M),
 	.clk_3125KHz(adc_clk_3125Khz),
 	.CPU_start(CPU_start),
 	.switch_key(key_flag),

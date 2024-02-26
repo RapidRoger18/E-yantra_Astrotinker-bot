@@ -16,6 +16,18 @@
 					"strict" : false
 				},
 				{
+					"name" : "led1_R1",
+					"strict" : false
+				},
+				{
+					"name" : "led1_G1",
+					"strict" : false
+				},
+				{
+					"name" : "led1_B1",
+					"strict" : false
+				},
+				{
 					"name" : "motor_A1",
 					"strict" : false
 				},
@@ -56,6 +68,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "transmit_data",
+					"strict" : false
+				},
+				{
+					"name" : "EM_A1",
+					"strict" : false
+				},
+				{
 					"name" : "clk_50M",
 					"strict" : false
 				},
@@ -65,6 +85,10 @@
 				},
 				{
 					"name" : "adc_dout",
+					"strict" : false
+				},
+				{
+					"name" : "receive_data",
 					"strict" : false
 				},
 				{

@@ -36,7 +36,7 @@ parameter FAULT_state = 2'b01;
 parameter PICKUP_state = 2'b10;
 parameter DEPOSIT_state = 2'b11;
 
-reg [15:0] msg_delay =0;
+reg [15:0] msg_delay = 0;
 reg [7:0] msg_container [12:0];
 reg [1:0] STATE = 2'd0;
 reg [3:0] idx = 0; 
