@@ -21,6 +21,7 @@ reg flag_counter = 0;
 reg [1:0] count = 0;
 reg EU_fault_count = 0;
 reg data_state = 0;
+reg start_flag = 0;
 
 initial begin
 			msg_mem[0] <= 0;
@@ -38,8 +39,10 @@ initial begin
 			EU_fault_flag <= 0;
 			pick_block_flag <= 0;
 end
-always@(posedge clk_3125KHz) begin
-	if ( delay_count < 32'd93750000 ) begin	//32'd93750000
+always@(posedge clk_3125KHz) begin												// this generates a 30 seconds delay 
+	if (!key0)start_flag <= 1;
+	else start_flag <= 0;
+	if ( delay_count < 32'd93750000&& start_flag) begin	//32'd93750000
 			delay_count <= delay_count + 1;
 		   switch_key <= 0;
 		end
@@ -55,7 +58,7 @@ end
 always @(posedge clk_50M) begin	
 	case (state)
 		2'd0: begin
-			if (rx_complete && data_state == 0) begin
+			if (rx_complete && data_state == 0) begin											//inputs data from UART RX
 				msg_mem[idx] <= rx_msg;
 				data_state <= 1;
 				if (rx_msg == 8'h23) begin
@@ -67,8 +70,8 @@ always @(posedge clk_50M) begin
 			else if (rx_complete == 0) data_state <= 0;
 		end
 		2'd1: begin
-			if ( msg_mem[0] == 8'h49 && msg_mem[1] == 8'h46 && msg_mem[2] == 8'h4D)  begin // IFM signal is detected 
-				if ( msg_mem[4] == 8'h45 ) EU_fault_flag <= 1; 
+			if ( msg_mem[0] == 8'h49 && msg_mem[1] == 8'h46 && msg_mem[2] == 8'h4D)  begin 										// IFM signal is detected 
+				if ( msg_mem[4] == 8'h45 ) EU_fault_flag <= 1; fault_dete
 				else if ( msg_mem[4] == 8'h43) CU_fault_flag <= 1; 
 				else if ( msg_mem[4] == 8'h52) RU_fault_flag <= 1;
 			end //PBM-SU-Bn-#
@@ -81,7 +84,7 @@ always @(posedge clk_50M) begin
 			end
 			state <= 2'd2;
 		end
-		2'd2: begin
+		2'd2: begin																		// setting all flags and container to zero again
 			EU_fault_flag <= 0;
 			CU_fault_flag <= 0;
 			RU_fault_flag <= 0;

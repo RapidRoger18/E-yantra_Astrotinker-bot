@@ -16,7 +16,7 @@ parameter B = 8'h42;
 parameter C = 8'h43;
 parameter D = 8'h44;
 parameter E = 8'h45;
-parameter F = 8'h46;
+parameter F = 8'h46;														// ascii codes for characters
 parameter I = 8'h49;
 parameter M = 8'h4D;
 parameter N = 8'h4E;
@@ -43,7 +43,7 @@ reg [3:0] idx = 0;
 reg msg_send = 0;
 reg next_fault_flag =0;
 reg EU_fault_flag = 0;
-reg CU_fault_flag = 0;
+reg CU_fault_flag = 0;								//necessary flags for each units
 reg RU_fault_flag = 0;
 reg next_pickup_flag = 0;
 reg next_deposit_flag = 0;
@@ -80,7 +80,7 @@ always@( posedge clk_50M ) begin
 			RU_fault_flag <= 0;
 		end
 		
-		if ( end_run_interrupt ) begin
+		if ( end_run_interrupt ) begin							//end message at the end of the run
 			msg_container[0] <= E;
 			msg_container[1] <= N;
 			msg_container[2] <= D;
@@ -88,16 +88,16 @@ always@( posedge clk_50M ) begin
 			msg_container[4] <= HASH;
 			msg_send <= 1;
 		end
-		if ( fault_detect && !block_picked && !next_fault_flag) STATE <= FAULT_state;
-		else if ( block_picked && !fault_detect && !next_pickup_flag) STATE <= PICKUP_state;
-		else if ( block_picked && fault_detect && !next_deposit_flag ) STATE <= DEPOSIT_state;
+		if ( fault_detect && !block_picked && !next_fault_flag) STATE <= FAULT_state;	//fault state conditions 
+		else if ( block_picked && !fault_detect && !next_pickup_flag) STATE <= PICKUP_state;	// pickup state conditions
+		else if ( block_picked && fault_detect && !next_deposit_flag ) STATE <= DEPOSIT_state;	//deposit state conditions
 //		else STATE <= IDLE_state;
 
-		case (STATE)
+		case (STATE)  //here complete message is stored in msg container
 				IDLE_state: begin
 					count <= 0;
 				end
-				FAULT_state: begin
+				FAULT_state: begin										//FIM-XSUn-# msg vased on incoming flags
 					msg_container[0] <= F;
 					msg_container[1] <= I;
 					msg_container[2] <= M;
@@ -118,7 +118,7 @@ always@( posedge clk_50M ) begin
 					data_send <= 1;
 					STATE <= IDLE_state;
 				end
-				PICKUP_state: begin
+				PICKUP_state: begin								//BPM-SU-Bn-#
 					msg_container[0] <= B;
 					msg_container[1] <= P;
 					msg_container[2] <= M;
@@ -137,7 +137,7 @@ always@( posedge clk_50M ) begin
 					next_pickup_flag <= 1;
 					STATE <= IDLE_state;
 				end
-				DEPOSIT_state: begin
+				DEPOSIT_state: begin                         //BDM-XSUn-#
 					msg_container[0] <= B;
 					msg_container[1] <= D;
 					msg_container[2] <= M;
@@ -165,7 +165,7 @@ always@( posedge clk_50M ) begin
 				end
 			endcase
 		
-		if ( msg_send ) begin
+		if ( msg_send ) begin                                     //msg is send serially after respective time counters to UART TX
 			msg <= msg_container[idx];
 			if (msg_delay == 4339) begin
 				msg_delay <= 0;

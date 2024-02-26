@@ -15,7 +15,7 @@ reg [1:0] STATE = 0;
 reg [1:0] curr_dir=0;
 reg [1:0] next_dir=0;
 reg [19:0] node_rel [29:0];
-reg [4:0] path_planned_array [15:0];
+reg [4:0] path_planned_array [24:0];
 reg [4:0] j=0,k=0;
 reg [4:0] next_node;
 reg [19:0] temp;
@@ -28,7 +28,7 @@ reg [4:0] pos = 0;
  initial begin
         //              N     E    S    W
         node_rel[0] = {5'd1,5'dx,5'dx,5'dx};
-        node_rel[1] = {5'dx,5'd29,5'd0,5'd2};
+        node_rel[1] = {5'dx,5'd29,5'd0,5'd2};												// Describing how nodes are related to each other
         node_rel[2] = {5'd8,5'd1,5'd3,5'dx}; 
         node_rel[3] = {5'd2,5'd28,5'dx,5'd4};       
         node_rel[4] = {5'd5,5'd3,5'dx,5'd6};
@@ -51,16 +51,16 @@ reg [4:0] pos = 0;
         node_rel[21] = {5'd23,5'd20,5'd22,5'dx};
         node_rel[22] = {5'd21,5'dx,5'dx,5'dx};
         node_rel[23] = {5'dx,5'dx,5'd21,5'dx};
-        node_rel[24] = {5'dx,5'd25,5'dx,5'd20};		// ??recheck after test
-        node_rel[25] = {5'd24,5'dx,5'd26,5'dx};
+        node_rel[24] = {5'dx,5'd25,5'dx,5'd20};		
+        node_rel[25] = {5'dx,5'dx,5'd26,5'd24};
         node_rel[26] = {5'd27,5'd25,5'dx,5'd28};
         node_rel[27] = {5'dx,5'dx,5'd26,5'dx};
         node_rel[28] = {5'd29,5'd26,5'dx,5'd3};
-        node_rel[29] = {5'd20,5'dx,5'd28,5'd1};	
+        node_rel[29] = {5'd20,5'dx,5'd28,5'd1};
 end 
 
 always @(posedge clk_3125KHz) begin
-		if (path_input) begin
+		if (path_input) begin															// taking path input from the CPU
 			path_planned_array[idx] <= path_planned;
 			idx <= idx + 1;
 			next_node <= path_planned_array[1];
@@ -75,12 +75,12 @@ always @(posedge clk_3125KHz) begin
 				pos <= curr_node;
 			end
 //			if ( pos == 0 && j == 0 ) j <= 1;
-			if (node_changed) begin
+			if (node_changed) begin														// calculation of the next to immediate next path is done when a node is crossed
 				curr_node<=path_planned_array[j];
 				next_node<=path_planned_array[j+1];
 				k<=0;
 				STATE <= 2'b01;
-				curr_dir<= next_dir;
+				curr_dir<= next_dir;													// determining current direction of the bot
 			end
 			case(STATE)
 				2'b00:begin
@@ -89,8 +89,8 @@ always @(posedge clk_3125KHz) begin
 					if ( {temp[k+4],temp[k+3],temp[k+2],temp[k+1],temp[k]}==next_node ) begin
 						case(k) 
 							5'd0  : next_dir <= 3; 									  
-							5'd5  : next_dir <= 2;                              
-							5'd10 : next_dir <= 1;                             
+							5'd5  : next_dir <= 2;                              					// determining the next direction of the bot
+							5'd10 : next_dir <= 1;                             						// done based on the relation between next node and current node
 							5'd15 : next_dir <= 0;                             
 						endcase
 						STATE <= 2'b10;
@@ -98,7 +98,7 @@ always @(posedge clk_3125KHz) begin
 					else k <= k + 5;
 				end
 				2'b10:begin 
-					if(next_dir > curr_dir) begin
+					if(next_dir > curr_dir) begin						
 							case (next_dir - curr_dir)
 								2'd0: turn <= 2'd0;                   //redundant
 								2'd1: turn <= 2'd1;
@@ -106,7 +106,7 @@ always @(posedge clk_3125KHz) begin
 								2'd3: turn <= 2'd3;
 							endcase
 					end
-					else begin
+					else begin																		// determining wher the bot should turn based on its current and next directions
 						case (curr_dir - next_dir)
 							2'd0: turn <= 2'd0;
 							2'd1: turn <= 2'd3;

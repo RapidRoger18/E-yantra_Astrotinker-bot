@@ -181,20 +181,6 @@ always@(*) begin
             end
 				if(wr_en==1) wr_en<=0;
         end
-//        7'b0110111 : begin
-//			if(j_signal==1)j_signal<=0;
-//            if(out_signal == 37'h800000000) begin   
-//				final_output <= {imm[31:12],12'b0};                                                          //lui
-//            end
-//				if(wr_en==1) wr_en<=0;
-//        end
-//        7'b0010111 : begin
-//			if(j_signal==1)j_signal<=0;
-//            if(out_signal == 37'h1000000000) begin   
-//				final_output <= pc_input +{imm[31:12],12'b0};                                             //auipc 
-//            end   
-//				if(wr_en==1) wr_en<=0;				
-  //      end
     endcase
 end
 endmodule 

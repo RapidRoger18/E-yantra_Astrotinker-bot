@@ -1,3 +1,8 @@
+/* 	
+	This is the main instanciation module.
+	It makes sure all the modules are properly connected and maintains the data flow
+*/
+
 module Astrotinker_main(
 	clk_50M,
 	adc_dout,
@@ -238,7 +243,6 @@ Dijkstra_handler b2v_inst12(
 	.RU_fault_flag(RU_fault_flag),
 	.pick_block_flag(pick_block_flag),
 	.block_location(block_location),
-//	.block_picked(block_picked),
 	.realtime_pos(now_position),
 	.start_point(CPU_dijkstra_SP),
 	.end_point(CPU_dijkstra_EP),

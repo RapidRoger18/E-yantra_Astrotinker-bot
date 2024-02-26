@@ -42,13 +42,13 @@ reg [8:0] count=0; //434
 always@(posedge clk_50M) begin 
 
 	case (state) 
-		2'd0: begin 
+		2'd0: begin 						// IDLE state
 			index<=4'd0;
 			if (data_send) state<=2'd1;
 			count<=9'b0;
 			tx <=1;
 			end 
-		2'd1: begin 
+		2'd1: begin 							//START state 
 			tx<=0;
 			if(count<=432) begin
 				count<=count+1;
@@ -59,7 +59,7 @@ always@(posedge clk_50M) begin
 				state<=2'd2;
 				end
 			end
-		2'd2: begin 
+		2'd2: begin 						// DATA state 
 			tx<=data[index];
 			if(count<=432) begin
 				count<=count+1;
@@ -77,7 +77,7 @@ always@(posedge clk_50M) begin
 					end
 				end
 			end
-		2'd3: begin 
+		2'd3: begin 					//STOP state
 			tx<=1;
 			if(count<=432) begin
 				count<=count+1;

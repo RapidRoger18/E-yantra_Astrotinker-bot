@@ -18,7 +18,7 @@ wire  is_r_instr, is_u_instr, is_s_instr, is_b_instr, is_j_instr, is_i_instr;
 wire [2:0]func3;
 wire [6:0]func7;
 
-
+  // Assigning istruction flags and register addresses based on input instructions
     assign opcode=instr[6:0];
     assign is_i_instr=(instr[6:0]== 7'b0000011)||(instr[6:0]== 7'b0010011)||(instr[6:0]== 7'b1100111);
     assign is_u_instr=(instr[6:0]==7'b0010111)||(instr[6:0] == 7'b0110111);

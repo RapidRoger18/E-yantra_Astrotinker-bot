@@ -22,7 +22,7 @@ Input:  clk_50M - 50 MHz clock
 Output: rx_msg      - read incoming message
         rx_complete - message received flag
 */
-
+// This module samples Data at the centre of its Baud rate 
 // module declaration
 module uart_rx (
   input clk_50M, rx,
@@ -33,7 +33,6 @@ module uart_rx (
 //////////////////DO NOT MAKE ANY CHANGES ABOVE THIS LINE//////////////////
 
 ////////////////////////// Add your code here
-
 parameter IDLE = 2'b00;
 parameter START = 2'b01;
 parameter DATA = 2'b10;

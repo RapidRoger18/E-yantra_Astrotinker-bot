@@ -1,6 +1,6 @@
 
 // riscv_cpu.v - single-cycle RISC-V CPU Processor
-
+// Instanciation for CPU components
 module riscv_cpu (
     input clk, reset,
     output [31:0] PC,

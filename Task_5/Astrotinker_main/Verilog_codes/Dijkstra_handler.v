@@ -9,12 +9,12 @@ module Dijkstra_handler(
 //	input block_picked,
 	input switch_key,
 	input [4:0] realtime_pos,                 // realtime node position of the bot  
-	input [4:0] curr_node,
+	input [4:0] curr_node,					//current node for calculations
 	
 	output reg CPU_start,             
 	output reg [4:0] start_point,        
 	output reg [4:0] end_point,
-	output reg ALL_DONE_FLAG = 0,            //switches on when the processing is done
+	output reg ALL_DONE_FLAG = 0,            //switches on when the process is done
 	output reg [2:0]  fault_id = 0,						//SU1 = 1, SU2 = 2, SU3 = 3, SU4 = 4;
 	output reg [1:0] fault_location = 0             //EU = 1, CU = 2, RU = 3 
 );
@@ -46,7 +46,7 @@ reg RU_rectify = 0;
 reg [1:0] EU_fault_count = 0;
 reg [1:0] CU_fault_count = 0;
 reg [2:0] RU_fault_count = 0;
-always@(posedge clk_50M) begin
+always@(posedge clk_50M) begin										//fault flags are based on 50MHz clock as it is toggled very fast in msg modules
 	if (EU_fault_flag) EU_fault_count <= EU_fault_count + 1;
 	if (CU_fault_flag) CU_fault_count <= CU_fault_count + 1;
 	if (RU_fault_flag) RU_fault_count <= RU_fault_count + 1;
@@ -54,7 +54,9 @@ always@(posedge clk_50M) begin
 	if (CU_rectify) CU_fault_count <= CU_fault_count - 1;
 	if (RU_rectify) RU_fault_count <= RU_fault_count - 1;
 end
-always@(posedge clk_3125KHz) begin
+// This module forward determines the position of the bot and its next step
+// the Generic algorithm used here will be modified further
+always@(posedge clk_3125KHz) begin				
 	if (switch_key) begin
 		case (SWITCH_STATE) 
 			IDLE_STATE: begin											//idle state for begining and ending stages 
@@ -88,14 +90,14 @@ always@(posedge clk_3125KHz) begin
 				end
 			end
 			EU_FAULT: begin										//fault identification step- bot traverses through multiple nodes of the perticular section
-				fault_location <= 2'd1;
+				fault_location <= 2'd1;								// determines the location of the fault in perticular Subunit
 				if (realtime_pos == 5'd29 && curr_node == 5'd28) fault_id <= 3'd3;
 				else if (realtime_pos == 5'd26 && curr_node == 5'd27) fault_id <= 3'd2;
 				else if (realtime_pos == 5'd25 && curr_node == 5'd24) fault_id <= 3'd1;
 				else fault_id <= 3'd0;
 				
 				case (counter_EU_fault)
-					2'b00: begin
+					2'b00: begin									//traversing to initial point for EU
 						CPU_start <= 1;
 						start_point <= realtime_pos;
 						end_point <= 5'd29;
@@ -106,7 +108,7 @@ always@(posedge clk_3125KHz) begin
 							check_flag <= 0;
 						end
 					end
-					2'b01: begin                        
+					2'b01: begin                        		//traversing to ESU2 & ESU3
 						CPU_start <= 1;
 						start_point <= curr_node;
 						end_point <= 5'd27;
@@ -117,7 +119,7 @@ always@(posedge clk_3125KHz) begin
 							counter_EU_fault <= 2'b10;
 						end
 					end
-					2'b10: begin
+					2'b10: begin							//traversing to ESU1 and last point of EU
 						CPU_start <= 1;
 						start_point <= curr_node;
 						end_point <= 5'd24;
@@ -132,7 +134,7 @@ always@(posedge clk_3125KHz) begin
 					end
 				endcase
 			end
-			CU_FAULT: begin
+			CU_FAULT: begin														//same concept for CU
 				fault_location <= 2'd2;
 				if (realtime_pos == 5'd7 && curr_node == 5'd6) fault_id <= 3'd3;
 				else if (realtime_pos == 5'd5 && curr_node == 5'd4) fault_id <= 3'd2;
@@ -176,7 +178,7 @@ always@(posedge clk_3125KHz) begin
 					end
 				endcase
 			end
-			RU_FAULT: begin
+			RU_FAULT: begin														//same traversing for RU
 				fault_location <= 2'd3;
 				if (realtime_pos == 5'd19 && curr_node == 5'd18) fault_id <= 3'd1;
 				else if (realtime_pos == 5'd17 && curr_node == 5'd16) fault_id <= 3'd2;
@@ -232,9 +234,9 @@ always@(posedge clk_3125KHz) begin
 					end
 				endcase
 			end
-			PICK_BLOCK: begin  																	//this state is responsible for planning the path to the 
+			PICK_BLOCK: begin  																	//this state is responsible for planning the path to the Storage Unit
 				if ( pick_block_flag && !block_pick_counter ) begin 
-					case ( block_location )
+					case ( block_location )														//traverses based on input location
 						2'd0: begin
 							CPU_start <= 1;
 							start_point <= curr_node;
@@ -281,7 +283,7 @@ always@(posedge clk_3125KHz) begin
 						end
 					endcase	
 				end
-				else if (block_pick_counter) begin
+				else if (block_pick_counter) begin                                             //once the block is picked moves to rectify state
 					SWITCH_STATE <= EU_RECTIFY;
 //					if(PREV_SWITCH_STATE == EU_FAULT) SWITCH_STATE <= EU_RECTIFY;
 //					else if(PREV_SWITCH_STATE == CU_FAULT)	SWITCH_STATE <= CU_RECTIFY;
@@ -289,9 +291,9 @@ always@(posedge clk_3125KHz) begin
 					block_pick_counter <= 1'b0;
 				end
 			end
-			EU_RECTIFY: begin
-				case (counter_EU_rectify)
-					2'b00: begin
+			EU_RECTIFY: begin															// traverses the same path from initial point tio final point of the EU
+				case (counter_EU_rectify)												//the traversing is done irrespective of fault is rectified or not
+					2'b00: begin														
 						CPU_start <= 1;
 						start_point <= curr_node;
 						end_point <= 5'd29;

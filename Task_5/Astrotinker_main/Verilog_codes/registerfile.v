@@ -13,7 +13,7 @@ module registerfile(
 	output reg [31:0]rs2_value
 );    
 	reg [31:0] register_file [31:0];
- 
+ // register file of 32 registers
 initial begin
 	register_file[0]=0;
 	register_file[1]=0;
@@ -49,12 +49,12 @@ initial begin
 	register_file[31]=0;
 end
 
-always@(*) begin
+always@(*) begin       // combinational read logic
 	if (rs1_valid) rs1_value <= register_file[rs1[4:0]];
 	if (rs2_valid) rs2_value <= register_file[rs2[4:0]];
 end
 
-always @(posedge clk) begin 
+always @(posedge clk) begin  //sequential write logic 
 	register_file[0]<=0;
 	if (wr_en&&rd[4:0]!=0) begin
 		register_file[rd[4:0]]<=result;

@@ -8,7 +8,7 @@ module PC(
 );
    reg [31:0] next_pc = 32'd0;
    
-   always @ (posedge clk) begin
+   always @ (posedge clk) begin									//program counter increments 4 addresses to fetch next instruction
 		if(reset)
 			next_pc = 32'b0;
 		else if(j_signal) begin

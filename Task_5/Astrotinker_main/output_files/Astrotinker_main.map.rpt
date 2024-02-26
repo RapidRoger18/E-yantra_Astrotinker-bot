@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Astrotinker_main
-Mon Feb 26 20:21:38 2024
+Mon Feb 26 20:36:09 2024
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -79,13 +79,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Feb 26 20:21:37 2024       ;
+; Analysis & Synthesis Status        ; Successful - Mon Feb 26 20:36:09 2024       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; Astrotinker_main                            ;
 ; Top-level Entity Name              ; Astrotinker_main                            ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 12,769                                      ;
-;     Total combinational functions  ; 7,706                                       ;
+; Total logic elements               ; 12,786                                      ;
+;     Total combinational functions  ; 7,723                                       ;
 ;     Dedicated logic registers      ; 6,249                                       ;
 ; Total registers                    ; 6249                                        ;
 ; Total pins                         ; 34                                          ;
@@ -195,13 +195,13 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.4%      ;
-;     Processor 3            ;   0.4%      ;
-;     Processor 4            ;   0.4%      ;
+;     Processor 2            ;   0.3%      ;
+;     Processor 3            ;   0.3%      ;
+;     Processor 4            ;   0.3%      ;
 ;     Processor 5            ;   0.3%      ;
 ;     Processor 6            ;   0.3%      ;
 ;     Processor 7            ;   0.3%      ;
-;     Processor 8            ;   0.3%      ;
+;     Processor 8            ;   0.2%      ;
 ;     Processors 9-12        ;   0.2%      ;
 +----------------------------+-------------+
 
@@ -299,16 +299,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------------------------------------+
 ; Resource                                    ; Usage                                   ;
 +---------------------------------------------+-----------------------------------------+
-; Estimated Total logic elements              ; 12,769                                  ;
+; Estimated Total logic elements              ; 12,786                                  ;
 ;                                             ;                                         ;
-; Total combinational functions               ; 7706                                    ;
+; Total combinational functions               ; 7723                                    ;
 ; Logic element usage by number of LUT inputs ;                                         ;
-;     -- 4 input functions                    ; 5510                                    ;
-;     -- 3 input functions                    ; 1567                                    ;
-;     -- <=2 input functions                  ; 629                                     ;
+;     -- 4 input functions                    ; 5521                                    ;
+;     -- 3 input functions                    ; 1570                                    ;
+;     -- <=2 input functions                  ; 632                                     ;
 ;                                             ;                                         ;
 ; Logic elements by mode                      ;                                         ;
-;     -- normal mode                          ; 7218                                    ;
+;     -- normal mode                          ; 7235                                    ;
 ;     -- arithmetic mode                      ; 488                                     ;
 ;                                             ;                                         ;
 ; Total registers                             ; 6249                                    ;
@@ -322,7 +322,7 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                                         ;
 ; Maximum fan-out node                        ; frequency_scaling:b2v_inst4|clk_3125KHz ;
 ; Maximum fan-out                             ; 3505                                    ;
-; Total fan-out                               ; 50632                                   ;
+; Total fan-out                               ; 50691                                   ;
 ; Average fan-out                             ; 3.57                                    ;
 +---------------------------------------------+-----------------------------------------+
 
@@ -332,12 +332,12 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                          ; Entity Name                       ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |Astrotinker_main                                                                                                                       ; 7706 (1)            ; 6249 (0)                  ; 346112      ; 0            ; 0       ; 0         ; 34   ; 0            ; |Astrotinker_main                                                                                                                                                                                                                                                                                                                                            ; Astrotinker_main                  ; work         ;
+; |Astrotinker_main                                                                                                                       ; 7723 (1)            ; 6249 (0)                  ; 346112      ; 0            ; 0       ; 0         ; 34   ; 0            ; |Astrotinker_main                                                                                                                                                                                                                                                                                                                                            ; Astrotinker_main                  ; work         ;
 ;    |ADC_Controller:b2v_inst2|                                                                                                           ; 22 (22)             ; 60 (60)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Astrotinker_main|ADC_Controller:b2v_inst2                                                                                                                                                                                                                                                                                                                   ; ADC_Controller                    ; work         ;
-;    |CPU_driver:b2v_inst1|                                                                                                               ; 163 (163)           ; 115 (115)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Astrotinker_main|CPU_driver:b2v_inst1                                                                                                                                                                                                                                                                                                                       ; CPU_driver                        ; work         ;
+;    |CPU_driver:b2v_inst1|                                                                                                               ; 170 (170)           ; 115 (115)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Astrotinker_main|CPU_driver:b2v_inst1                                                                                                                                                                                                                                                                                                                       ; CPU_driver                        ; work         ;
 ;    |Dijkstra_handler:b2v_inst12|                                                                                                        ; 69 (69)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Astrotinker_main|Dijkstra_handler:b2v_inst12                                                                                                                                                                                                                                                                                                                ; Dijkstra_handler                  ; work         ;
 ;    |Fault_detection:b2v_inst7|                                                                                                          ; 105 (105)           ; 70 (70)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Astrotinker_main|Fault_detection:b2v_inst7                                                                                                                                                                                                                                                                                                                  ; Fault_detection                   ; work         ;
-;    |LED_driver:b2v_inst8|                                                                                                               ; 6 (6)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Astrotinker_main|LED_driver:b2v_inst8                                                                                                                                                                                                                                                                                                                       ; LED_driver                        ; work         ;
+;    |LED_driver:b2v_inst8|                                                                                                               ; 5 (5)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Astrotinker_main|LED_driver:b2v_inst8                                                                                                                                                                                                                                                                                                                       ; LED_driver                        ; work         ;
 ;    |Line_Following:b2v_inst3|                                                                                                           ; 80 (80)             ; 45 (45)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Astrotinker_main|Line_Following:b2v_inst3                                                                                                                                                                                                                                                                                                                   ; Line_Following                    ; work         ;
 ;    |frequency_scaling:b2v_inst4|                                                                                                        ; 4 (4)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Astrotinker_main|frequency_scaling:b2v_inst4                                                                                                                                                                                                                                                                                                                ; frequency_scaling                 ; work         ;
 ;    |message_unit:b2v_inst14|                                                                                                            ; 133 (133)           ; 69 (69)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Astrotinker_main|message_unit:b2v_inst14                                                                                                                                                                                                                                                                                                                    ; message_unit                      ; work         ;
@@ -556,14 +556,14 @@ https://fpgasoftware.intel.com/eula.
 ;                |lpm_shiftreg:ram_data_shift_out|                                                                                        ; 169 (169)           ; 169 (169)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Astrotinker_main|sld_signaltap:All_20signals|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:ram_data_shift_out                                                                                                                  ; lpm_shiftreg                      ; work         ;
 ;                |lpm_shiftreg:status_data_shift_out|                                                                                     ; 23 (23)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Astrotinker_main|sld_signaltap:All_20signals|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:status_data_shift_out                                                                                                               ; lpm_shiftreg                      ; work         ;
 ;             |sld_rom_sr:crc_rom_sr|                                                                                                     ; 30 (30)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Astrotinker_main|sld_signaltap:All_20signals|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_rom_sr:crc_rom_sr                                                                                                                                                                                                             ; sld_rom_sr                        ; work         ;
-;    |t2b_riscv_cpu:b2v_inst0|                                                                                                            ; 5510 (39)           ; 3072 (0)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Astrotinker_main|t2b_riscv_cpu:b2v_inst0                                                                                                                                                                                                                                                                                                                    ; t2b_riscv_cpu                     ; work         ;
-;       |data_mem:dmem|                                                                                                                   ; 1485 (1485)         ; 2048 (2048)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Astrotinker_main|t2b_riscv_cpu:b2v_inst0|data_mem:dmem                                                                                                                                                                                                                                                                                                      ; data_mem                          ; work         ;
-;       |instr_mem:imem|                                                                                                                  ; 628 (628)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Astrotinker_main|t2b_riscv_cpu:b2v_inst0|instr_mem:imem                                                                                                                                                                                                                                                                                                     ; instr_mem                         ; work         ;
-;       |riscv_cpu:rvsingle|                                                                                                              ; 3358 (0)            ; 1024 (0)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Astrotinker_main|t2b_riscv_cpu:b2v_inst0|riscv_cpu:rvsingle                                                                                                                                                                                                                                                                                                 ; riscv_cpu                         ; work         ;
+;    |t2b_riscv_cpu:b2v_inst0|                                                                                                            ; 5521 (39)           ; 3072 (0)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Astrotinker_main|t2b_riscv_cpu:b2v_inst0                                                                                                                                                                                                                                                                                                                    ; t2b_riscv_cpu                     ; work         ;
+;       |data_mem:dmem|                                                                                                                   ; 1486 (1486)         ; 2048 (2048)               ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Astrotinker_main|t2b_riscv_cpu:b2v_inst0|data_mem:dmem                                                                                                                                                                                                                                                                                                      ; data_mem                          ; work         ;
+;       |instr_mem:imem|                                                                                                                  ; 630 (630)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Astrotinker_main|t2b_riscv_cpu:b2v_inst0|instr_mem:imem                                                                                                                                                                                                                                                                                                     ; instr_mem                         ; work         ;
+;       |riscv_cpu:rvsingle|                                                                                                              ; 3366 (0)            ; 1024 (0)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Astrotinker_main|t2b_riscv_cpu:b2v_inst0|riscv_cpu:rvsingle                                                                                                                                                                                                                                                                                                 ; riscv_cpu                         ; work         ;
 ;          |PC:b2v_inst|                                                                                                                  ; 63 (63)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Astrotinker_main|t2b_riscv_cpu:b2v_inst0|riscv_cpu:rvsingle|PC:b2v_inst                                                                                                                                                                                                                                                                                     ; PC                                ; work         ;
 ;          |alu:b2v_inst1|                                                                                                                ; 608 (608)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Astrotinker_main|t2b_riscv_cpu:b2v_inst0|riscv_cpu:rvsingle|alu:b2v_inst1                                                                                                                                                                                                                                                                                   ; alu                               ; work         ;
-;          |control_unit:b2v_inst2|                                                                                                       ; 1081 (1081)         ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Astrotinker_main|t2b_riscv_cpu:b2v_inst0|riscv_cpu:rvsingle|control_unit:b2v_inst2                                                                                                                                                                                                                                                                          ; control_unit                      ; work         ;
-;          |decoder:b2v_inst3|                                                                                                            ; 150 (150)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Astrotinker_main|t2b_riscv_cpu:b2v_inst0|riscv_cpu:rvsingle|decoder:b2v_inst3                                                                                                                                                                                                                                                                               ; decoder                           ; work         ;
+;          |control_unit:b2v_inst2|                                                                                                       ; 1088 (1088)         ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Astrotinker_main|t2b_riscv_cpu:b2v_inst0|riscv_cpu:rvsingle|control_unit:b2v_inst2                                                                                                                                                                                                                                                                          ; control_unit                      ; work         ;
+;          |decoder:b2v_inst3|                                                                                                            ; 151 (151)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Astrotinker_main|t2b_riscv_cpu:b2v_inst0|riscv_cpu:rvsingle|decoder:b2v_inst3                                                                                                                                                                                                                                                                               ; decoder                           ; work         ;
 ;          |registerfile:b2v_inst4|                                                                                                       ; 1456 (1456)         ; 992 (992)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Astrotinker_main|t2b_riscv_cpu:b2v_inst0|riscv_cpu:rvsingle|registerfile:b2v_inst4                                                                                                                                                                                                                                                                          ; registerfile                      ; work         ;
 ;    |uart_rx:b2v_inst10|                                                                                                                 ; 37 (37)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Astrotinker_main|uart_rx:b2v_inst10                                                                                                                                                                                                                                                                                                                         ; uart_rx                           ; work         ;
 ;    |uart_tx:b2v_inst9|                                                                                                                  ; 43 (43)             ; 17 (17)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Astrotinker_main|uart_tx:b2v_inst9                                                                                                                                                                                                                                                                                                                          ; uart_tx                           ; work         ;
@@ -880,8 +880,17 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +----------------------------------------------------------------------------------------+---------------------------------------------------------------+
 ; Register name                                                                          ; Reason for Removal                                            ;
 +----------------------------------------------------------------------------------------+---------------------------------------------------------------+
+; LED_driver:b2v_inst8|led3_B3                                                           ; Stuck at GND due to stuck port data_in                        ;
+; LED_driver:b2v_inst8|led2_B2                                                           ; Stuck at GND due to stuck port data_in                        ;
+; LED_driver:b2v_inst8|led3_R3                                                           ; Stuck at GND due to stuck port data_in                        ;
+; LED_driver:b2v_inst8|led2_R2                                                           ; Stuck at GND due to stuck port data_in                        ;
+; LED_driver:b2v_inst8|run_complete_flag                                                 ; Stuck at GND due to stuck port data_in                        ;
 ; CPU_driver:b2v_inst1|CPU_Ext_DataAdr[0,1,4..24,26..31]                                 ; Stuck at GND due to stuck port data_in                        ;
 ; CPU_driver:b2v_inst1|CPU_Ext_WriteData[5..31]                                          ; Stuck at GND due to stuck port data_in                        ;
+; LED_driver:b2v_inst8|led2_G2                                                           ; Stuck at GND due to stuck port clock_enable                   ;
+; LED_driver:b2v_inst8|led3_G3                                                           ; Stuck at GND due to stuck port clock_enable                   ;
+; LED_driver:b2v_inst8|counter[0..31]                                                    ; Lost fanout                                                   ;
+; LED_driver:b2v_inst8|switch                                                            ; Lost fanout                                                   ;
 ; message_unit:b2v_inst14|msg_container[5][3]                                            ; Stuck at GND due to stuck port data_in                        ;
 ; message_unit:b2v_inst14|msg_container[5][5]                                            ; Stuck at GND due to stuck port data_in                        ;
 ; message_unit:b2v_inst14|msg_container[5][7]                                            ; Stuck at GND due to stuck port data_in                        ;
@@ -898,36 +907,27 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 ; message_unit:b2v_inst14|msg_container[12][4]                                           ; Stuck at GND due to stuck port data_in                        ;
 ; message_unit:b2v_inst14|msg_container[12][6]                                           ; Stuck at GND due to stuck port data_in                        ;
 ; message_unit:b2v_inst14|msg_container[12][7]                                           ; Stuck at GND due to stuck port data_in                        ;
-; LED_driver:b2v_inst8|led3_B3                                                           ; Stuck at GND due to stuck port data_in                        ;
-; LED_driver:b2v_inst8|led2_B2                                                           ; Stuck at GND due to stuck port data_in                        ;
-; LED_driver:b2v_inst8|led3_R3                                                           ; Stuck at GND due to stuck port data_in                        ;
-; LED_driver:b2v_inst8|led2_R2                                                           ; Stuck at GND due to stuck port data_in                        ;
-; LED_driver:b2v_inst8|run_complete_flag                                                 ; Stuck at GND due to stuck port data_in                        ;
-; LED_driver:b2v_inst8|led3_G3                                                           ; Stuck at GND due to stuck port clock_enable                   ;
-; LED_driver:b2v_inst8|led2_G2                                                           ; Stuck at GND due to stuck port clock_enable                   ;
 ; Line_Following:b2v_inst3|dutycyc_left[0]                                               ; Merged with Line_Following:b2v_inst3|dutycyc_right[0]         ;
-; Line_Following:b2v_inst3|m2_b                                                          ; Merged with Line_Following:b2v_inst3|dutycyc_right[1]         ;
 ; Line_Following:b2v_inst3|dutycyc_right[3]                                              ; Merged with Line_Following:b2v_inst3|dutycyc_right[1]         ;
 ; Line_Following:b2v_inst3|dutycyc_left[2]                                               ; Merged with Line_Following:b2v_inst3|dutycyc_right[1]         ;
+; Line_Following:b2v_inst3|m2_b                                                          ; Merged with Line_Following:b2v_inst3|dutycyc_right[1]         ;
 ; Line_Following:b2v_inst3|m1_b                                                          ; Merged with Line_Following:b2v_inst3|dutycyc_right[2]         ;
 ; Line_Following:b2v_inst3|dutycyc_left[1,3]                                             ; Merged with Line_Following:b2v_inst3|dutycyc_right[2]         ;
 ; Line_Following:b2v_inst3|m2_a                                                          ; Merged with Line_Following:b2v_inst3|dutycyc_right[4]         ;
 ; Line_Following:b2v_inst3|m1_a                                                          ; Merged with Line_Following:b2v_inst3|dutycyc_left[4]          ;
-; ADC_Controller:b2v_inst2|mem1[2][1]                                                    ; Merged with ADC_Controller:b2v_inst2|mem1[2][0]               ;
 ; ADC_Controller:b2v_inst2|mem1[1][2]                                                    ; Merged with ADC_Controller:b2v_inst2|mem1[2][0]               ;
+; ADC_Controller:b2v_inst2|mem1[2][1]                                                    ; Merged with ADC_Controller:b2v_inst2|mem1[2][0]               ;
 ; ADC_Controller:b2v_inst2|mem1[0][0]                                                    ; Merged with ADC_Controller:b2v_inst2|mem1[2][0]               ;
 ; ADC_Controller:b2v_inst2|mem1[0][1]                                                    ; Merged with ADC_Controller:b2v_inst2|mem1[2][2]               ;
 ; ADC_Controller:b2v_inst2|mem1[0][2]                                                    ; Merged with ADC_Controller:b2v_inst2|mem1[2][2]               ;
-; ADC_Controller:b2v_inst2|mem1[1][1]                                                    ; Merged with ADC_Controller:b2v_inst2|mem1[2][2]               ;
 ; ADC_Controller:b2v_inst2|mem1[1][0]                                                    ; Merged with ADC_Controller:b2v_inst2|mem1[2][2]               ;
+; ADC_Controller:b2v_inst2|mem1[1][1]                                                    ; Merged with ADC_Controller:b2v_inst2|mem1[2][2]               ;
 ; CPU_driver:b2v_inst1|CPU_Ext_DataAdr[25]                                               ; Merged with CPU_driver:b2v_inst1|start_mem                    ;
 ; CPU_driver:b2v_inst1|CPU_Ext_MemWrite                                                  ; Merged with CPU_driver:b2v_inst1|start_mem                    ;
 ; Line_Following:b2v_inst3|dc1[0]                                                        ; Merged with Line_Following:b2v_inst3|dc2[0]                   ;
 ; Line_Following:b2v_inst3|dc2[3]                                                        ; Merged with Line_Following:b2v_inst3|dc2[1]                   ;
 ; Line_Following:b2v_inst3|dc1[2]                                                        ; Merged with Line_Following:b2v_inst3|dc2[1]                   ;
 ; Line_Following:b2v_inst3|dc1[1,3]                                                      ; Merged with Line_Following:b2v_inst3|dc2[2]                   ;
-; LED_driver:b2v_inst8|counter[0..31]                                                    ; Lost fanout                                                   ;
-; LED_driver:b2v_inst8|switch                                                            ; Lost fanout                                                   ;
 ; message_unit:b2v_inst14|msg_container[11][2]                                           ; Merged with message_unit:b2v_inst14|msg_container[11][0]      ;
 ; message_unit:b2v_inst14|msg_container[11][3]                                           ; Merged with message_unit:b2v_inst14|msg_container[11][0]      ;
 ; message_unit:b2v_inst14|msg_container[11][5]                                           ; Merged with message_unit:b2v_inst14|msg_container[11][0]      ;
@@ -1094,7 +1094,7 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 ;                                                   ;                           ; message_unit:b2v_inst14|msg_container[7][2], message_unit:b2v_inst14|CU_fault_flag,    ;
 ;                                                   ;                           ; Dijkstra_handler:b2v_inst12|counter_RU_fault.01,                                       ;
 ;                                                   ;                           ; Dijkstra_handler:b2v_inst12|counter_CU_fault.00                                        ;
-; LED_driver:b2v_inst8|run_complete_flag            ; Stuck at GND              ; LED_driver:b2v_inst8|led3_G3, LED_driver:b2v_inst8|led2_G2,                            ;
+; LED_driver:b2v_inst8|run_complete_flag            ; Stuck at GND              ; LED_driver:b2v_inst8|led2_G2, LED_driver:b2v_inst8|led3_G3,                            ;
 ;                                                   ; due to stuck port data_in ; LED_driver:b2v_inst8|switch                                                            ;
 ; CPU_driver:b2v_inst1|CPU_Ext_DataAdr[4]           ; Stuck at GND              ; t2b_riscv_cpu:b2v_inst0|riscv_cpu:rvsingle|registerfile:b2v_inst4|register_file[0][0], ;
 ;                                                   ; due to stuck port data_in ; t2b_riscv_cpu:b2v_inst0|riscv_cpu:rvsingle|registerfile:b2v_inst4|register_file[0][1]  ;
@@ -1151,16 +1151,15 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------+
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |Astrotinker_main|path_mapping:b2v_inst11|j[2]                                                           ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |Astrotinker_main|message_unit:b2v_inst14|msg_container[0][0]                                            ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |Astrotinker_main|LED_driver:b2v_inst8|led1_R1                                                           ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |Astrotinker_main|path_mapping:b2v_inst11|next_node[2]                                                   ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |Astrotinker_main|path_mapping:b2v_inst11|j[3]                                                           ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |Astrotinker_main|message_unit:b2v_inst14|msg_container[0][6]                                            ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |Astrotinker_main|path_mapping:b2v_inst11|next_node[4]                                                   ;
 ; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |Astrotinker_main|Fault_detection:b2v_inst7|fault_detect_counter[2]                                      ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |Astrotinker_main|ADC_Controller:b2v_inst2|channel_select[0]                                             ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Astrotinker_main|CPU_driver:b2v_inst1|index[0]                                                          ;
 ; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Astrotinker_main|t2b_riscv_cpu:b2v_inst0|riscv_cpu:rvsingle|registerfile:b2v_inst4|register_file[0][28] ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |Astrotinker_main|t2b_riscv_cpu:b2v_inst0|riscv_cpu:rvsingle|PC:b2v_inst|next_pc[0]                      ;
-; 3:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |Astrotinker_main|t2b_riscv_cpu:b2v_inst0|riscv_cpu:rvsingle|PC:b2v_inst|next_pc[4]                      ;
+; 3:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |Astrotinker_main|t2b_riscv_cpu:b2v_inst0|riscv_cpu:rvsingle|PC:b2v_inst|next_pc[3]                      ;
 ; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |Astrotinker_main|path_mapping:b2v_inst11|k[2]                                                           ;
 ; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |Astrotinker_main|Fault_detection:b2v_inst7|time_counter[8]                                              ;
 ; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |Astrotinker_main|message_unit:b2v_inst14|msg_container[7][4]                                            ;
@@ -1449,16 +1448,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SLD           ; 8                           ;
 ;     SCLR              ; 34                          ;
 ;     plain             ; 144                         ;
-; cycloneiii_lcell_comb ; 6659                        ;
+; cycloneiii_lcell_comb ; 6676                        ;
 ;     arith             ; 394                         ;
 ;         2 data inputs ; 185                         ;
 ;         3 data inputs ; 209                         ;
-;     normal            ; 6265                        ;
+;     normal            ; 6282                        ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 34                          ;
-;         2 data inputs ; 225                         ;
-;         3 data inputs ; 1047                        ;
-;         4 data inputs ; 4958                        ;
+;         2 data inputs ; 228                         ;
+;         3 data inputs ; 1050                        ;
+;         4 data inputs ; 4969                        ;
 ;                       ;                             ;
 ; Max LUT depth         ; 25.00                       ;
 ; Average LUT depth     ; 10.57                       ;
@@ -1470,7 +1469,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:25     ;
+; Top            ; 00:00:26     ;
 +----------------+--------------+
 
 
@@ -1859,7 +1858,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Mon Feb 26 20:20:54 2024
+    Info: Processing started: Mon Feb 26 20:35:17 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Astrotinker_main -c Astrotinker_main
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -2301,7 +2300,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_ngc File: /home/atharvak/E-yantra23/Astrotinker_main/db/cmpr_ngc.tdf Line: 23
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "All_20signals"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2024.02.26.20:21:06 Progress: Loading sld4cb053a0/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2024.02.26.20:35:34 Progress: Loading sld4cb053a0/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -2737,16 +2736,16 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "key0" File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/Astrotinker_main.v Line: 33
     Warning (15610): No output dependent on input pin "key1" File: /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/Astrotinker_main.v Line: 34
-Info (21057): Implemented 13091 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 13108 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
     Info (21059): Implemented 29 output pins
-    Info (21061): Implemented 12883 logic cells
+    Info (21061): Implemented 12900 logic cells
     Info (21064): Implemented 169 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 490 warnings
-    Info: Peak virtual memory: 560 megabytes
-    Info: Processing ended: Mon Feb 26 20:21:38 2024
-    Info: Elapsed time: 00:00:44
-    Info: Total CPU time (on all processors): 00:01:05
+    Info: Peak virtual memory: 564 megabytes
+    Info: Processing ended: Mon Feb 26 20:36:09 2024
+    Info: Elapsed time: 00:00:52
+    Info: Total CPU time (on all processors): 00:01:20
 
 
 +------------------------------------------+

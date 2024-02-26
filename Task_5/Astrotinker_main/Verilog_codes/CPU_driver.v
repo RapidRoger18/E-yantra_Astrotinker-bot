@@ -1,9 +1,12 @@
+// This module is the CPU controller 
+// It is the access pint between CPU and external modules 
+// This module makes sure that CPU can be rerun whenever needed and the resultant path is correctly stored and transmitted to the required modules
 module CPU_driver(
 	input clk_3125KHz,
 	input CPU_MemWrite,
 	input CPU_start,
-	input [4:0] SP, EP,
-	input [31:0] CPU_WriteData, CPU_DataAdr, CPU_ReadData,
+	input [4:0] SP, EP,                                                                   //Start point and End point
+	input [31:0] CPU_WriteData, CPU_DataAdr, CPU_ReadData,                                //Data Mem access for CPU 
 	output reg CPU_reset,
 	output reg CPU_Ext_MemWrite,
 	output reg [4:0] path_planned,
@@ -21,9 +24,9 @@ reg CPU_state_flag = 0;
 reg CPU_stop = 0; 
 reg read_state = 0;
 always @(posedge clk_3125KHz) begin
-	if ( CPU_start && !CPU_state_flag) begin
-		if( CPU_state_counter == 8 ) begin
-			CPU_state_counter <= 0;
+	if ( CPU_start && !CPU_state_flag) begin                                       //This loop makes sure that the CPU counter is switched only for 8 cycles
+		if( CPU_state_counter == 8 ) begin                                         //i.e., until all required data is stored into memory
+			CPU_state_counter <= 0;												   //This will also make sure the CPU is runnig only once for a set of SP and EP
 			CPU_start_state <= 0;
 			CPU_state_flag <= 1;
 		end
@@ -86,7 +89,7 @@ always @(posedge clk_3125KHz) begin
 		// External Memory Access Disabled
 //		CPU_Ext_MemWrite <= 0; CPU_Ext_WriteData <= 0; CPU_Ext_DataAdr <= 0;
 	end
-	if(CPU_MemWrite && !CPU_reset && read_state) begin
+	if(CPU_MemWrite && !CPU_reset && read_state) begin                                     // here we read the stored path from perticular location 
         if (CPU_DataAdr === 32'h02000008) begin
             path_planned_array [index] <= CPU_WriteData;
 				index <= index + 1;
@@ -97,7 +100,7 @@ always @(posedge clk_3125KHz) begin
 				index <= 0;
         end
     end
-	 if (CPU_stop) begin
+	 if (CPU_stop) begin                                                               //here we send the planned path serially with help of a flag to recieve in other modules
 		if (path_planned_array[idx] == EP) begin
 			path_planned <= path_planned_array [idx];
 			idx <= 0;
