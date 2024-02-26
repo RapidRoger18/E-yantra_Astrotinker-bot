@@ -6,6 +6,7 @@ module Line_Following(
 		input 	[1:0]  turn_flag,
 		input end_path,
 		input switch_key,
+		input EU_FAULT_FLAG,
 		input [4:0] realtime_pos,
 		output  reg m1_a,
 		output  reg m1_b,
@@ -20,105 +21,146 @@ reg [4:0] dutycyc_left, dutycyc_right;
 reg [31:0] count;
 reg [10:0] node_delay;
 reg is_str,is_left,is_right,all_white = 0;
+reg [1:0] node_count;
+reg [1:0] nc;
 
 
 always @(posedge clk_3125KHz) begin
 	if(switch_key) begin	
 		if (left>12'd1000 && middle>12'd1000 && right>12'd1000) 	node_flag<=1;
-		else if ( right > 1000  && left < 1000)	is_right<=1;
-		else if ( left > 1000 && right < 1000) 	is_left<=1;
-		else if ( left < 12'd1000 && middle < 12'd1000 && right < 12'd1000) all_white<=1;
-		else if ( left < 12'd1000 && middle > 12'd1000 && right < 12'd1000) begin 
+		else if ( right > 1000  && left < 400)	is_right<=1;
+		else if ( left > 1000 && right < 400) 	is_left<=1;
+		else if ( left < 12'd400 && middle < 12'd400 && right < 12'd400) all_white<=1;
+		else if ( left < 12'd400 && middle > 12'd1000 && right < 12'd400) begin 
 			is_str <= 1;
 			node_flag<=0;
+			all_white<=0;
 		end
 		if (node_changed) node_changed<=0;
-		
 		if (node_flag) begin
-//				if (node_delay<11'd1000) begin
-//						node_delay<=node_delay+1;
-//						m1_a<=1;
-//						m1_b<=0;
-//						m2_a<=1;
-//						m2_b<=0;
-//						dutycyc_left<=0;
-//						dutycyc_right<=0;
-//				end
-//				else begin
 								case(turn_flag)
 										0: begin
-												if ( realtime_pos == 5'd29 || realtime_pos == 5'd28 || realtime_pos == 5'd24) begin														
+												if ( realtime_pos == 5'd29 ) begin	
+																m1_a<=1;
+																m1_b<=0;
+																m2_a<=1;
+																m2_b<=0; 
+																dutycyc_left<=5'd3;
+																dutycyc_right<=5'd26;
+//																nc<=nc+1;
+												end
+												else if (realtime_pos == 5'd24 ) begin
 														m1_a<=1;
 														m1_b<=0;
 														m2_a<=1;
-														m2_b<=0; 
+														m2_b<=0;
 														dutycyc_left<=5'd3;
-														dutycyc_right<=5'd26;
+														dutycyc_right<=5'd22;
+												end
+												else if (realtime_pos == 5'd2 ) begin
+														m1_a<=1;
+														m1_b<=0;
+														m2_a<=1;
+														m2_b<=0;
+														dutycyc_left<=5'd26;
+														dutycyc_right<=5'd3;
 												end
 												else  begin
 														m1_a<=1;
 														m1_b<=0;
 														m2_a<=1;
 														m2_b<=0;
-														dutycyc_left<=5'd16;
-														dutycyc_right<=5'd16;
+														dutycyc_left<=5'd18;
+														dutycyc_right<=5'd18;
 												end
 										end
 										1: begin
-												if(realtime_pos == 5'd21 ) begin														
-														m1_a<=1;
-														m1_b<=0;
-														m2_a<=1;
-														m2_b<=0;
-														dutycyc_left<=5'd18;
-														dutycyc_right<=5'd1;
-												end
-												else begin
-														m1_a<=1;
-														m1_b<=0;
-														m2_a<=0;
-														m2_b<=1;
-														dutycyc_left<=5'd18;
-														dutycyc_right<=5'd3;
-												end
+													case(realtime_pos) 	
+														5'd21 : begin
+																	m1_a<=1;
+																	m1_b<=0;
+																	m2_a<=1;
+																	m2_b<=0;
+																	dutycyc_left<=5'd18;
+																	dutycyc_right<=5'd1;
+															end
+														5'd29 : begin
+																	m1_a<=1;
+																	m1_b<=0;
+																	m2_a<=1;
+																	m2_b<=0;
+																	dutycyc_left<=5'd18;
+																	dutycyc_right<=5'd2;
+																end		
+														default : begin
+																	m1_a<=1;
+																	m1_b<=0;
+																	m2_a<=0;
+																	m2_b<=1;
+																	dutycyc_left<=5'd18;
+																	dutycyc_right<=5'd1;
+															end
+													endcase
 										end
 										2: begin
-														m1_a<=1;
-														m1_b<=0;
-														m2_a<=0;
-														m2_b<=1;
-														dutycyc_left<=5'd10;
-														dutycyc_right<=5'd20;
+													if(all_white) begin
+															m1_a<=1;
+															m1_b<=0;
+															m2_a<=0;
+															m2_b<=1;
+															dutycyc_left<=5'd16;
+															dutycyc_right<=5'd20;
+													end
+													else if ( realtime_pos == 5'd25 ) begin
+															m1_a<=1;
+															m1_b<=0;
+															m2_a<=1;
+															m2_b<=0;
+															dutycyc_left<=5'd15;
+															dutycyc_right<=5'd17;
+															all_white<=0;
+													end
+													else begin
+															m1_a<=1;
+															m1_b<=0;
+															m2_a<=1;
+															m2_b<=0;
+															dutycyc_left<=5'd10;
+															dutycyc_right<=5'd10;
+													end
 										end
 										3: begin
-												if ( realtime_pos == 5'd20 ) begin
-														m1_a<=0; 
-														m1_b<=1;
-														m2_a<=1;
-														m2_b<=0;
-														dutycyc_left<=5'd10;
-														dutycyc_right<=5'd30;
-												end
-												else if ( realtime_pos == 5'd28) begin
-														m1_a<=1;
-														m1_b<=0;
-														m2_a<=0;
-														m2_b<=1;
-														dutycyc_left<= 5'd20;
-														dutycyc_right<= 5'd5;
-												end		
-												else begin
-														m1_a<=0; 
-														m1_b<=1;
-														m2_a<=1;
-														m2_b<=0;
-														dutycyc_left<=5'd3;
-														dutycyc_right<=5'd24;
-												end
-										end
+												case ( realtime_pos) 
+														5'd20 : begin
+																	if(node_count==0) begin
+																			m1_a<=0; 
+																			m1_b<=1;
+																			m2_a<=1;
+																			m2_b<=0;
+																			dutycyc_left<=5'd14;
+																			dutycyc_right<=5'd30;
+																			node_count<=1;
+																	end
+																end
+														5'd28 : begin 	
+																	m1_a<=1;
+																	m1_b<=0;
+																	m2_a<=1;
+																	m2_b<=0;
+																	dutycyc_left<= 5'd7;
+																	dutycyc_right<= 5'd21;
+																end
+														default : begin
+																	 	m1_a<=1;
+																		m1_b<=0;
+																		m2_a<=1;
+																		m2_b<=0;
+																		dutycyc_left<=5'd2;
+																		dutycyc_right<=5'd18;
+																end
+											endcase
+								end
 								endcase
-//						node_delay<=0;
-//				end
 		end
 		// Line follow algo
 		else if (is_right) begin      
@@ -126,7 +168,7 @@ always @(posedge clk_3125KHz) begin
 							m1_b<=0;
 							m2_a<=0;	
 							m2_b<=1;
-							dutycyc_left<=5'd20;
+							dutycyc_left<=5'd22;
 							dutycyc_right<=5'd10;
 							is_right<=0;
 //							node_flag<=0;
@@ -137,7 +179,7 @@ always @(posedge clk_3125KHz) begin
 							m2_a<=1;
 							m2_b<=0;
 							dutycyc_left<=5'd10;	
-							dutycyc_right<=5'd20;
+							dutycyc_right<=5'd22;
 							is_left<=0;
 //							node_flag<=0;
 		end
@@ -146,12 +188,13 @@ always @(posedge clk_3125KHz) begin
 							m1_b<=0;
 							m2_a<=1;
 							m2_b<=0;
-							dutycyc_left <= 5'd16;
-							dutycyc_right<= 5'd16;
+							dutycyc_left <= 5'd20;
+							dutycyc_right<= 5'd20;
 							node_delay <=0;
 							is_left<=0;
 							is_right<=0;
 							is_str<=0;
+							all_white<=0;
 							node_flag<=0;
 		end
 		dc1<=dutycyc_left;
@@ -164,17 +207,7 @@ always @(posedge clk_3125KHz) begin
 			node_changed <= 1;
 		end
 	end
-	else begin
-		m1_a<=0;
-		m1_b<=0;
-		m2_a<=0;
-		m2_b<=0;
-		dutycyc_left<=5'd0;
-		dutycyc_right<=5'd0;
-	end
-	
 end
-
 endmodule  
 
 

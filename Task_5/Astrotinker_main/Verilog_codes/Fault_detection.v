@@ -16,6 +16,7 @@ module Fault_detection(
 	reg [15:0] time_counter = 0;										//measuring pulse width of UV recieved data
 	reg [15:0] prev_time_counter = 0;								//comparison for fault detection
 	reg [15:0] fault_detect_counter = 0;
+	reg [15:0] block_detect_counter = 0;
 always@(posedge clk_50M)begin
 	if (switch_key) begin	
 		case(state1)																				//UV sensor driver FSM
@@ -48,7 +49,10 @@ always@(posedge clk_50M)begin
 			if (fault_detect_counter == 1000) fault_detect <= 1;
 			else fault_detect_counter <= fault_detect_counter + 1;
 		end
-		else if(prev_time_counter < 9000 && prev_time_counter > 7000 && !fault_detect) block_picked <= 1;
+		else if(prev_time_counter < 9000 && prev_time_counter > 7000 && !fault_detect) begin
+			if ( block_detect_counter ==1000) block_picked <= 1 ;
+			else block_detect_counter <= block_detect_counter + 1 ;
+		end
 		else if (prev_time_counter > 29000 ) begin
 			fault_detect <= 0;
 			block_picked <= 0;
