@@ -77,10 +77,10 @@ always @(posedge clk_50M) begin
 			end //PBM-SU-Bn-#
 			else if ( msg_mem[0] == 8'h50 && msg_mem[1] == 8'h42 && msg_mem[2]  == 8'h4D && msg_mem [4] == 8'h53 && msg_mem[5] == 8'h55 && msg_mem[7] == 8'h42) begin // PBM signal is detected 
 				pick_block_flag <= 1;
-				if ( msg_mem[8] == 8'h39 ) block_location <= 2'd0;
-				else if (msg_mem[8] == 8'h40) block_location <= 2'd1;
-				else if (msg_mem[8] == 8'h41) block_location <= 2'd2;
-				else if (msg_mem[8] == 8'h42) block_location <= 2'd3;
+				if ( msg_mem[8] == 8'h31 ) block_location <= 2'd0;
+				else if (msg_mem[8] == 8'h32) block_location <= 2'd1;
+				else if (msg_mem[8] == 8'h33) block_location <= 2'd2;
+				else if (msg_mem[8] == 8'h34) block_location <= 2'd3;
 			end
 			state <= 2'd2;
 		end
