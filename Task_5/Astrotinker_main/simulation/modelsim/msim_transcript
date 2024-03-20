@@ -1,0 +1,51 @@
+# do Astrotinker_main_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying /home/atharvak/Quartus/intelFPGA/20.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/message_unit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:29:53 on Feb 15,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes" /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/message_unit.v 
+# -- Compiling module message_unit
+# 
+# Top level modules:
+# 	message_unit
+# End time: 18:29:53 on Feb 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/msg_rx.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:29:53 on Feb 15,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes" /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/msg_rx.v 
+# -- Compiling module msg_rx
+# 
+# Top level modules:
+# 	msg_rx
+# End time: 18:29:53 on Feb 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/uart_tx.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:29:53 on Feb 15,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes" /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/uart_tx.v 
+# -- Compiling module uart_tx
+# 
+# Top level modules:
+# 	uart_tx
+# End time: 18:29:53 on Feb 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes {/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/uart_rx.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:29:53 on Feb 15,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes" /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/uart_rx.v 
+# -- Compiling module uart_rx
+# 
+# Top level modules:
+# 	uart_rx
+# End time: 18:29:53 on Feb 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

@@ -1,0 +1,107 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/atharvak/E-yantra23/Astrotinker_main/simulation/modelsim
+vmessage_unit
+Z1 !s110 1708001993
+!i10b 1
+!s100 8WOWPBQ:FcPT@>FBidcEQ0
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I^i8LnnFbf[FY2QYzQ]m1C3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1707998252
+8/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/message_unit.v
+F/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/message_unit.v
+!i122 0
+L0 1 145
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1708001993.000000
+!s107 /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/message_unit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes|/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/message_unit.v|
+!i113 1
+Z6 o-vlog01compat -work work
+Z7 !s92 -vlog01compat -work work +incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes
+Z8 tCvgOpt 0
+vmsg_rx
+R1
+!i10b 1
+!s100 5:B`3WS?8hKCA:LOb8_V12
+R2
+I:;6lg>?2]Uz?9e?AIC9G[0
+R3
+R0
+w1707999179
+8/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/msg_rx.v
+F/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/msg_rx.v
+!i122 1
+L0 1 62
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/msg_rx.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes|/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/msg_rx.v|
+!i113 1
+R6
+R7
+R8
+vuart_rx
+R1
+!i10b 1
+!s100 A=]<AiIBGlg`TmdDEbKZ[2
+R2
+I]@XdoG@C6[0V<OkWh5=6`1
+R3
+R0
+w1707886981
+8/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/uart_rx.v
+F/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/uart_rx.v
+!i122 3
+L0 27 75
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/uart_rx.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes|/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/uart_rx.v|
+!i113 1
+R6
+R7
+R8
+vuart_tx
+R1
+!i10b 1
+!s100 7>AOlf?Uz8YE0N;DXk:iB0
+R2
+IQUnIcDJoXzodkeJTWSQ2^3
+R3
+R0
+w1705981142
+8/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/uart_tx.v
+F/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/uart_tx.v
+!i122 2
+L0 25 70
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/uart_tx.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes|/home/atharvak/E-yantra23/Astrotinker_main/Verilog_codes/uart_tx.v|
+!i113 1
+R6
+R7
+R8
